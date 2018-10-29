@@ -9,6 +9,7 @@
 #### Team Member: 
 
 - Jinzhou Tao (adiosray)
+- David Montes (davidpmontes)
 
 #### Course Info
 
