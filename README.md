@@ -10,6 +10,7 @@
 
 - Jinzhou Tao (adiosray)
 - David Montes (davidpmontes)
+- Siyi Cai (CSIYI)
 
 #### Course Info
 
