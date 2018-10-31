@@ -62,13 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CloseQuestionEditPanel.cs" />
-    <Compile Include="Assets\Scripts\CreateNewGameButton.cs" />
     <Compile Include="Assets\Scripts\EditQuestion.cs" />
     <Compile Include="Assets\Scripts\GameSaveManager.cs" />
     <Compile Include="Assets\Scripts\JeopardyLogo.cs" />
-    <Compile Include="Assets\Scripts\QuitButton.cs" />
-    <Compile Include="Assets\Scripts\RotateCamera.cs" />
-    <Compile Include="Assets\Scripts\StartButton.cs" />
+    <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -87,16 +84,16 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/davidpmontes/Documents/Jeopardy/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/davidpmontes/Desktop/fa18-202-polymorphers/Jeopardy/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/davidpmontes/Documents/Jeopardy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/davidpmontes/Desktop/fa18-202-polymorphers/Jeopardy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/davidpmontes/Documents/Jeopardy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/davidpmontes/Desktop/fa18-202-polymorphers/Jeopardy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/davidpmontes/Documents/Jeopardy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/davidpmontes/Desktop/fa18-202-polymorphers/Jeopardy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
