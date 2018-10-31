@@ -7,16 +7,13 @@ public class JeopardyLogo : MonoBehaviour {
     public float rotateRate;
     public float approachRate;
 
-
-	// Use this for initialization
-	void Start () {
+   	void Start () {
         StartCoroutine("Rotate");
     }
 
-    // Update is called once per frame
-    void Update () {
-
-	}
+    /*
+     * Translates the gameobject closer to the camera
+     */
 
     IEnumerator Approach()
     {
@@ -30,6 +27,9 @@ public class JeopardyLogo : MonoBehaviour {
                                          -6);
     }
 
+    /*
+     * Rotates the gameobject around its vertical
+     */
     IEnumerator Rotate()
     {
         while(true)
