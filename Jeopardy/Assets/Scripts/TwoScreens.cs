@@ -10,10 +10,4 @@ public class TwoScreens : MonoBehaviour
         for (int i = 0; i < Display.displays.Length; i++)
             Display.displays[i].Activate(1024, 768, 60);
 	}
-
-    void Update()
-    {
-
-    }
-
 }
