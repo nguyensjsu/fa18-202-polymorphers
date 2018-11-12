@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="df702663-a949-455d-81f0-8fd4b6a98eb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameData.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jeopardy.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Jeopardy.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2117223507">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.remote" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="8" />
+          <entry key="shader" value="1" />
+          <entry key="sln" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="8" />
+          <entry key="ShaderLab" value="1" />
+          <entry key="Solution File" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cs" value="1421" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="1421" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/CloseQuestionEditPanel.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding>
+                <marker date="1542012665887" expanded="false" signature="6:132" ph="..." />
+                <marker date="1542012665887" expanded="true" signature="185:582" ph="{...}" />
+                <marker date="1542012665887" expanded="true" signature="269:276" ph="{...}" />
+                <marker date="1542012665887" expanded="true" signature="331:338" ph="{...}" />
+                <marker date="1542012665887" expanded="true" signature="363:580" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameDataManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <marker date="1542020986768" expanded="true" signature="6:117" ph="..." />
+                <marker date="1542020986768" expanded="true" signature="137:3009" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="179:3007" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="556:661" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="706:1862" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="754:824" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="863:1852" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1148:1265" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1320:1506" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1390:1459" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1555:1638" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1704:1755" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1787:1838" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="1908:2384" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2045:2115" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2329:2374" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2441:2500" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2574:2728" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2605:2660" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2815:2999" ph="{...}" />
+                <marker date="1542020986768" expanded="true" signature="2846:2903" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+              <folding>
+                <marker date="1542020362466" expanded="false" signature="6:115" ph="..." />
+                <marker date="1542020362466" expanded="true" signature="135:1485" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="166:289" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="323:1483" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="601:690" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="734:1203" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="819:881" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="969:1193" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="1079:1162" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="1268:1327" ph="{...}" />
+                <marker date="1542020362466" expanded="true" signature="1413:1476" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Jeopardy.sln">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/JeopardyLogo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <marker date="1542012665890" expanded="false" signature="6:78" ph="..." />
+                <marker date="1542012665890" expanded="true" signature="122:959" ph="{...}" />
+                <marker date="1542012665890" expanded="true" signature="204:245" ph="{...}" />
+                <marker date="1542012665890" expanded="true" signature="251:315" ph="/* Translates the gameobject closer to the camera ... */" />
+                <marker date="1542012665890" expanded="true" signature="343:704" ph="{...}" />
+                <marker date="1542012665890" expanded="true" signature="390:526" ph="{...}" />
+                <marker date="1542012665890" expanded="true" signature="710:770" ph="/* Rotates the gameobject around its vertical ... */" />
+                <marker date="1542012665890" expanded="true" signature="795:957" ph="{...}" />
+                <marker date="1542012665890" expanded="true" signature="821:951" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/JeopardyLogo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameDataManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///C# Console" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CloseQuestionEditPanel.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/NewUnlitShader1.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MonoBehaviour1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/JeopardyLogo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameData/Global.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameData/DataHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameData/DataStruct.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameData/GameDataManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="474" />
+    <option name="y" value="186" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="References" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="GameData" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="TextMesh Pro" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="TextMesh Pro" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Resources" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Jeopardy" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="TextMesh Pro" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Sprites" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets/Library/LitJson.dll" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="9784">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="9784" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
+      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor &amp; Play" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df702663-a949-455d-81f0-8fd4b6a98eb0" name="Default Changelist" comment="" />
+      <created>1542012666016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542012666016</updated>
+      <workItem from="1542012667235" duration="709000" />
+      <workItem from="1542014447227" duration="6612000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7321000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13513513" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32943013" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39968774" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.3298887" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3298887" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.3298887" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/NewUnlitShader1.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MonoBehaviour1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/JeopardyLogo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <marker date="1542012665890" expanded="false" signature="6:78" ph="..." />
+            <marker date="1542012665890" expanded="true" signature="122:959" ph="{...}" />
+            <marker date="1542012665890" expanded="true" signature="204:245" ph="{...}" />
+            <marker date="1542012665890" expanded="true" signature="251:315" ph="/* Translates the gameobject closer to the camera ... */" />
+            <marker date="1542012665890" expanded="true" signature="343:704" ph="{...}" />
+            <marker date="1542012665890" expanded="true" signature="390:526" ph="{...}" />
+            <marker date="1542012665890" expanded="true" signature="710:770" ph="/* Rotates the gameobject around its vertical ... */" />
+            <marker date="1542012665890" expanded="true" signature="795:957" ph="{...}" />
+            <marker date="1542012665890" expanded="true" signature="821:951" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Jeopardy.sln">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/DataHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="118" selection-start-line="16" selection-start-column="118" selection-end-line="16" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/Global.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/DataStruct.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CloseQuestionEditPanel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <marker date="1542012665887" expanded="false" signature="6:132" ph="..." />
+            <marker date="1542012665887" expanded="true" signature="185:582" ph="{...}" />
+            <marker date="1542012665887" expanded="true" signature="269:276" ph="{...}" />
+            <marker date="1542012665887" expanded="true" signature="331:338" ph="{...}" />
+            <marker date="1542012665887" expanded="true" signature="363:580" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameDataManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <marker date="1542020986768" expanded="true" signature="6:117" ph="..." />
+            <marker date="1542020986768" expanded="true" signature="137:3009" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="179:3007" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="556:661" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="706:1862" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="754:824" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="863:1852" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1148:1265" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1320:1506" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1390:1459" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1555:1638" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1704:1755" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1787:1838" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="1908:2384" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2045:2115" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2329:2374" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2441:2500" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2574:2728" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2605:2660" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2815:2999" ph="{...}" />
+            <marker date="1542020986768" expanded="true" signature="2846:2903" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding>
+            <marker date="1542020362466" expanded="false" signature="6:115" ph="..." />
+            <marker date="1542020362466" expanded="true" signature="135:1485" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="166:289" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="323:1483" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="601:690" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="734:1203" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="819:881" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="969:1193" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="1079:1162" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="1268:1327" ph="{...}" />
+            <marker date="1542020362466" expanded="true" signature="1413:1476" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
