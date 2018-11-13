@@ -11,7 +11,6 @@ public class Global : MonoBehaviour {
 		GameDataManager.InitDemo();
 	}
 
-
 	public void SaveData()
 	{
 		GameDataManager.SaveData();
