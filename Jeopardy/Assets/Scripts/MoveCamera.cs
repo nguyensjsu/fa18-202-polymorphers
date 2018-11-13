@@ -10,18 +10,22 @@ public class MoveCamera : MonoBehaviour
      */
     public void MoveToScreen(string screen)
     {
-        if (screen == "game")
+        if (screen == "gamehost")
         {
             transform.position = new Vector3(2736, 0, 0);
         }
-        else if (screen == "creategame")
+        else if (screen == "creategamehost")
         {
             transform.position = new Vector3(1368, 0, 0);
         }
-        else if (screen == "mainmenu")
+        else if (screen == "mainmenuhost")
         {
             transform.position = new Vector3(0, 0, 0);
         }
+        else if (screen == "opengamehost")
+		{
+			transform.position = new Vector3(-1368, 0, 0);
+		}
 
     }
 }

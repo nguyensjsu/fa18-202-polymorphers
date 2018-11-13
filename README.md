@@ -11,6 +11,7 @@
 - Jinzhou Tao (adiosray)
 - David Montes (davidpmontes)
 - Siyi Cai (CSIYI)
+- Fei Wang (feiwang6079)
 
 #### Course Info
 
