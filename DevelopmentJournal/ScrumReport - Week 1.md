@@ -21,3 +21,23 @@
 
 - GameData: 6 hrs
 - GameDataManager: 6hrs
+
+## David Montes
+
+#### Last Week Finished 
+
+- Created Screens, Overlays and UI elements (Buttons, labels, textfields)
+- Created demo of wireless controllers
+
+#### Next Week Planned
+
+- 
+
+#### Problem
+
+- 
+
+#### Time Spend
+
+- Screens and Overlay: 6 hrs
+- Wireless controllers demo: 2hrs
