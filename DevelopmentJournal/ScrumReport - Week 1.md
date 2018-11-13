@@ -41,3 +41,23 @@
 
 - Screens and Overlay: 6 hrs
 - Wireless controllers demo: 2hrs
+
+## Siyi Cai
+
+#### Last Week Finished 
+
+- Learn how to use UNITY by developing a small game("CUBETHON") using UNITY
+
+
+#### Next Week Planned
+
+- Working on UI design by adding font, animation and audio
+
+#### Problem
+
+-  Make sure the game flow and other details designed for the game.
+
+#### Time Spend
+
+- Developing CUBETHON: 6 hrs
+
