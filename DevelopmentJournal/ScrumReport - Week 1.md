@@ -61,3 +61,23 @@
 
 - Developing CUBETHON: 6 hrs
 
+## Fei Wang
+
+#### Last Week Finished 
+
+- Learn how to use unity to develop a game
+- learn how to write script
+
+#### Next Week Planned
+
+- write script to controller object and save and write data
+
+#### Problem
+
+-  How to change scene by using script.
+-  How to send data from one object to another.
+
+#### Time Spend
+
+- Learning unity: 10 hrs
+
