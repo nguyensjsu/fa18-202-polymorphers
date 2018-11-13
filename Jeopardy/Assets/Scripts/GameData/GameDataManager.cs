@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using LitJson;
 using UnityEngine;
 
@@ -15,39 +13,45 @@ namespace GameData
         private static string FileName { get { return Path.Combine(FolderName, mFileName);} }
         private static string FolderName { get { return Path.Combine(Application.persistentDataPath, mFolderName); } }
 
+        public static void InitDemo()
+        {
+            GameData.SetSize(5, 5);
+            for (int i = 0; i < 5; i++)
+            {
+                GameData.Category[i] = "Test Category";
+                for (int j = 0; j < 5; j++)
+                {
+                    JQuestion q = new JQuestion();
+                    q.Question = "Test Question";
+                    q.Answer = "Test Answer";
+                    q.Clue = "Test Clue";
+                    q.Value = i * 100 + 100;
+                    q.isDouble = false;
+                    GameData.Question[i][j] = q;
+                }
+            }
+            
+        }
+        
         public static void Init(string pFolderName, string pFileName) {
             mFolderName = pFolderName;
             mFileName = pFileName;
-            Read();
+            Debug.Log(FileName);
+            Debug.Log(FolderName);
+//            ReadData();
         }
         
-        private static void Read() {
+        public static void LoadData() {
+            
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
+            
             if(File.Exists(FileName)) {
                 FileStream fs = new FileStream(FileName, FileMode.Open);
                 StreamReader sr = new StreamReader(fs);
-                JsonData values = JsonMapper.ToObject(sr.ReadToEnd());
-
-                if (values.Keys.Contains("Row") && values.Keys.Contains("Column"))
-                {
-                    GameData.SetSize((int)values["Row"], (int)values["Column"]);
-                }
-
-                if (values.Keys.Contains("Catagory"))
-                {
-                    for (int i = 0; i < UPPER; i++)
-                    {
-                        
-                    }
-                    GameData
-                }
-                foreach(var key in values.Keys) {
-                    Dic_Value.Add(key, values[key].ToString());
-                }
-                
-                
+                JGameData data = JsonMapper.ToObject<JGameData>(sr.ReadToEnd());
+                data.ResumeData();
                 if(fs != null) {
                     fs.Close();
                 }
@@ -57,13 +61,19 @@ namespace GameData
             }
         }
         
-
-        private static void Save() {
-            string values = JsonMapper.ToJson(GameData.);
-            Debug.Log(values);
+        public static void SaveData() {
+            Dictionary<string, object> gamedata = new Dictionary<string, object>();
+            foreach (var info in typeof(GameData).GetProperties())
+            {
+                gamedata.Add(info.Name, info.GetValue(null, null));
+            }
+            
+            string values = JsonMapper.ToJson(gamedata);
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
+            Debug.Log(values);
+            
             FileStream file = new FileStream(FileName, FileMode.Create);
             byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
             file.Write(bts,0,bts.Length);
@@ -71,30 +81,5 @@ namespace GameData
                 file.Close();
             }
         }
-        
-        public static bool HasKey(string pKey) {
-            return Dic_Value.ContainsKey(pKey);
-        }
-
-        //读取string值
-        public static string GetString(string pKey) {
-            if(HasKey(pKey)) {
-                return Dic_Value[pKey];
-            } else {
-                return string.Empty;
-            }
-        }
-
-        //保存string值
-        public static void SetString(string pKey, string pValue) {
-            if(HasKey(pKey)) {
-                Dic_Value[pKey] = pValue;
-            } else {
-                Dic_Value.Add(pKey, pValue);
-            }
-            Save();
-        }
-
-
     }
 }

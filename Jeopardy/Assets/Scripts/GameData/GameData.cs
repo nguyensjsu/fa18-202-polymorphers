@@ -7,33 +7,58 @@ namespace GameData
 
     public struct JQuestion
     {
-        string Question;
-        string Answer;
-        int Value;
-        string Clue;
-        bool isDouble;
+        public string Question;
+        public string Answer;
+        public int Value;
+        public string Clue;
+        public bool isDouble;
     }
+
+    public class JGameData
+    {
+        public int Row { get; set; }
+        public int Column { get; set; }
+        public List<string> Category { get; set; }
+        public List<List<JQuestion>> Question { get; set; }
+        
+        public JGameData GetInstance()
+        {
+            return new JGameData
+            {
+                Row = GameData.Row,
+                Column = GameData.Column,
+                Category = GameData.Category,
+                Question = GameData.Question
+            };
+        }
+
+        public void ResumeData()
+        {
+            GameData.SetSize(Row, Column);
+            GameData.Question = Question;
+            GameData.Category = Category;
+        }
+    }
+    
 
     public static class GameData
     {
-        private static int Row { get; private set; }
-        private static int Column { get; private set; }
-        private static List<string> Catagory;
-        private static List<List<JQuestion>> Question;
-        
-        public static void SetSize(int row, int col)
+        public static int Row { get; private set; }
+        public static int Column { get; private set; }
+        public static List<string> Category { get; set; }
+        public static List<List<JQuestion>> Question { get; set; }
+
+        static GameData()
         {
-            Row = row;
-            Column = col;
-            Init();
+            SetSize(5,5);
         }
-        
+       
         private static void Init()
         {
-            Catagory.Clear();
+            Category.Clear();
             for (int i = 0; i < Column; i++)
             {
-                Catagory.Add("");
+                Category.Add("");
             }
             
             Question.Clear();
@@ -44,18 +69,18 @@ namespace GameData
                 {
                     qset.Add(new JQuestion());
                 }
+                Question.Add(qset);
                 
             }
-        }  
-
-        public static JQuestion GetQuestion(int row, int col)
-        {
-            return Question[row][col];
         }
         
-        public static void SetQuestion(int row, int col, JQuestion question)
+        public static void SetSize(int row, int col)
         {
-            Question[row][col] = question;
+            Category = new List<string>();
+            Question = new List<List<JQuestion>>();
+            Row = row;
+            Column = col;
+            Init();
         }
 
     }
