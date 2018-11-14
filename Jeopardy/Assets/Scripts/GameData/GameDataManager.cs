@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
-using LitJson;
+//using LitJson;
 using UnityEngine;
 
 namespace GameData
@@ -50,8 +50,8 @@ namespace GameData
             if(File.Exists(FileName)) {
                 FileStream fs = new FileStream(FileName, FileMode.Open);
                 StreamReader sr = new StreamReader(fs);
-                JGameData data = JsonMapper.ToObject<JGameData>(sr.ReadToEnd());
-                data.ResumeData();
+                //JGameData data = JsonMapper.ToObject<JGameData>(sr.ReadToEnd());
+                //data.ResumeData();
                 if(fs != null) {
                     fs.Close();
                 }
@@ -68,15 +68,15 @@ namespace GameData
                 gamedata.Add(info.Name, info.GetValue(null, null));
             }
             
-            string values = JsonMapper.ToJson(gamedata);
+            //string values = JsonMapper.ToJson(gamedata);
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
-            Debug.Log(values);
+            //Debug.Log(values);
             
             FileStream file = new FileStream(FileName, FileMode.Create);
-            byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
-            file.Write(bts,0,bts.Length);
+            //byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
+            //file.Write(bts,0,bts.Length);
             if(file != null) {
                 file.Close();
             }
