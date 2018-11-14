@@ -12,6 +12,7 @@
 #### Last Week Finished
  - #14 Screen Refactory (.5)
  - #22 Reorganize UI layout on GameHost Screen (3)
+ - #24 Refactor rest of Game Host Screen for consistancy (3)
 #### Next Week Planned
 #### Problem
 #### Time Spend
