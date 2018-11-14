@@ -14,6 +14,7 @@
  - #22 Reorganize UI layout on GameHost Screen (3)
  - #24 Refactor rest of Game Host Screen for consistancy (3)
  - #26 Refactor CreateGame screen for consistancy (.5) 
+ - #28 Improve layout of CreateGame screen (1.5)
 #### Next Week Planned
 #### Problem
 #### Time Spend
