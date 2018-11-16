@@ -16,6 +16,7 @@
  - #26 Refactor CreateGame screen for consistancy (.5) 
  - #28 Improve layout of CreateGame screen (1.5)
  - #30 CreateGameHost screen seperate questionedit and catagoryedit (0.1)
+ - #32 Refactor PlayGameScene (1)
 #### Next Week Planned
 #### Problem
 #### Time Spend
