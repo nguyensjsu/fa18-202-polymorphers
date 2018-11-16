@@ -82,6 +82,9 @@ namespace GameData
             Column = col;
             Init();
         }
+        
 
     }
+    
+    
 }
