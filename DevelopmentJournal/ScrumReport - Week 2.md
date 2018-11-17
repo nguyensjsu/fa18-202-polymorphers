@@ -17,6 +17,10 @@
  - #28 Improve layout of CreateGame screen (1.5)
  - #30 CreateGameHost screen seperate questionedit and catagoryedit (0.1)
  - #32 Refactor PlayGameScene (1)
+ - #46 Create "Next Round" button to update new teams (0.1)
+ - #47 Create "Select Teams" button to manually choose new teams(0.1)
+ - #53 Create "SelectTeams" interface to manually choose teams in PlayGame (1)
+ 
 #### Next Week Planned
 #### Problem
 #### Time Spend
