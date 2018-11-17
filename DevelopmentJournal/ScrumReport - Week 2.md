@@ -3,6 +3,11 @@
 ## Jinzhou Tao
 
 #### Last Week Finished 
+
+- #40 Create Button from script (12)
+- #40-1 Wire Gamedata Object into each button (4)
+- Documentation for GameData system
+
 #### Next Week Planned
 #### Problem
 #### Time Spend
