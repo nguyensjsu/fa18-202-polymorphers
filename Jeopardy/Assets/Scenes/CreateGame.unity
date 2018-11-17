@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4395835, g: 0.47991794, b: 0.5247336, a: 1}
+  m_IndirectSpecularColor: {r: 0.4395832, g: 0.47991788, b: 0.52473384, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2794,6 +2794,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 404375242}
     m_Modifications:
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224808067369670824, guid: 6a1c587aff72a42fa884abc81a708e39,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -4547,6 +4557,61 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2146578450}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoubleJeopardyClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114992125965763328, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2146578450}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JeopardyButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1c587aff72a42fa884abc81a708e39, type: 2}
@@ -6855,6 +6920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146578448}
   - component: {fileID: 2146578449}
+  - component: {fileID: 2146578450}
   m_Layer: 0
   m_Name: CreateGameHostScreen
   m_TagString: Untagged
@@ -6890,3 +6956,14 @@ MonoBehaviour:
   jeopardy: {fileID: 0}
   doubleJeopardy: {fileID: 0}
   finalJeopardy: {fileID: 0}
+--- !u!114 &2146578450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2146578447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c37bb4e3cda46f9bfb9151e761f770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
