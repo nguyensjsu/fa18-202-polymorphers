@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using GameData;
+using LitJson;
 using UnityEngine;
 
-public class Global : MonoBehaviour {
-
-	void Start ()
+public class Global : MonoBehaviour{
+	
+	
+	private void Awake()
 	{
 		GameDataManager.Init("savedata", "save");
 		GameDataManager.InitDemo();
+		Debug.Log(JsonMapper.ToJson(GameData.GetInstance()));
 	}
 
-	public void SaveData()
+	public static void SaveData()
 	{
 		GameDataManager.SaveData();
 	}
 
-	public void LoadData()
+	public static void LoadData()
 	{
 		GameDataManager.LoadData();
 	}

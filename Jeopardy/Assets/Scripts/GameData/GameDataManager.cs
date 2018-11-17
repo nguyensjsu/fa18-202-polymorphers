@@ -3,8 +3,6 @@ using System.IO;
 //using LitJson;
 using UnityEngine;
 
-namespace GameData
-{
     public static class GameDataManager
     {
         private static string mFolderName;
@@ -15,22 +13,20 @@ namespace GameData
 
         public static void InitDemo()
         {
-            GameData.SetSize(5, 5);
-            for (int i = 0; i < 5; i++)
+            GameData.SetSize(6, 5);
+            for (int i = 0; i < GameData.Column; i++)
             {
                 GameData.Category[i] = "Test Category";
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < GameData.Row; j++)
                 {
-                    JQuestion q = new JQuestion();
-                    q.Question = "Test Question";
-                    q.Answer = "Test Answer";
-                    q.Clue = "Test Clue";
-                    q.Value = i * 100 + 100;
-                    q.isDouble = false;
-                    GameData.Question[i][j] = q;
+                    GameData.Question[i][j].Question = "";
+                    GameData.Question[i][j].Question = "Test Question";
+                    GameData.Question[i][j].Answer = "Test Answer";
+                    GameData.Question[i][j].Clue = "Test Clue";
+                    GameData.Question[i][j].Value = i * 100 + 100;
+                    GameData.Question[i][j].isDouble = false;
                 }
             }
-            
         }
         
         public static void Init(string pFolderName, string pFileName) {
@@ -38,6 +34,8 @@ namespace GameData
             mFileName = pFileName;
             Debug.Log(FileName);
             Debug.Log(FolderName);
+            InitDemo();
+            Debug.Log(GameData.GetInstance());
 //            ReadData();
         }
         
@@ -82,4 +80,3 @@ namespace GameData
             }
         }
     }
-}
