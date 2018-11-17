@@ -23,7 +23,7 @@ using UnityEngine;
                     GameData.Question[i][j].Question = "Test Question";
                     GameData.Question[i][j].Answer = "Test Answer";
                     GameData.Question[i][j].Clue = "Test Clue";
-                    GameData.Question[i][j].Value = i * 100 + 100;
+                    GameData.Question[i][j].Value = j * 200 + 100;
                     GameData.Question[i][j].isDouble = false;
                 }
             }
