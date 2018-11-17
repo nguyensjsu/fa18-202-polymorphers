@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f5f7e23-1df0-4f21-8ed1-d331a49c910f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Library.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jeopardy.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Jeopardy.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Jeopardy/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Jeopardy/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Jeopardy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Jeopardy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3GamePanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3GamePanel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CloseButton.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CloseButton.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DoubleJeopardyPanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DoubleJeopardyPanel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalJeopardyPanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FinalJeopardyPanel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/JeopardyPanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/JeopardyPanel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TabsPanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TabsPanel.prefab.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,37 +29,100 @@
     <session id="1159198620">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cs" value="1102" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="1102" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameDataManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
-                <marker date="1542088123369" expanded="true" signature="6:84" ph="..." />
-                <marker date="1542088123369" expanded="true" signature="104:2816" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="146:2814" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="490:1086" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="576:1063" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="690:1049" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="1166:1345" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="1393:2012" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="1454:1524" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="1576:2002" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="1854:1905" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="1937:1988" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="2060:2808" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="2212:2308" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="2425:2495" ph="{...}" />
-                <marker date="1542088123369" expanded="true" signature="2753:2798" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="6:86" ph="..." />
+                <marker date="1542406559576" expanded="true" signature="148:2828" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="492:1088" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="578:1065" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="692:1051" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="1168:1347" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="1395:2018" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="1456:1526" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="1578:2008" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="1725:1828" ph="/* JGameData data = JsonMapper.ToObject&lt;JGameData&gt;(sr.ReadToEnd()); ... */" />
+                <marker date="1542406559576" expanded="true" signature="1860:1911" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="1943:1994" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="2066:2822" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="2218:2314" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="2433:2503" ph="{...}" />
+                <marker date="1542406559576" expanded="true" signature="2635:2737" ph="/* byte[] bts = System.Text.Encoding.UTF8.GetBytes(values); ... */" />
+                <marker date="1542406559576" expanded="true" signature="2767:2812" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EditCategoryPanel.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <marker date="1542416959218" expanded="true" signature="6:119" ph="..." />
+                <marker date="1542416959218" expanded="true" signature="167:1513" ph="{...}" />
+                <marker date="1542416959218" expanded="true" signature="274:452" ph="{...}" />
+                <marker date="1542416959218" expanded="true" signature="503:1449" ph="{...}" />
+                <marker date="1542416959218" expanded="true" signature="950:1135" ph="{...}" />
+                <marker date="1542416959218" expanded="true" signature="1142:1445" ph="/* GameObject questionButton = gameObject.transform.GetChild(1).transform.GetChild(0).gameObject; ... */" />
+                <marker date="1542416959218" expanded="true" signature="1504:1511" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-274">
+              <folding>
+                <marker date="1542408598524" expanded="false" signature="6:115" ph="..." />
+                <marker date="1542408598524" expanded="true" signature="135:2204" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="166:324" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="352:1032" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="594:845" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="650:834" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="879:1026" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1071:2192" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1336:1382" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1425:1930" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1510:1572" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1660:1920" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1770:1853" ph="{...}" />
+                <marker date="1542408598524" expanded="true" signature="1992:2176" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -58,7 +134,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EditCategoryPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameDataManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/EditCategoryPanel.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -80,16 +165,63 @@
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Prefabs" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Resources" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Resources" type="1045f7f1:UnityExplorerNode" />
+              <item name="Prefabs" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="GameData" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Transition" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Packages" type="4e2708dd:PackagesRoot" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <option name="show-hidden-items" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -130,11 +262,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542088590145</updated>
       <workItem from="1542088593425" duration="48000" />
+      <workItem from="1542410897071" duration="5666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48000" />
+    <option name="totallyTimeSpent" value="5731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -149,16 +282,9 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -166,10 +292,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="10" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,22 +329,61 @@
         <state>
           <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
-            <marker date="1542088123369" expanded="true" signature="6:84" ph="..." />
-            <marker date="1542088123369" expanded="true" signature="104:2816" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="146:2814" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="490:1086" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="576:1063" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="690:1049" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="1166:1345" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="1393:2012" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="1454:1524" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="1576:2002" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="1854:1905" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="1937:1988" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="2060:2808" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="2212:2308" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="2425:2495" ph="{...}" />
-            <marker date="1542088123369" expanded="true" signature="2753:2798" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="6:86" ph="..." />
+            <marker date="1542406559576" expanded="true" signature="148:2828" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="492:1088" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="578:1065" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="692:1051" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="1168:1347" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="1395:2018" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="1456:1526" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="1578:2008" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="1725:1828" ph="/* JGameData data = JsonMapper.ToObject&lt;JGameData&gt;(sr.ReadToEnd()); ... */" />
+            <marker date="1542406559576" expanded="true" signature="1860:1911" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="1943:1994" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="2066:2822" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="2218:2314" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="2433:2503" ph="{...}" />
+            <marker date="1542406559576" expanded="true" signature="2635:2737" ph="/* byte[] bts = System.Text.Encoding.UTF8.GetBytes(values); ... */" />
+            <marker date="1542406559576" expanded="true" signature="2767:2812" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameData/GameData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <folding>
+            <marker date="1542408598524" expanded="false" signature="6:115" ph="..." />
+            <marker date="1542408598524" expanded="true" signature="135:2204" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="166:324" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="352:1032" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="594:845" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="650:834" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="879:1026" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1071:2192" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1336:1382" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1425:1930" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1510:1572" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1660:1920" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1770:1853" ph="{...}" />
+            <marker date="1542408598524" expanded="true" signature="1992:2176" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EditCategoryPanel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <marker date="1542416959218" expanded="true" signature="6:119" ph="..." />
+            <marker date="1542416959218" expanded="true" signature="167:1513" ph="{...}" />
+            <marker date="1542416959218" expanded="true" signature="274:452" ph="{...}" />
+            <marker date="1542416959218" expanded="true" signature="503:1449" ph="{...}" />
+            <marker date="1542416959218" expanded="true" signature="950:1135" ph="{...}" />
+            <marker date="1542416959218" expanded="true" signature="1142:1445" ph="/* GameObject questionButton = gameObject.transform.GetChild(1).transform.GetChild(0).gameObject; ... */" />
+            <marker date="1542416959218" expanded="true" signature="1504:1511" ph="{...}" />
           </folding>
         </state>
       </provider>
