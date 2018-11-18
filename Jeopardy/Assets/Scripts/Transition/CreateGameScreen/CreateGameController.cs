@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using UnityEngine.UI; 
 
 public class CreateGameController : MonoBehaviour
 {
@@ -97,6 +98,15 @@ public class CreateGameController : MonoBehaviour
 
     }
 
+    public void SaveQuestionButtonClick()
+    {
+        InputField question_Input = GameObject.FindGameObjectsWithTag("Question")[0].GetComponent<InputField>();
+        InputField answer_Input = GameObject.FindGameObjectsWithTag("Answer")[0].GetComponent<InputField>();
+        string questionText = txt_Input.text;
+        string answerText = txt_Input.text;
+
+    }
+
     // all methods of categotyEnditPanel
 
     public void ExitCategoryPanelClick()
@@ -107,7 +117,19 @@ public class CreateGameController : MonoBehaviour
 
     public void SaveCategoryButtonClick()
     {
-
+        InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
+        string ObjectsText = txt_Input.text;
+        if(ObjectsText == "")
+        {
+            Debug.Log("Please input text");
+        }
+        else
+        {
+            // save data 
+            GameData.GameData.Category[0] = ObjectsText;
+            Debug.Log(GameData.GameData.Category[0]);
+            categoryEditPanel.SetActive(false);
+        }
     }
 
 }
