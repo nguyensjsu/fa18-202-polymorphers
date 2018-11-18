@@ -105,4 +105,9 @@ public class CreateGameController : MonoBehaviour
 
     }
 
+    public void SaveCategoryButtonClick()
+    {
+
+    }
+
 }
