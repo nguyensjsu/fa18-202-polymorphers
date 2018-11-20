@@ -15,6 +15,8 @@ public class HostGameController : MonoBehaviour {
     private GameObject setScoreOverlay;
     private InputField scoreInput;
 
+    private GameObject audienceObject;
+
     private bool isRed;
 
     // Use this for initialization
@@ -26,6 +28,8 @@ public class HostGameController : MonoBehaviour {
 
         setScoreOverlay = GameObject.Find("SetScoreOverlay");
         scoreInput = GameObject.Find("SetScoreOverlay").GetComponentInChildren<InputField>();
+
+        audienceObject = GameObject.Find("GameAudienceScreen");
     }
 
     // Update is called once per frame
@@ -101,6 +105,21 @@ public class HostGameController : MonoBehaviour {
         {
             GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = score;
         }
+
+
+        object[] tempStorage = new object[2];
+        string a;
+        if(isRed)
+        {
+            a = "1";
+        }else
+        {
+            a = "0";
+        }
+        tempStorage[0] = a;
+        tempStorage[1] = score;
+        audienceObject.SendMessage("setScore", tempStorage);
+
         setScoreOverlay.SetActive(false);
 
     }
