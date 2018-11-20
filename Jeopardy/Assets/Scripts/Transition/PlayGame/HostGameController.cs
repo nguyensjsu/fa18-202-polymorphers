@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class HostGameController : MonoBehaviour {
@@ -66,6 +67,12 @@ public class HostGameController : MonoBehaviour {
 
         Transform temp_transform = finalJeopardyObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+
+    }
+
+    public void ExitButtonClick()
+    {
+        SceneManager.LoadScene("MainMenu");
 
     }
 

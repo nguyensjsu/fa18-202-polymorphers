@@ -16,12 +16,21 @@ public class SavedGamesController : MonoBehaviour {
 		
 	}
 
-    public void ExitSavedGamesController(){
+    public void ExitButtonClick(){
         SceneManager.LoadScene("MainMenu");
+
+    }
+
+    public void EditButtonClick(){
+        SceneManager.LoadScene("CreateGame");
 
     }
 
     public void PlayButtonClick(){
         SceneManager.LoadScene("PlayGame");
+    }
+
+    public void deleteButtonClick(){
+        // delete 
     }
 }
