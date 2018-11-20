@@ -15,6 +15,8 @@ public class CreateGameController : MonoBehaviour
     private GameObject categoryEditPanel;
     private GameObject questionEditPanel;
 
+    private bool isDailyDouble = true; 
+
     // Use this for initialization
     void Start()
     {
@@ -30,6 +32,13 @@ public class CreateGameController : MonoBehaviour
         finalJeopardyObject.SetActive(false);
 
         categoryEditPanel.SetActive(false);
+
+
+        GameObject toggleObj = GameObject.Find("Toggle");
+        Debug.Log(toggleObj);
+        Toggle togle = toggleObj.GetComponent<Toggle>();
+        togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
+
         questionEditPanel.SetActive(false);
 
     }
@@ -43,6 +52,12 @@ public class CreateGameController : MonoBehaviour
     public void ExitCreateGameButtonClick()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void SaveGameButtonClick()
+    {
+        // save game;
+        GameData.GameDataManager.SaveData();
     }
 
     public void JeopardyButtonClick()
@@ -80,6 +95,16 @@ public class CreateGameController : MonoBehaviour
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
         categoryEditPanel.SetActive(true);
+
+        //read category imformation
+        InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
+
+        string ObjectsText = GameData.GameData.Category[0];
+        if(!(ObjectsText == ""))
+        {
+            txt_Input.text = ObjectsText;
+        }
+
     }
 
     public void OneHunderdButtonClick()
@@ -88,6 +113,18 @@ public class CreateGameController : MonoBehaviour
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
         questionEditPanel.SetActive(true);
+
+        InputField question_Input = GameObject.FindGameObjectWithTag("Question").GetComponent<InputField>();
+        InputField answer_Input = GameObject.FindGameObjectWithTag("Answer").GetComponent<InputField>();
+        GameData.JQuestion s = GameData.GameData.Question[0][0];        
+        if (!(s.Question == ""))
+        {
+            question_Input.text = s.Question;
+        }
+        if (!(s.Answer == ""))
+        {
+            answer_Input.text = s.Answer;
+        }
 
     }
 
@@ -98,13 +135,47 @@ public class CreateGameController : MonoBehaviour
 
     }
 
+    public void OnToggleClick(Toggle toggle, bool value)
+    {
+        isDailyDouble = value;
+    }
+
     public void SaveQuestionButtonClick()
     {
-        InputField question_Input = GameObject.FindGameObjectsWithTag("Question")[0].GetComponent<InputField>();
-        InputField answer_Input = GameObject.FindGameObjectsWithTag("Answer")[0].GetComponent<InputField>();
-        string questionText = txt_Input.text;
-        string answerText = txt_Input.text;
+        InputField question_Input = GameObject.FindGameObjectWithTag("Question").GetComponent<InputField>();
+        InputField answer_Input = GameObject.FindGameObjectWithTag("Answer").GetComponent<InputField>();
+        string questionText = question_Input.text;
+        string answerText = answer_Input.text;
 
+        if (questionText == "" && answerText == "")
+        {
+            Debug.Log("Please input text");
+        }
+        else
+        {
+
+            //test code
+
+            //GameData.JQuestion s = GameData.GameData.Question[0][0];
+            //s.Question = questionText;
+            //s.Answer = answerText;
+            //s.Value = 100;
+            //s.Clue = "";
+            //s.isDouble = false;
+
+            //GameData.JQuestion m = GameData.GameData.Question[0][0];
+            //Debug.Log(s.Question);
+            //Debug.Log(m.Question);
+
+
+            GameData.JQuestion s;
+            s.Question = questionText;
+            s.Answer = answerText;
+            s.Value = 100;
+            s.Clue = "";
+            s.isDouble = isDailyDouble;
+            GameData.GameData.Question[0][0] = s;
+        }
     }
 
     // all methods of categotyEnditPanel

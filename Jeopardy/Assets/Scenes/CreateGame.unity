@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 398617178}
   m_Layer: 5
   m_Name: InputField
-  m_TagString: Untagged
+  m_TagString: Question
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2362,7 +2362,6 @@ GameObject:
   - component: {fileID: 1180139937}
   - component: {fileID: 1180139940}
   - component: {fileID: 1180139939}
-  - component: {fileID: 1180139938}
   m_Layer: 5
   m_Name: QuestionEditPanel
   m_TagString: Untagged
@@ -2390,19 +2389,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3169, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1180139938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114469290798557286, guid: 267e0e2ff94784a66b483c4e1811a2c6,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1180139936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5441ab724764f62a909c49e38de342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
 --- !u!114 &1180139939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5743,8 +5729,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1180139938}
-        m_MethodName: Close
+      - m_Target: {fileID: 2146578450}
+        m_MethodName: SaveQuestionButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6919,7 +6905,7 @@ GameObject:
   - component: {fileID: 2141777990}
   m_Layer: 5
   m_Name: InputField (1)
-  m_TagString: Untagged
+  m_TagString: Answer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
