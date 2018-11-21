@@ -25,6 +25,7 @@
  - #46 Create "Next Round" button to update new teams (0.1)
  - #47 Create "Select Teams" button to manually choose new teams(0.1)
  - #53 Create "SelectTeams" interface to manually choose teams in PlayGame (1)
+ - #70 Create new Tab for CreateGame screen (1)
  
 #### Next Week Planned
 #### Problem
