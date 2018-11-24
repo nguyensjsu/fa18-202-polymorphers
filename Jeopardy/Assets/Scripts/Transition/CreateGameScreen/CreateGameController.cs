@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CreateGameController : MonoBehaviour
 {
@@ -109,6 +110,9 @@ public class CreateGameController : MonoBehaviour
 
     public void OneHunderdButtonClick()
     {
+
+        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+
         Transform temp_transform = questionEditPanel.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 

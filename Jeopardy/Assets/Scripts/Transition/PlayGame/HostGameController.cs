@@ -132,5 +132,10 @@ public class HostGameController : MonoBehaviour {
         isRed = false;
     }
 
+    public void OneHundredButtonClick()
+    {
+        SceneManager.LoadScene("QA");
+
+    }
 
 }

@@ -1667,6 +1667,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1680802350}
     m_Modifications:
+    - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224616758907267786, guid: 62b36596c115b482dbfea14e5373d95e,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1756,6 +1761,31 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1214209271}
+    - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62b36596c115b482dbfea14e5373d95e, type: 2}
@@ -2289,6 +2319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214209270}
+  - component: {fileID: 1214209271}
   m_Layer: 0
   m_Name: GameHostScreen
   m_TagString: Untagged
@@ -2310,6 +2341,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214209271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214209269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9743e638ce934b58bdc536e1f1e48aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1240618312
 GameObject:
   m_ObjectHideFlags: 0
