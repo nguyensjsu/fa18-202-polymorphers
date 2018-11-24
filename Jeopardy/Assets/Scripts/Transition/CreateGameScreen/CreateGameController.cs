@@ -45,6 +45,11 @@ public class CreateGameController : MonoBehaviour
         temp_transform = questionEditPanel.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
+        GameObject toggleObj = GameObject.Find("DailyDoubleToggle");
+        Debug.Log(toggleObj);
+        Toggle togle = toggleObj.GetComponent<Toggle>();
+        togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
+
         teamsObject.SetActive(true);
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
@@ -54,12 +59,6 @@ public class CreateGameController : MonoBehaviour
         categoryEditPanel.SetActive(false);
         questionEditPanel.SetActive(false);
 
-        GameObject toggleObj = GameObject.Find("Toggle");
-        Debug.Log(toggleObj);
-        Toggle togle = toggleObj.GetComponent<Toggle>();
-        togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
-
-        questionEditPanel.SetActive(false);
 
     }
 
@@ -205,6 +204,9 @@ public class CreateGameController : MonoBehaviour
             s.Clue = "";
             s.isDouble = isDailyDouble;
             GameData.GameData.Question[0][0] = s;
+
+            questionEditPanel.SetActive(false);
+
         }
     }
 
