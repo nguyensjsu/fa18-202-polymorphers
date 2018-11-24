@@ -13024,9 +13024,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146578447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6387bee10829b4752ab6fd3f6631575c, type: 3}
+  m_Script: {fileID: 11500000, guid: bb552bed36c474dfe987d8a6dc9f0932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jeopardy: {fileID: 0}
-  doubleJeopardy: {fileID: 0}
-  finalJeopardy: {fileID: 0}
