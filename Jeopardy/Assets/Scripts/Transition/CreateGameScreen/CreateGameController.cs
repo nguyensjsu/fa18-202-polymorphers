@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 public class CreateGameController : MonoBehaviour
 {
 
+    private GameObject teamsObject;
     private GameObject jeopardyObject;
     private GameObject doubleJeopardyObject;
     private GameObject finalJeopardyObject;
@@ -22,6 +23,7 @@ public class CreateGameController : MonoBehaviour
     void Start()
     {
 
+        teamsObject = GameObject.Find("TeamsPanel");
         jeopardyObject = GameObject.Find("JeopardyPanel");
         doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");
         finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");
@@ -29,18 +31,34 @@ public class CreateGameController : MonoBehaviour
         categoryEditPanel = GameObject.Find("CategoryEditPanel");
         questionEditPanel = GameObject.Find("QuestionEditPanel");
 
-        doubleJeopardyObject.SetActive(false);
-        finalJeopardyObject.SetActive(false);
 
-        categoryEditPanel.SetActive(false);
+        Transform temp_transform = jeopardyObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
+        temp_transform = finalJeopardyObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+        temp_transform = doubleJeopardyObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
-        GameObject toggleObj = GameObject.Find("Toggle");
+        temp_transform = categoryEditPanel.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+        temp_transform = questionEditPanel.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+
+        GameObject toggleObj = GameObject.Find("DailyDoubleToggle");
         Debug.Log(toggleObj);
         Toggle togle = toggleObj.GetComponent<Toggle>();
         togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
 
+        teamsObject.SetActive(true);
+        jeopardyObject.SetActive(false);
+        doubleJeopardyObject.SetActive(false);
+        finalJeopardyObject.SetActive(false);
+
+
+        categoryEditPanel.SetActive(false);
         questionEditPanel.SetActive(false);
+
 
     }
 
@@ -66,8 +84,17 @@ public class CreateGameController : MonoBehaviour
         GameData.GameDataManager.SaveData();
     }
 
+    public void TeamsButtonClick()
+    {
+        teamsObject.SetActive(true);
+        jeopardyObject.SetActive(false);
+        doubleJeopardyObject.SetActive(false);
+        finalJeopardyObject.SetActive(false);
+    }
+
     public void JeopardyButtonClick()
     {
+        teamsObject.SetActive(false);
         jeopardyObject.SetActive(true);
         doubleJeopardyObject.SetActive(false);
         finalJeopardyObject.SetActive(false);
@@ -75,17 +102,15 @@ public class CreateGameController : MonoBehaviour
 
     public void DoubleJeopardyClick()
     {
+        teamsObject.SetActive(false);
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(true);
         finalJeopardyObject.SetActive(false);
-
-
-        Transform temp_transform = doubleJeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
     }
 
     public void FinalJeopardyClick()
     {
+        teamsObject.SetActive(false);
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
         finalJeopardyObject.SetActive(true);
@@ -184,6 +209,9 @@ public class CreateGameController : MonoBehaviour
             s.Clue = "";
             s.isDouble = isDailyDouble;
             GameData.GameData.Question[0][0] = s;
+
+            questionEditPanel.SetActive(false);
+
         }
     }
 
