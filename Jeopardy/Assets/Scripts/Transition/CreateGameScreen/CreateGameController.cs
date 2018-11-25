@@ -19,7 +19,8 @@ public class CreateGameController : MonoBehaviour
 
     private bool isDailyDouble = true;
 
-    private string cuttentCategoryName;
+    private string currentCategoryName;
+    private string currentButtonName;
 
     // Use this for initialization
     void Start()
@@ -136,7 +137,7 @@ public class CreateGameController : MonoBehaviour
 
     public void CategoryButtonClick()
     {
-        cuttentCategoryName = EventSystem.current.currentSelectedGameObject.name;
+        currentCategoryName = EventSystem.current.currentSelectedGameObject.name;
 
 
         Transform temp_transform = categoryEditPanel.GetComponent<Transform>();
@@ -147,8 +148,8 @@ public class CreateGameController : MonoBehaviour
         //read category imformation
         InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
 
-        string lastIndex = cuttentCategoryName.Substring((cuttentCategoryName.Length) - 1, 1);
-        int n = System.Int32.Parse(lastIndex);
+        string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
+        int n = System.Int32.Parse(index);
 
         string ObjectsText = GameData.GameData.Category[n];
         if(!(ObjectsText == ""))
@@ -160,6 +161,7 @@ public class CreateGameController : MonoBehaviour
 
     public void QuestionButtonClick()
     {
+        currentButtonName = EventSystem.current.currentSelectedGameObject.name;
 
 
         Transform temp_transform = questionEditPanel.GetComponent<Transform>();
@@ -169,7 +171,17 @@ public class CreateGameController : MonoBehaviour
 
         InputField question_Input = GameObject.FindGameObjectWithTag("Question").GetComponent<InputField>();
         InputField answer_Input = GameObject.FindGameObjectWithTag("Answer").GetComponent<InputField>();
-        GameData.JQuestion s = GameData.GameData.Question[0][0];        
+
+        string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
+        int line = System.Int32.Parse(lineIndex);
+        Debug.Log(line);
+
+        string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
+        int row = System.Int32.Parse(rowIndex);
+        Debug.Log(row);
+
+
+        GameData.JQuestion s = GameData.GameData.Question[line][row];        
         if (!(s.Question == ""))
         {
             question_Input.text = s.Question;
@@ -207,6 +219,13 @@ public class CreateGameController : MonoBehaviour
         else
         {
 
+            string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
+            int line = System.Int32.Parse(lineIndex);
+
+            string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
+            int row = System.Int32.Parse(rowIndex);
+
+
             //test code
 
             //GameData.JQuestion s = GameData.GameData.Question[0][0];
@@ -227,7 +246,7 @@ public class CreateGameController : MonoBehaviour
             s.Value = 100;
             s.Clue = "";
             s.isDouble = isDailyDouble;
-            GameData.GameData.Question[0][0] = s;
+            GameData.GameData.Question[line][row] = s;
 
             questionEditPanel.SetActive(false);
 
@@ -252,10 +271,10 @@ public class CreateGameController : MonoBehaviour
         }
         else
         {
-            string lastIndex = cuttentCategoryName.Substring((cuttentCategoryName.Length) - 1, 1);
-            int n = System.Int32.Parse(lastIndex);
+            string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
+            int n = System.Int32.Parse(index);
 
-            Text text = GameObject.Find(cuttentCategoryName).GetComponentInChildren<Text>();
+            Text text = GameObject.Find(currentCategoryName).GetComponentInChildren<Text>();
             text.text = ObjectsText;
 
             // save data 
