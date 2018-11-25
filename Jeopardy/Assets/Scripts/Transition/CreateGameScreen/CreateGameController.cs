@@ -166,6 +166,7 @@ public class CreateGameController : MonoBehaviour
 
     public void OnToggleClick(Toggle toggle, bool value)
     {
+        Debug.Log(value);
         isDailyDouble = value;
     }
 
