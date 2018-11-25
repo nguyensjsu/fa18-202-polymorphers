@@ -17,7 +17,9 @@ public class CreateGameController : MonoBehaviour
     private GameObject categoryEditPanel;
     private GameObject questionEditPanel;
 
-    private bool isDailyDouble = true; 
+    private bool isDailyDouble = true;
+
+    private string cuttentCategoryName;
 
     // Use this for initialization
     void Start()
@@ -46,7 +48,6 @@ public class CreateGameController : MonoBehaviour
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
         GameObject toggleObj = GameObject.Find("DailyDoubleToggle");
-        Debug.Log(toggleObj);
         Toggle togle = toggleObj.GetComponent<Toggle>();
         togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
 
@@ -80,8 +81,21 @@ public class CreateGameController : MonoBehaviour
 
     public void SaveGameButtonClick()
     {
-        // save game;
-        GameData.GameDataManager.SaveData();
+        //get game name
+        string gameName = GameObject.Find("NameOfGameField").GetComponent<InputField>().text;
+        //get red team name
+        string redTeam1 = GameObject.Find("RedTeamInputField").GetComponent<InputField>().text;
+
+        //get blue team name
+        string blueTeam1 = GameObject.Find("BlueTeamInputField").GetComponent<InputField>().text;
+
+
+        Debug.Log(gameName);
+        Debug.Log(redTeam1);
+        Debug.Log(blueTeam1);
+
+
+        //GameData.GameDataManager.SaveData();
     }
 
     public void TeamsButtonClick()
@@ -122,6 +136,9 @@ public class CreateGameController : MonoBehaviour
 
     public void CategoryButtonClick()
     {
+        cuttentCategoryName = EventSystem.current.currentSelectedGameObject.name;
+
+
         Transform temp_transform = categoryEditPanel.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
@@ -130,7 +147,10 @@ public class CreateGameController : MonoBehaviour
         //read category imformation
         InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
 
-        string ObjectsText = GameData.GameData.Category[0];
+        string lastIndex = cuttentCategoryName.Substring((cuttentCategoryName.Length) - 1, 1);
+        int n = System.Int32.Parse(lastIndex);
+
+        string ObjectsText = GameData.GameData.Category[n];
         if(!(ObjectsText == ""))
         {
             txt_Input.text = ObjectsText;
@@ -138,10 +158,9 @@ public class CreateGameController : MonoBehaviour
 
     }
 
-    public void OneHunderdButtonClick()
+    public void QuestionButtonClick()
     {
 
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
 
         Transform temp_transform = questionEditPanel.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
@@ -171,7 +190,6 @@ public class CreateGameController : MonoBehaviour
 
     public void OnToggleClick(Toggle toggle, bool value)
     {
-        Debug.Log(value);
         isDailyDouble = value;
     }
 
@@ -234,9 +252,14 @@ public class CreateGameController : MonoBehaviour
         }
         else
         {
+            string lastIndex = cuttentCategoryName.Substring((cuttentCategoryName.Length) - 1, 1);
+            int n = System.Int32.Parse(lastIndex);
+
+            Text text = GameObject.Find(cuttentCategoryName).GetComponentInChildren<Text>();
+            text.text = ObjectsText;
+
             // save data 
-            GameData.GameData.Category[0] = ObjectsText;
-            Debug.Log(GameData.GameData.Category[0]);
+            GameData.GameData.Category[n] = ObjectsText;
             categoryEditPanel.SetActive(false);
         }
     }
