@@ -30,6 +30,21 @@ public class HostGameController : MonoBehaviour {
         scoreInput = GameObject.Find("SetScoreOverlay").GetComponentInChildren<InputField>();
 
         audienceObject = GameObject.Find("GameAudienceScreen");
+
+
+        Transform temp_transform = jeopardyObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+
+        temp_transform = finalJeopardyObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+        temp_transform = doubleJeopardyObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+
+        jeopardyObject.SetActive(true);
+        doubleJeopardyObject.SetActive(false);
+        finalJeopardyObject.SetActive(false);
+
+
     }
 
     // Update is called once per frame
@@ -39,7 +54,6 @@ public class HostGameController : MonoBehaviour {
 
     public void JeopardyButtonClick()
     {
-        Debug.Log("123");
 
 
         jeopardyObject.SetActive(true);
@@ -50,7 +64,6 @@ public class HostGameController : MonoBehaviour {
     public void DoubleJeopardyClick()
     {
 
-        Debug.Log("123");
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(true);
         finalJeopardyObject.SetActive(false);
@@ -63,7 +76,6 @@ public class HostGameController : MonoBehaviour {
     public void FinalJeopardyClick()
     {
 
-        Debug.Log("123");
 
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
