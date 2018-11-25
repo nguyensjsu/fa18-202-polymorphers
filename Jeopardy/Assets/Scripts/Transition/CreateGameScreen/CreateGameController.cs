@@ -52,6 +52,11 @@ public class CreateGameController : MonoBehaviour
 
     public void ExitCreateGameButtonClick()
     {
+        /*
+         * (David)
+         * Prompt Save Game
+         */
+
         SceneManager.LoadScene("MainMenu");
     }
 
