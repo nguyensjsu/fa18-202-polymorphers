@@ -1062,6 +1062,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 248607560}
   m_CullTransparentMesh: 0
+--- !u!114 &250222311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334460340}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &280550095
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,7 +4071,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.78039217, g: 0.79607844, b: 1, a: 1}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4329,6 +4335,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753061245}
   m_CullTransparentMesh: 0
+--- !u!114 &756775954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334460340}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &774298091
 GameObject:
   m_ObjectHideFlags: 0
@@ -9774,6 +9786,51 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuestionButtonClick
       objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6792453
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6792453
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1c587aff72a42fa884abc81a708e39, type: 2}
   m_IsPrefabAsset: 0
@@ -10115,6 +10172,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378635246}
   m_CullTransparentMesh: 0
+--- !u!114 &1397673019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+    type: 2}
+  m_PrefabInternal: {fileID: 1334460340}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1402055202
 GameObject:
   m_ObjectHideFlags: 0
@@ -13997,3 +14060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb552bed36c474dfe987d8a6dc9f0932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamsButton: {fileID: 712453740}
+  jeopardyButton: {fileID: 1397673019}
+  doubleJeopardyButton: {fileID: 250222311}
+  finalJeopardyButton: {fileID: 756775954}
