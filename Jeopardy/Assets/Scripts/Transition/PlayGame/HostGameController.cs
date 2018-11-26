@@ -19,10 +19,12 @@ public class HostGameController : MonoBehaviour {
 
     private string currentButtonName;
 
-    private GameObject qaGameHoseObject;
+    private GameObject qaGameHostObject;
 
 
     private bool isRed;
+
+    public int TotalTime = 5;
 
     // Use this for initialization
     void Start()
@@ -36,7 +38,7 @@ public class HostGameController : MonoBehaviour {
 
         audienceObject = GameObject.Find("GameAudienceScreen");
 
-        qaGameHoseObject = GameObject.Find("QAGameHostScreen");
+        qaGameHostObject = GameObject.Find("QAGameHostScreen");
 
 
         Transform temp_transform = jeopardyObject.GetComponent<Transform>();
@@ -50,22 +52,21 @@ public class HostGameController : MonoBehaviour {
         jeopardyObject.SetActive(true);
         doubleJeopardyObject.SetActive(false);
         finalJeopardyObject.SetActive(false);
-
-
     }
+
 
     // Update is called once per frame
     void Update () {
-		
-	}
+   
 
+	}
+    
     public void JeopardyButtonClick()
     {
-
-
         jeopardyObject.SetActive(true);
         doubleJeopardyObject.SetActive(false);
         finalJeopardyObject.SetActive(false);
+        audienceObject.SendMessage("changePanel", "0");
     }
 
     public void DoubleJeopardyClick()
@@ -74,10 +75,8 @@ public class HostGameController : MonoBehaviour {
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(true);
         finalJeopardyObject.SetActive(false);
+        audienceObject.SendMessage("changePanel", "1");
 
-
-        Transform temp_transform = doubleJeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
     }
 
     public void FinalJeopardyClick()
@@ -87,9 +86,7 @@ public class HostGameController : MonoBehaviour {
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
         finalJeopardyObject.SetActive(true);
-
-        Transform temp_transform = finalJeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+        audienceObject.SendMessage("changePanel", "2");
 
     }
 
@@ -151,30 +148,59 @@ public class HostGameController : MonoBehaviour {
         isRed = false;
     }
 
-    public void OneHundredButtonClick()
+    public void QuestionButtonClick()
     {
 
         EventSystem.current.currentSelectedGameObject.SetActive(false);
 
-        Transform temp_transform = qaGameHoseObject.GetComponent<Transform>();
+        Transform temp_transform = qaGameHostObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);
 
-        qaGameHoseObject.SetActive(true);
+        qaGameHostObject.SetActive(true);
 
-        //currentButtonName = EventSystem.current.currentSelectedGameObject.name;
+        currentButtonName = EventSystem.current.currentSelectedGameObject.name;
         //string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
         //int line = System.Int32.Parse(lineIndex);
         //string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
         //int row = System.Int32.Parse(rowIndex);
+
+        audienceObject.SendMessage("changePanel", "3");
+
+        string index = currentButtonName.Substring(currentButtonName.Length-2, 2);
+        Debug.Log(index);
+        audienceObject.SendMessage("dispearButton", index);
     }
 
     //teacher question pannel
 
     public void ExitQAHostButtonClick()
     {
-        qaGameHoseObject.SetActive(false);
+        qaGameHostObject.SetActive(false);
+        audienceObject.SendMessage("changePanel", "4");
     }
 
+    public void StartButtonClick()
+    {
+        StartCoroutine(CountDown());
+    }
+
+    IEnumerator CountDown()
+    {
+        while (TotalTime >= 0)
+        {
+
+            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();
+            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());
+            yield return new WaitForSeconds(1);
+            Debug.Log(TotalTime);
+            TotalTime--;
+        }
+        if(TotalTime == 0)
+        {
+            StopAllCoroutines();
+            TotalTime = 5;
+        }
+    }
 
 
 }
