@@ -27,6 +27,8 @@ public class CreateGameController : MonoBehaviour
     public Button doubleJeopardyButton;
     public Button finalJeopardyButton;
 
+    private string tempCategoryString;
+
     // Use this for initialization
     void Start()
     {
@@ -89,18 +91,21 @@ public class CreateGameController : MonoBehaviour
     {
         //get game name
         string gameName = GameObject.Find("NameOfGameField").GetComponent<InputField>().text;
-        //get red team name
-        string redTeam1 = GameObject.Find("RedTeamInputField").GetComponent<InputField>().text;
-        //get blue team name
-        string blueTeam1 = GameObject.Find("BlueTeamInputField").GetComponent<InputField>().text;
-
 
         Debug.Log(gameName);
-        Debug.Log(redTeam1);
-        Debug.Log(blueTeam1);
 
+        string[] redTeam = new string[10];
+        string[] blueTeam = new string[10]; ;
+        for (int i = 0; i < 10; i++)
+        {
+            redTeam[i] = GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text;
+            blueTeam[i] = GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text;
+            Debug.Log("redTeam" + i + ": " + redTeam[i]);
+            Debug.Log("blueTeam" + i + ": " + blueTeam[i]);
 
-        //GameData.GameDataManager.SaveData();
+        }
+
+        GameData.GameDataManager.SaveData();
     }
 
     private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
@@ -180,11 +185,15 @@ public class CreateGameController : MonoBehaviour
         //read category imformation
         InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
 
+        Text text = GameObject.Find(currentCategoryName).GetComponentInChildren<Text>();
+        tempCategoryString = text.text;
+        Debug.Log(tempCategoryString);
+
         string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
         int n = System.Int32.Parse(index);
 
+        Debug.Log(n);
         string ObjectsText = GameData.GameData.Category[n];
-
         if(!(ObjectsText == ""))
         {
             txt_Input.text = ObjectsText;
@@ -292,6 +301,13 @@ public class CreateGameController : MonoBehaviour
     {
         categoryEditPanel.SetActive(false);
 
+        string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
+        int n = System.Int32.Parse(index);
+
+        Text text = GameObject.Find(currentCategoryName).GetComponentInChildren<Text>();
+        text.text = tempCategoryString;
+
+
     }
 
     public void SaveCategoryButtonClick()
@@ -312,6 +328,7 @@ public class CreateGameController : MonoBehaviour
 
             // save data 
             GameData.GameData.Category[n] = ObjectsText;
+            txt_Input.text = "";
             categoryEditPanel.SetActive(false);
         }
     }
