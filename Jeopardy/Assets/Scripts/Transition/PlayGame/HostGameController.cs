@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.EventSystems;
 
 public class HostGameController : MonoBehaviour {
 
@@ -16,6 +16,11 @@ public class HostGameController : MonoBehaviour {
     private InputField scoreInput;
 
     private GameObject audienceObject;
+
+    private string currentButtonName;
+
+    private GameObject qaGameHoseObject;
+
 
     private bool isRed;
 
@@ -30,6 +35,8 @@ public class HostGameController : MonoBehaviour {
         scoreInput = GameObject.Find("SetScoreOverlay").GetComponentInChildren<InputField>();
 
         audienceObject = GameObject.Find("GameAudienceScreen");
+
+        qaGameHoseObject = GameObject.Find("QAGameHostScreen");
 
 
         Transform temp_transform = jeopardyObject.GetComponent<Transform>();
@@ -146,8 +153,28 @@ public class HostGameController : MonoBehaviour {
 
     public void OneHundredButtonClick()
     {
-        SceneManager.LoadScene("QA");
 
+        EventSystem.current.currentSelectedGameObject.SetActive(false);
+
+        Transform temp_transform = qaGameHoseObject.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);
+
+        qaGameHoseObject.SetActive(true);
+
+        //currentButtonName = EventSystem.current.currentSelectedGameObject.name;
+        //string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
+        //int line = System.Int32.Parse(lineIndex);
+        //string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
+        //int row = System.Int32.Parse(rowIndex);
     }
+
+    //teacher question pannel
+
+    public void ExitQAHostButtonClick()
+    {
+        qaGameHoseObject.SetActive(false);
+    }
+
+
 
 }
