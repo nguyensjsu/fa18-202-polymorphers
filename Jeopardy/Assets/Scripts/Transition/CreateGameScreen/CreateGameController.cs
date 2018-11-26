@@ -22,6 +22,11 @@ public class CreateGameController : MonoBehaviour
     private string currentCategoryName;
     private string currentButtonName;
 
+    public Button teamsButton;
+    public Button jeopardyButton;
+    public Button doubleJeopardyButton;
+    public Button finalJeopardyButton;
+
     // Use this for initialization
     void Start()
     {
@@ -99,8 +104,21 @@ public class CreateGameController : MonoBehaviour
         //GameData.GameDataManager.SaveData();
     }
 
+    private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
+    {
+        ColorBlock cb = button.GetComponentInChildren<Button>().colors;
+        cb.normalColor = cb.highlightedColor = buttonColor;
+        button.GetComponentInChildren<Button>().colors = cb;
+        button.GetComponentInChildren<Text>().color = textColor;
+    }
+
     public void TeamsButtonClick()
     {
+        ChangeButtonColorAndText(teamsButton, Color.black, Color.white);
+        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
+
         teamsObject.SetActive(true);
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
@@ -109,6 +127,11 @@ public class CreateGameController : MonoBehaviour
 
     public void JeopardyButtonClick()
     {
+        ChangeButtonColorAndText(teamsButton, Color.white, Color.black);
+        ChangeButtonColorAndText(jeopardyButton, Color.black, Color.white);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
+
         teamsObject.SetActive(false);
         jeopardyObject.SetActive(true);
         doubleJeopardyObject.SetActive(false);
@@ -117,6 +140,11 @@ public class CreateGameController : MonoBehaviour
 
     public void DoubleJeopardyClick()
     {
+        ChangeButtonColorAndText(teamsButton, Color.white, Color.black);
+        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.black, Color.white);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
+
         teamsObject.SetActive(false);
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(true);
@@ -125,6 +153,11 @@ public class CreateGameController : MonoBehaviour
 
     public void FinalJeopardyClick()
     {
+        ChangeButtonColorAndText(teamsButton, Color.white, Color.black);
+        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.black, Color.white);
+
         teamsObject.SetActive(false);
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
