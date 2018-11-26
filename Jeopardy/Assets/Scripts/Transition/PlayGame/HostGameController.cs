@@ -21,6 +21,9 @@ public class HostGameController : MonoBehaviour {
 
     private GameObject qaGameHoseObject;
 
+    public Button jeopardyButton;
+    public Button doubleJeopardyButton;
+    public Button finalJeopardyButton;
 
     private bool isRed;
 
@@ -59,9 +62,19 @@ public class HostGameController : MonoBehaviour {
 		
 	}
 
+    private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
+    {
+        ColorBlock cb = button.GetComponentInChildren<Button>().colors;
+        cb.normalColor = cb.highlightedColor = buttonColor;
+        button.GetComponentInChildren<Button>().colors = cb;
+        button.GetComponentInChildren<Text>().color = textColor;
+    }
+
     public void JeopardyButtonClick()
     {
-
+        ChangeButtonColorAndText(jeopardyButton, Color.black, Color.white);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
 
         jeopardyObject.SetActive(true);
         doubleJeopardyObject.SetActive(false);
@@ -70,6 +83,9 @@ public class HostGameController : MonoBehaviour {
 
     public void DoubleJeopardyClick()
     {
+        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.black, Color.white);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
 
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(true);
@@ -82,7 +98,9 @@ public class HostGameController : MonoBehaviour {
 
     public void FinalJeopardyClick()
     {
-
+        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
+        ChangeButtonColorAndText(finalJeopardyButton, Color.black, Color.white);
 
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
