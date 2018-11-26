@@ -10,6 +10,8 @@
 ## David Montes
 
 #### Last Week Finished
+ - Fix PlayGame tab colors of buttons when clicked #81 (1hr)
+ - Create LoadImage Screen (0.5hr)
 #### Next Week Planned
 #### Problem
 #### Time Spend
