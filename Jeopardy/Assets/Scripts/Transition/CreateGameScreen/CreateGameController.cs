@@ -91,7 +91,6 @@ public class CreateGameController : MonoBehaviour
         string gameName = GameObject.Find("NameOfGameField").GetComponent<InputField>().text;
         //get red team name
         string redTeam1 = GameObject.Find("RedTeamInputField").GetComponent<InputField>().text;
-
         //get blue team name
         string blueTeam1 = GameObject.Find("BlueTeamInputField").GetComponent<InputField>().text;
 
@@ -185,6 +184,7 @@ public class CreateGameController : MonoBehaviour
         int n = System.Int32.Parse(index);
 
         string ObjectsText = GameData.GameData.Category[n];
+
         if(!(ObjectsText == ""))
         {
             txt_Input.text = ObjectsText;
