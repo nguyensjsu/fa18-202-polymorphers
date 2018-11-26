@@ -5525,6 +5525,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 345608455}
   m_CullTransparentMesh: 0
+--- !u!114 &354977716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+    type: 2}
+  m_PrefabInternal: {fileID: 1213592743}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &362409802
 GameObject:
   m_ObjectHideFlags: 0
@@ -23514,6 +23520,66 @@ Prefab:
       propertyPath: m_Name
       value: Button00
       objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6784888
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6784888
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6784888
+      objectReference: {fileID: 0}
+    - target: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6784888
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6784888
+      objectReference: {fileID: 0}
+    - target: {fileID: 114112637044712468, guid: 6a1c587aff72a42fa884abc81a708e39,
+        type: 2}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6784888
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1c587aff72a42fa884abc81a708e39, type: 2}
   m_IsPrefabAsset: 0
@@ -23558,6 +23624,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513ebfa231e41431eac67ff8aedac6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jeopardyButton: {fileID: 1940387381}
+  doubleJeopardyButton: {fileID: 1990588601}
+  finalJeopardyButton: {fileID: 354977716}
 --- !u!1 &1215548662
 GameObject:
   m_ObjectHideFlags: 0
@@ -35187,6 +35256,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1939387141}
   m_CullTransparentMesh: 0
+--- !u!114 &1940387381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114089945078608550, guid: 6a1c587aff72a42fa884abc81a708e39,
+    type: 2}
+  m_PrefabInternal: {fileID: 1213592743}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1945392394
 GameObject:
   m_ObjectHideFlags: 0
@@ -35600,6 +35675,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1972898904}
   m_CullTransparentMesh: 0
+--- !u!114 &1990588601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114571365928277478, guid: 6a1c587aff72a42fa884abc81a708e39,
+    type: 2}
+  m_PrefabInternal: {fileID: 1213592743}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2009471458
 GameObject:
   m_ObjectHideFlags: 0
