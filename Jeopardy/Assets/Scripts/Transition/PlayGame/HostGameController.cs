@@ -36,5 +36,5 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
                 //ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
                 //ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
 
-                GameObject g = EventSystem.current.currentSelectedGameObject;
-                ColorBlock cb = g.GetComponentInChildren<Button>().colors;                //cb.normalColor = cb.highlightedColor = buttonColor;                g.GetComponentInChildren<Button>().colors = Color.black;                g.GetComponentInChildren<Text>().color = textColor;            }            else            {            }        }    }    public void SelectOneBlueTeamButtonClick()    {    }}
+                //GameObject g = EventSystem.current.currentSelectedGameObject;
+                //ColorBlock cb = g.GetComponentInChildren<Button>().colors;                ////cb.normalColor = cb.highlightedColor = buttonColor;                //g.GetComponentInChildren<Button>().colors = Color.black;                //g.GetComponentInChildren<Text>().color = textColor;            }            else            {            }        }    }    public void SelectOneBlueTeamButtonClick()    {    }}
