@@ -117,4 +117,15 @@ public class AudienceController : MonoBehaviour {
 
         }
     }
+
+    public void changeRedTeamName(string redTeam)
+    {
+        GameObject.Find("Team1Text").GetComponent<Text>().text = redTeam;
+    }
+
+    public void changeBlueTeamName(string blueTeam)
+    {
+        GameObject.Find("Team2Text").GetComponent<Text>().text = blueTeam;
+    }
+
 }
