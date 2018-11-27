@@ -30,11 +30,24 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
     public void ExitScoreScreenButtonClick()    {
         scoreInput.text = "";        setScoreOverlay.SetActive(false);    }    public void SetScoreButtonClick()    {        string score = scoreInput.text;        if(isRed)        {            GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = score;        }        else        {            GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = score;        }        object[] tempStorage = new object[2];        string a;        if(isRed)        {            a = "1";        }else        {            a = "0";        }        tempStorage[0] = a;        tempStorage[1] = score;        audienceObject.SendMessage("setScore", tempStorage);        setScoreOverlay.SetActive(false);    }    //teacher question pannel    public void ExitQAHostButtonClick()    {        qaGameHostObject.SetActive(false);        audienceObject.SendMessage("changePanel", "4");    }    public void StartButtonClick()    {        TotalTime = 5;        StartCoroutine(CountDown());    }    IEnumerator CountDown()    {
         Debug.Log(TotalTime);        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    //team pannel    public void ExitTeamButtonClick()    {        selectTeamObject.SetActive(false);    }    public void SelectOneRedTeamButtonClick()    {
-        currentButtonName = EventSystem.current.currentSelectedGameObject.name;        string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);        int index = System.Int32.Parse(indexString);        for (int i = 0; i < 9; i++)        {            if(i == index)            {
+        currentButtonName = EventSystem.current.currentSelectedGameObject.name;        string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);        int index = System.Int32.Parse(indexString);        for (int i = 0; i < 9; i++)        {            if(i == index)            {                GameObject button = EventSystem.current.currentSelectedGameObject;                ColorBlock cb = button.GetComponentInChildren<Button>().colors;
+                cb.normalColor = cb.highlightedColor = Color.black;                button.GetComponentInChildren<Button>().colors = cb;                button.GetComponentInChildren<Text>().color = Color.white;
                 //ChangeButtonColorAndText((Button)EventSystem.current.currentSelectedGameObject, Color.black, Color.white);
                 //ChangeButtonColorAndText(jeopardyButton, Color.black, Color.white);
                 //ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
                 //ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
 
                 //GameObject g = EventSystem.current.currentSelectedGameObject;
-                //ColorBlock cb = g.GetComponentInChildren<Button>().colors;                ////cb.normalColor = cb.highlightedColor = buttonColor;                //g.GetComponentInChildren<Button>().colors = Color.black;                //g.GetComponentInChildren<Text>().color = textColor;            }            else            {            }        }    }    public void SelectOneBlueTeamButtonClick()    {    }}
+                //ColorBlock cb = g.GetComponentInChildren<Button>().colors;
+                ////cb.normalColor = cb.highlightedColor = buttonColor;
+                //g.GetComponentInChildren<Button>().colors = Color.black;
+                //g.GetComponentInChildren<Text>().color = textColor;
+
+                //private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
+                //{
+                //    ColorBlock cb = button.GetComponentInChildren<Button>().colors;
+                //    cb.normalColor = cb.highlightedColor = buttonColor;
+                //    button.GetComponentInChildren<Button>().colors = cb;
+                //    button.GetComponentInChildren<Text>().color = textColor;
+                //}
+            }            else            {            }        }    }    public void SelectOneBlueTeamButtonClick()    {    }}
