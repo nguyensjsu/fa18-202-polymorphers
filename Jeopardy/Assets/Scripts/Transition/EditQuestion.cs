@@ -20,4 +20,5 @@ public class EditQuestion : MonoBehaviour
         //pass this button to the edit panel so this button can be updated
         editPanel.GetComponent<CloseQuestionEditPanel>().button = gameObject.GetComponent<Button>();
     }
+
 }
