@@ -81,7 +81,6 @@ public class AudienceController : MonoBehaviour {
     public void dispearButton(string index)
     {
         string str = "AudienceButton" + index;
-        Debug.Log(str);
         GameObject.Find(str).SetActive(false);
     }
 
