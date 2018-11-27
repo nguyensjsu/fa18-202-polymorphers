@@ -60,7 +60,44 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
     public void ExitScoreScreenButtonClick()    {
         scoreInput.text = "";        setScoreOverlay.SetActive(false);    }    public void SetScoreButtonClick()    {        string score = scoreInput.text;        if(isRed)        {            GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = score;            currentRedScore = System.Int32.Parse(score);        }        else        {            GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = score;
             currentBlueScore = System.Int32.Parse(score);        }        object[] tempStorage = new object[2];        string a;        if(isRed)        {            a = "1";        }else        {            a = "0";        }        tempStorage[0] = a;        tempStorage[1] = score;        audienceObject.SendMessage("setScore", tempStorage);        setScoreOverlay.SetActive(false);    }    //teacher question pannel    public void ExitQAHostButtonClick()    {        qaGameHostObject.SetActive(false);        audienceObject.SendMessage("changePanel", "4");    }    public void StartButtonClick()    {        TotalTime = 60;        StartCoroutine(CountDown());    }    IEnumerator CountDown()    {
-        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    public void RedAddScoreButtonClick()    {    }    public void RedSubtractButtonClick()    {    }    //team pannel    public void saveTeamButtonClick()    {        if(temporaryRedIndex != currentRedIndex)        {            currentRedIndex = temporaryRedIndex;
+        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    public void RedAddScoreButtonClick()    {        currentRedScore += buttonScore;
+        GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = currentRedScore.ToString();
+        //currentRedScore = System.Int32.Parse(score);
+        object[] tempStorage = new object[2];
+        tempStorage[0] = "1"; //1 is means red, 0 is blue        tempStorage[1] = currentRedScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }    public void RedSubtractButtonClick()    {
+        currentRedScore -= buttonScore;        GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = currentRedScore.ToString();
+        //currentRedScore = System.Int32.Parse(score);
+
+        object[] tempStorage = new object[2];        tempStorage[0] = "1"; //1 is means red, 0 is blue
+        tempStorage[1] = currentRedScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }
+
+    public void BlueAddScoreButtonClick()    {        currentBlueScore += buttonScore;        GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = currentBlueScore.ToString();
+        //currentRedScore = System.Int32.Parse(score);
+
+        object[] tempStorage = new object[2];        tempStorage[0] = "0"; //1 is means red, 0 is blue
+        tempStorage[1] = currentBlueScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }    public void BlueSubtractButtonClick()    {        currentBlueScore -= buttonScore;        GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = currentBlueScore.ToString();
+        //currentRedScore = System.Int32.Parse(score);
+
+        object[] tempStorage = new object[2];        tempStorage[0] = "0"; //1 is means red, 0 is blue
+        tempStorage[1] = currentBlueScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }        public void WagerButtonClick()    {        GameObject wagerObject = GameObject.Find("SetWagerOverlay");        wagerObject.SetActive(true);
+
+        Transform temp_transform = wagerObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);        wagerObject.SetActive(true);    }
+
+    //wager pannel
+
+    public void ExitWagerButtonClick()    {
+        GameObject wagerObject = GameObject.Find("SetWagerOverlay");        wagerObject.SetActive(false);    }    public void SetWagerButtonClick()    {        GameObject wagerObject = GameObject.Find("SetWagerOverlay");
+        InputField wagerField = wagerObject.GetComponentInChildren<InputField>();        buttonScore = System.Int32.Parse(wagerField.text);
+        wagerField.text = "";
+
+        //set score
+        GameObject.Find("RedAddButton").GetComponentInChildren<Text>().text = "+" + buttonScore.ToString();        GameObject.Find("RedSubtractButton").GetComponentInChildren<Text>().text = "-" + buttonScore.ToString();        GameObject.Find("BlueAddButton").GetComponentInChildren<Text>().text = "+" + buttonScore.ToString();        GameObject.Find("BlueSubtractButton").GetComponentInChildren<Text>().text = "-" + buttonScore.ToString();
+        wagerObject.SetActive(false);    }
+
+
+    //team pannel
+
+    public void saveTeamButtonClick()    {        if(temporaryRedIndex != currentRedIndex)        {            currentRedIndex = temporaryRedIndex;
             GameObject.Find("HostTeam1Text").GetComponent<Text>().text = redTeam[currentRedIndex];            audienceObject.SendMessage("changeRedTeamName", redTeam[currentRedIndex]);        }        if (temporaryBlueIndex != currentBlueIndex)        {            currentBlueIndex = temporaryBlueIndex;
             GameObject.Find("HostTeam2Text").GetComponent<Text>().text = blueTeam[currentBlueIndex];
             audienceObject.SendMessage("changeBlueTeamName", blueTeam[currentBlueIndex]);        }
