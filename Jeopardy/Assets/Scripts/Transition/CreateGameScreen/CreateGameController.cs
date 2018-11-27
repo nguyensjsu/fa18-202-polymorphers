@@ -201,6 +201,11 @@ public class CreateGameController : MonoBehaviour
 
     }
 
+    public void DoubleQuestionButtonClick()
+    {
+
+    }
+
     public void QuestionButtonClick()
     {
         currentButtonName = EventSystem.current.currentSelectedGameObject.name;
@@ -222,8 +227,15 @@ public class CreateGameController : MonoBehaviour
         int row = System.Int32.Parse(rowIndex);
         Debug.Log(row);
 
+        GameData.JQuestion s;
 
-        GameData.JQuestion s = GameData.GameData.Question[line][row];        
+        if (currentButtonName[6] == 'D'){
+           s = GameData.GameData.Question[line][row];//Jinzhou needs to figure out how to save both Double Jeopardy and Jeopardy
+        }else{
+           s = GameData.GameData.Question[line][row];
+        }
+          
+
         if (!(s.Question == ""))
         {
             question_Input.text = s.Question;
@@ -232,6 +244,9 @@ public class CreateGameController : MonoBehaviour
         {
             answer_Input.text = s.Answer;
         }
+
+
+
 
     }
 
