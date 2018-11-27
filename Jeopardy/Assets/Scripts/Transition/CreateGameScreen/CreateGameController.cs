@@ -16,6 +16,7 @@ public class CreateGameController : MonoBehaviour
 
     private GameObject categoryEditPanel;
     private GameObject questionEditPanel;
+    private GameObject loadImagePanel;
 
     private bool isDailyDouble = true;
 
@@ -40,7 +41,7 @@ public class CreateGameController : MonoBehaviour
 
         categoryEditPanel = GameObject.Find("CategoryEditPanel");
         questionEditPanel = GameObject.Find("QuestionEditPanel");
-
+        loadImagePanel = GameObject.Find("LoadImagePanel");
 
         Transform temp_transform = jeopardyObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
@@ -201,11 +202,7 @@ public class CreateGameController : MonoBehaviour
 
     }
 
-    public void DoubleQuestionButtonClick()
-    {
-
-    }
-
+   
     public void QuestionButtonClick()
     {
         currentButtonName = EventSystem.current.currentSelectedGameObject.name;
@@ -245,6 +242,17 @@ public class CreateGameController : MonoBehaviour
             answer_Input.text = s.Answer;
         }
 
+
+
+
+    }
+
+    public void LoadImageButtonClick()
+    {
+        Transform temp_transform = loadImagePanel.GetComponent<Transform>();
+        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+
+        loadImagePanel.SetActive(true);
 
 
 
