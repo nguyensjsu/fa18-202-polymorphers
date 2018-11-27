@@ -3,7 +3,7 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
     private int currentRedIndex;
     private int currentBlueIndex;
     private string[] redTeam;    private string[] blueTeam;    private int temporaryRedIndex;
-    private int temporaryBlueIndex;    private int buttonScore;
+    private int temporaryBlueIndex;    private int buttonScore;    private string[] category;    private int currentRedScore;    private int currentBlueScore;
 
     // Use this for initialization
     void Start()    {        jeopardyObject = GameObject.Find("JeopardyPanel");        doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");        finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");        setScoreOverlay = GameObject.Find("SetScoreOverlay");        scoreInput = GameObject.Find("SetScoreOverlay").GetComponentInChildren<InputField>();        selectTeamObject = GameObject.Find("ChooseTeamsOverlay");        audienceObject = GameObject.Find("GameAudienceScreen");        qaGameHostObject = GameObject.Find("QAGameHostScreen");        Transform temp_transform = jeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        temp_transform = finalJeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        temp_transform = doubleJeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
@@ -11,7 +11,7 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
         temp_transform = selectTeamObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        jeopardyObject.SetActive(true);        doubleJeopardyObject.SetActive(false);        finalJeopardyObject.SetActive(false);
 
         redTeam = new string[] { "Debuggers", "red1", "red2", "red3", "red4", "red5", "red6", "red7", "red8", "red9" };        blueTeam = new string[] { "Polymorphers", "blue1", "blue2", "blue3", "blue4", "blue5", "blue6", "blue7", "blue8", "blue9" };        for (int i = 0; i < 10; i++)        {            string redButtonName = "RedTeamButton" + i.ToString();            Text redButtonText = GameObject.Find(redButtonName).GetComponentInChildren<Text>();            redButtonText.text = redTeam[i];            string blueButtonName = "BlueTeamButton" + i.ToString();            Text blueButtonText = GameObject.Find(blueButtonName).GetComponentInChildren<Text>();            blueButtonText.text = blueTeam[i];            if(i == 0)            {                changeTeamButtonColor(GameObject.Find(redButtonName), Color.black, Color.white);
-                changeTeamButtonColor(GameObject.Find(blueButtonName), Color.black, Color.white);                currentRedIndex = i;                currentBlueIndex = i;            }        }        selectTeamObject.SetActive(false);    }    private void changeTeamName()    {
+                changeTeamButtonColor(GameObject.Find(blueButtonName), Color.black, Color.white);                currentRedIndex = i;                currentBlueIndex = i;            }        }        currentRedScore = 10000;        currentBlueScore = 10000;        selectTeamObject.SetActive(false);    }    private void changeTeamName()    {
         GameObject.Find("HostTeam1Text").GetComponent<Text>().text = redTeam[currentRedIndex];        GameObject.Find("HostTeam2Text").GetComponent<Text>().text = blueTeam[currentBlueIndex];
         audienceObject.SendMessage("changeRedTeamName", redTeam[currentRedIndex]);
         audienceObject.SendMessage("changeBlueTeamName", blueTeam[currentBlueIndex]);    }
@@ -28,8 +28,7 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
 
         //get score
         string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
-        int line = System.Int32.Parse(lineIndex);        buttonScore = 100 * (line + 1);        Debug.Log(buttonScore);
-
+        int line = System.Int32.Parse(lineIndex);        buttonScore = 100 * (line + 1);
         Transform temp_transform = qaGameHostObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);
         qaGameHostObject.SetActive(true);
         //set score
@@ -43,19 +42,32 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
         string index = currentButtonName.Substring(currentButtonName.Length - 2, 2);        audienceObject.SendMessage("dispearButton", index); //audience dispear button
  
         EventSystem.current.currentSelectedGameObject.SetActive(false);    }
-    public void NextTeamButtonClick()    {    }    public void ChooseTeamButtonClick()    {        selectTeamObject.SetActive(true);    }
+    public void NextTeamButtonClick()    {        if(!(currentRedIndex == redTeam.Length - 1))        {            currentRedIndex += 1;
+            GameObject.Find("HostTeam1Text").GetComponent<Text>().text = redTeam[currentRedIndex];            audienceObject.SendMessage("changeRedTeamName", redTeam[currentRedIndex]);        }        if(!(currentBlueIndex == blueTeam.Length - 1))        {            currentBlueIndex += 1;
+
+            GameObject.Find("HostTeam2Text").GetComponent<Text>().text = blueTeam[currentBlueIndex];            audienceObject.SendMessage("changeBlueTeamName", blueTeam[currentBlueIndex]);        }    }    public void ChooseTeamButtonClick()    {        selectTeamObject.SetActive(true);
+
+        for (int i = 0; i < redTeam.Length; i++)        {
+            string buttonName = "RedTeamButton" + i.ToString();
+            GameObject button = GameObject.Find(buttonName);            if (i == currentRedIndex)            {                changeTeamButtonColor(button, Color.black, Color.white);            }            else            {                changeTeamButtonColor(button, Color.white, Color.black);            }        }
+        temporaryRedIndex = currentRedIndex;
+
+        for(int i = 0; i < blueTeam.Length; i++)        {
+            string buttonName = "BlueTeamButton" + i.ToString();
+            GameObject button = GameObject.Find(buttonName);            if (i == currentBlueIndex)            {                changeTeamButtonColor(button, Color.black, Color.white);            }            else            {                changeTeamButtonColor(button, Color.white, Color.black);            }        }        temporaryBlueIndex = currentBlueIndex;    }
     //set score screen event
 
     public void ExitScoreScreenButtonClick()    {
-        scoreInput.text = "";        setScoreOverlay.SetActive(false);    }    public void SetScoreButtonClick()    {        string score = scoreInput.text;        if(isRed)        {            GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = score;        }        else        {            GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = score;        }        object[] tempStorage = new object[2];        string a;        if(isRed)        {            a = "1";        }else        {            a = "0";        }        tempStorage[0] = a;        tempStorage[1] = score;        audienceObject.SendMessage("setScore", tempStorage);        setScoreOverlay.SetActive(false);    }    //teacher question pannel    public void ExitQAHostButtonClick()    {        qaGameHostObject.SetActive(false);        audienceObject.SendMessage("changePanel", "4");    }    public void StartButtonClick()    {        TotalTime = 60;        StartCoroutine(CountDown());    }    IEnumerator CountDown()    {
-        Debug.Log(TotalTime);        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    //team pannel    public void saveTeamButtonClick()    {        if(temporaryRedIndex != currentRedIndex)        {            currentRedIndex = temporaryRedIndex;
+        scoreInput.text = "";        setScoreOverlay.SetActive(false);    }    public void SetScoreButtonClick()    {        string score = scoreInput.text;        if(isRed)        {            GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = score;            currentRedScore = System.Int32.Parse(score);        }        else        {            GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = score;
+            currentBlueScore = System.Int32.Parse(score);        }        object[] tempStorage = new object[2];        string a;        if(isRed)        {            a = "1";        }else        {            a = "0";        }        tempStorage[0] = a;        tempStorage[1] = score;        audienceObject.SendMessage("setScore", tempStorage);        setScoreOverlay.SetActive(false);    }    //teacher question pannel    public void ExitQAHostButtonClick()    {        qaGameHostObject.SetActive(false);        audienceObject.SendMessage("changePanel", "4");    }    public void StartButtonClick()    {        TotalTime = 60;        StartCoroutine(CountDown());    }    IEnumerator CountDown()    {
+        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    public void RedAddScoreButtonClick()    {    }    public void RedSubtractButtonClick()    {    }    //team pannel    public void saveTeamButtonClick()    {        if(temporaryRedIndex != currentRedIndex)        {            currentRedIndex = temporaryRedIndex;
             GameObject.Find("HostTeam1Text").GetComponent<Text>().text = redTeam[currentRedIndex];            audienceObject.SendMessage("changeRedTeamName", redTeam[currentRedIndex]);        }        if (temporaryBlueIndex != currentBlueIndex)        {            currentBlueIndex = temporaryBlueIndex;
             GameObject.Find("HostTeam2Text").GetComponent<Text>().text = blueTeam[currentBlueIndex];
             audienceObject.SendMessage("changeBlueTeamName", blueTeam[currentBlueIndex]);        }
 
         selectTeamObject.SetActive(false);    }    public void ExitTeamButtonClick()    {        selectTeamObject.SetActive(false);    }    public void SelectOneRedTeamButtonClick()    {
         currentButtonName = EventSystem.current.currentSelectedGameObject.name;        string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);        temporaryRedIndex = System.Int32.Parse(indexString);
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < redTeam.Length; i++)
         {
             if (i == temporaryRedIndex)
             {
@@ -69,7 +81,7 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
                 changeTeamButtonColor(button, Color.white, Color.black);
             }
         }    }    public void SelectOneBlueTeamButtonClick()    {
-        currentButtonName = EventSystem.current.currentSelectedGameObject.name;        string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);        temporaryBlueIndex = System.Int32.Parse(indexString);        for (int i = 0; i < 9; i++)        {            if (i == temporaryBlueIndex)            {                GameObject button = EventSystem.current.currentSelectedGameObject;                changeTeamButtonColor(button, Color.black, Color.white);            }            else            {                string buttonName = "BlueTeamButton" + i.ToString();                GameObject button = GameObject.Find(buttonName);                changeTeamButtonColor(button, Color.white, Color.black);            }        }    }    private void changeTeamButtonColor(GameObject button, Color buttonColor, Color textColor)
+        currentButtonName = EventSystem.current.currentSelectedGameObject.name;        string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);        temporaryBlueIndex = System.Int32.Parse(indexString);        for (int i = 0; i < blueTeam.Length; i++)        {            if (i == temporaryBlueIndex)            {                GameObject button = EventSystem.current.currentSelectedGameObject;                changeTeamButtonColor(button, Color.black, Color.white);            }            else            {                string buttonName = "BlueTeamButton" + i.ToString();                GameObject button = GameObject.Find(buttonName);                changeTeamButtonColor(button, Color.white, Color.black);            }        }    }    private void changeTeamButtonColor(GameObject button, Color buttonColor, Color textColor)
     {
         ColorBlock cb = button.GetComponentInChildren<Button>().colors;        cb.normalColor = cb.highlightedColor = buttonColor;        button.GetComponentInChildren<Button>().colors = cb;        button.GetComponentInChildren<Text>().color = textColor;
     }}
