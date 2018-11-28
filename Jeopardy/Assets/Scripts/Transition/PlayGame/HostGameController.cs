@@ -1,12 +1,26 @@
-using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;using UnityEngine.SceneManagement;using UnityEngine.EventSystems;public class HostGameController : MonoBehaviour {    private GameObject jeopardyObject;    private GameObject doubleJeopardyObject;    private GameObject finalJeopardyObject;    private GameObject setScoreOverlay;    private GameObject selectTeamObject;    private InputField scoreInput;    private GameObject audienceObject;    private string currentButtonName;    private int TotalTime;    private GameObject qaGameHostObject;    public Button jeopardyButton;    public Button doubleJeopardyButton;    public Button finalJeopardyButton;    private bool isRed;
+using System.Collections;using System.Collections.Generic;using UnityEngine;using UnityEngine.UI;using UnityEngine.SceneManagement;using UnityEngine.EventSystems;public class HostGameController : MonoBehaviour {    //question panel    private GameObject jeopardyObject;    private GameObject doubleJeopardyObject;    private GameObject finalJeopardyObject;    //set teamscore panel     private GameObject setScoreOverlay;    //select team panel    private GameObject selectTeamObject;    //the question detail of teacher
+    private GameObject qaGameHostObject;
+    //set wager panel
+    private GameObject wagerObject;
+    //audience panel     send message to the object
+    private GameObject audienceObject;
 
+    private InputField scoreInput;
+    public Button jeopardyButton;    public Button doubleJeopardyButton;    public Button finalJeopardyButton;    private string currentButtonName;
+    private string[] category;    private int TotalTime; //Countdown
+
+
+    private bool isRed; //change team score and change team wager    //set team information
     private int currentRedIndex;
     private int currentBlueIndex;
     private string[] redTeam;    private string[] blueTeam;    private int temporaryRedIndex;
-    private int temporaryBlueIndex;    private int buttonScore;    private string[] category;    private int currentRedScore;    private int currentBlueScore;
+    private int temporaryBlueIndex;    //the question detail of teacher. set wager
+    private int redButtonScore;    private int blueButtonScore;    private int currentRedScore;    private int currentBlueScore;
 
     // Use this for initialization
-    void Start()    {        jeopardyObject = GameObject.Find("JeopardyPanel");        doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");        finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");        setScoreOverlay = GameObject.Find("SetScoreOverlay");        scoreInput = GameObject.Find("SetScoreOverlay").GetComponentInChildren<InputField>();        selectTeamObject = GameObject.Find("ChooseTeamsOverlay");        audienceObject = GameObject.Find("GameAudienceScreen");        qaGameHostObject = GameObject.Find("QAGameHostScreen");        Transform temp_transform = jeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        temp_transform = finalJeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        temp_transform = doubleJeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
+    void Start()    {        jeopardyObject = GameObject.Find("JeopardyPanel");        doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");        finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");        setScoreOverlay = GameObject.Find("SetScoreOverlay");        scoreInput = GameObject.Find("SetScoreOverlay").GetComponentInChildren<InputField>();        selectTeamObject = GameObject.Find("ChooseTeamsOverlay");        audienceObject = GameObject.Find("GameAudienceScreen");        qaGameHostObject = GameObject.Find("QAGameHostScreen");
+
+        wagerObject = GameObject.Find("SetWagerOverlay");                Transform temp_transform = jeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        temp_transform = finalJeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        temp_transform = doubleJeopardyObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
         temp_transform = selectTeamObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);        jeopardyObject.SetActive(true);        doubleJeopardyObject.SetActive(false);        finalJeopardyObject.SetActive(false);
 
@@ -28,13 +42,13 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
 
         //get score
         string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
-        int line = System.Int32.Parse(lineIndex);        buttonScore = 100 * (line + 1);
+        int line = System.Int32.Parse(lineIndex);        redButtonScore = 100 * (line + 1);        blueButtonScore = redButtonScore;
         Transform temp_transform = qaGameHostObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);
         qaGameHostObject.SetActive(true);
         //set score
-        GameObject.Find("RedAddButton").GetComponentInChildren<Text>().text = "+" + buttonScore.ToString();
-        GameObject.Find("RedSubtractButton").GetComponentInChildren<Text>().text = "-" + buttonScore.ToString();
-        GameObject.Find("BlueAddButton").GetComponentInChildren<Text>().text = "+" + buttonScore.ToString();        GameObject.Find("BlueSubtractButton").GetComponentInChildren<Text>().text = "-" + buttonScore.ToString();
+        GameObject.Find("RedAddButton").GetComponentInChildren<Text>().text = "+" + redButtonScore.ToString();
+        GameObject.Find("RedSubtractButton").GetComponentInChildren<Text>().text = "-" + blueButtonScore.ToString();
+        GameObject.Find("BlueAddButton").GetComponentInChildren<Text>().text = "+" + redButtonScore.ToString();        GameObject.Find("BlueSubtractButton").GetComponentInChildren<Text>().text = "-" + blueButtonScore.ToString();
 
         //string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
         //int row = System.Int32.Parse(rowIndex);
@@ -60,39 +74,42 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
     public void ExitScoreScreenButtonClick()    {
         scoreInput.text = "";        setScoreOverlay.SetActive(false);    }    public void SetScoreButtonClick()    {        string score = scoreInput.text;        if(isRed)        {            GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = score;            currentRedScore = System.Int32.Parse(score);        }        else        {            GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = score;
             currentBlueScore = System.Int32.Parse(score);        }        object[] tempStorage = new object[2];        string a;        if(isRed)        {            a = "1";        }else        {            a = "0";        }        tempStorage[0] = a;        tempStorage[1] = score;        audienceObject.SendMessage("setScore", tempStorage);        setScoreOverlay.SetActive(false);    }    //teacher question pannel    public void ExitQAHostButtonClick()    {        qaGameHostObject.SetActive(false);        audienceObject.SendMessage("changePanel", "4");    }    public void StartButtonClick()    {        TotalTime = 60;        StartCoroutine(CountDown());    }    IEnumerator CountDown()    {
-        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    public void RedAddScoreButtonClick()    {        currentRedScore += buttonScore;
+        while (TotalTime >= 0)        {            GameObject.Find("ClockText").GetComponent<Text>().text = TotalTime.ToString();            audienceObject.SendMessage("SetAudienceTime", TotalTime.ToString());            yield return new WaitForSeconds(1);            TotalTime--;        }    }    public void RedAddScoreButtonClick()    {        currentRedScore += redButtonScore;
         GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = currentRedScore.ToString();
         //currentRedScore = System.Int32.Parse(score);
         object[] tempStorage = new object[2];
         tempStorage[0] = "1"; //1 is means red, 0 is blue        tempStorage[1] = currentRedScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }    public void RedSubtractButtonClick()    {
-        currentRedScore -= buttonScore;        GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = currentRedScore.ToString();
+        currentRedScore -= redButtonScore;        GameObject.Find("Team1ScoreButton").GetComponentInChildren<Text>().text = currentRedScore.ToString();
         //currentRedScore = System.Int32.Parse(score);
 
         object[] tempStorage = new object[2];        tempStorage[0] = "1"; //1 is means red, 0 is blue
         tempStorage[1] = currentRedScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }
 
-    public void BlueAddScoreButtonClick()    {        currentBlueScore += buttonScore;        GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = currentBlueScore.ToString();
+    public void BlueAddScoreButtonClick()    {        currentBlueScore += blueButtonScore;        GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = currentBlueScore.ToString();
         //currentRedScore = System.Int32.Parse(score);
 
         object[] tempStorage = new object[2];        tempStorage[0] = "0"; //1 is means red, 0 is blue
-        tempStorage[1] = currentBlueScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }    public void BlueSubtractButtonClick()    {        currentBlueScore -= buttonScore;        GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = currentBlueScore.ToString();
+        tempStorage[1] = currentBlueScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }    public void BlueSubtractButtonClick()    {        currentBlueScore -= blueButtonScore;        GameObject.Find("Team2ScoreButton").GetComponentInChildren<Text>().text = currentBlueScore.ToString();
         //currentRedScore = System.Int32.Parse(score);
 
         object[] tempStorage = new object[2];        tempStorage[0] = "0"; //1 is means red, 0 is blue
-        tempStorage[1] = currentBlueScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }        public void WagerButtonClick()    {        GameObject wagerObject = GameObject.Find("SetWagerOverlay");        wagerObject.SetActive(true);
-
-        Transform temp_transform = wagerObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);        wagerObject.SetActive(true);    }
+        tempStorage[1] = currentBlueScore.ToString();        audienceObject.SendMessage("setScore", tempStorage);    }        public void RedWagerButtonClick()    {        isRed = true;        ShowWagerScreen();    }    public void BlueWagerButtonClick()    {        isRed = false;
+        ShowWagerScreen();    }    private void ShowWagerScreen()    {        wagerObject.SetActive(true);        Transform temp_transform = wagerObject.GetComponent<Transform>();        temp_transform.position = new Vector3(0f, 0f, temp_transform.position.z);    }
 
     //wager pannel
 
     public void ExitWagerButtonClick()    {
-        GameObject wagerObject = GameObject.Find("SetWagerOverlay");        wagerObject.SetActive(false);    }    public void SetWagerButtonClick()    {        GameObject wagerObject = GameObject.Find("SetWagerOverlay");
-        InputField wagerField = wagerObject.GetComponentInChildren<InputField>();        buttonScore = System.Int32.Parse(wagerField.text);
-        wagerField.text = "";
+        wagerObject.SetActive(false);    }    public void SetWagerButtonClick()    {        InputField wagerField = wagerObject.GetComponentInChildren<InputField>();
 
-        //set score
-        GameObject.Find("RedAddButton").GetComponentInChildren<Text>().text = "+" + buttonScore.ToString();        GameObject.Find("RedSubtractButton").GetComponentInChildren<Text>().text = "-" + buttonScore.ToString();        GameObject.Find("BlueAddButton").GetComponentInChildren<Text>().text = "+" + buttonScore.ToString();        GameObject.Find("BlueSubtractButton").GetComponentInChildren<Text>().text = "-" + buttonScore.ToString();
-        wagerObject.SetActive(false);    }
+        if (isRed)        { 
+            redButtonScore = System.Int32.Parse(wagerField.text);//set score
+            GameObject.Find("RedAddButton").GetComponentInChildren<Text>().text = "+" + redButtonScore.ToString();
+            GameObject.Find("RedSubtractButton").GetComponentInChildren<Text>().text = "-" + redButtonScore.ToString();        }        else        {
+            blueButtonScore = System.Int32.Parse(wagerField.text);//set score
+            GameObject.Find("BlueAddButton").GetComponentInChildren<Text>().text = "+" + blueButtonScore.ToString();            GameObject.Find("BlueSubtractButton").GetComponentInChildren<Text>().text = "-" + blueButtonScore.ToString();        }
+
+        wagerField.text = "";
+        wagerObject.SetActive(false);    }
 
 
     //team pannel
