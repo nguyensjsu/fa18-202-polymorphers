@@ -15,12 +15,12 @@ public class MainMenuController : MonoBehaviour {
 		
 	}
 
-    public void CreateButtonClick(){
-        SceneManager.LoadScene("CreateGame");
+    public void PlayButtonClick(){
+        SceneManager.LoadScene("PlayGame");
     }
 
-    public void SavedGamesClick(){
-        SceneManager.LoadScene("SavedGames");
+    public void CreateEditButtonClick(){
+        SceneManager.LoadScene("CreateEditGame");
 
     }
 }
