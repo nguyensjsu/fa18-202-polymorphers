@@ -1,5 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using System;
+
+
 
 public class DailyDoubleAnimation : MonoBehaviour {
 
