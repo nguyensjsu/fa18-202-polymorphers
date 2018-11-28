@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+using System.IO;
+
+
 public class CreateGameController : MonoBehaviour
 {
 
@@ -29,6 +32,14 @@ public class CreateGameController : MonoBehaviour
     public Button finalJeopardyButton;
 
     private string tempCategoryString;
+
+    public GameObject loadImageCanvas;
+    public GameObject loadImageButton;
+
+    private string imagePath;
+    private int buttonNameImageLoadLine;
+    private int buttonNameImageLoadRow;
+
 
     // Use this for initialization
     void Start()
@@ -205,6 +216,7 @@ public class CreateGameController : MonoBehaviour
    
     public void QuestionButtonClick()
     {
+
         currentButtonName = EventSystem.current.currentSelectedGameObject.name;
 
 
@@ -224,6 +236,14 @@ public class CreateGameController : MonoBehaviour
         int row = System.Int32.Parse(rowIndex);
         Debug.Log(row);
 
+        /*
+         * David-
+         * These coordinates need to be saved to create an image for the correct
+         * question.
+         */
+        buttonNameImageLoadLine = line;
+        buttonNameImageLoadRow = row;
+
         GameData.JQuestion s;
 
         if (currentButtonName[6] == 'D'){
@@ -232,15 +252,28 @@ public class CreateGameController : MonoBehaviour
            s = GameData.GameData.Question[line][row];
         }
           
+        if(!isImage(answer_Input.text)){
+            if (!(s.Question == ""))
+            {
+                question_Input.text = s.Question;
+            }
+            if (!(s.Answer == ""))
+            {
+                answer_Input.text = s.Answer;
+            }
+        }else{
+            byte[] fileData;
+            Texture2D tex = null;
 
-        if (!(s.Question == ""))
-        {
-            question_Input.text = s.Question;
+            fileData = File.ReadAllBytes(answer_Input.text);
+            tex = new Texture2D(50, 50);
+            tex.LoadImage(fileData);
+
+            Button btn = GameObject.FindGameObjectWithTag("Answer").GetComponent<Button>();
+            btn.GetComponent<Image>().sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
+            btn.transform.SetParent(loadImageCanvas.transform, false);
         }
-        if (!(s.Answer == ""))
-        {
-            answer_Input.text = s.Answer;
-        }
+       
 
 
 
@@ -254,8 +287,7 @@ public class CreateGameController : MonoBehaviour
 
         loadImagePanel.SetActive(true);
 
-
-
+        PNGload();
     }
 
     // all methods of questionEditPanel
@@ -354,6 +386,91 @@ public class CreateGameController : MonoBehaviour
             txt_Input.text = "";
             categoryEditPanel.SetActive(false);
         }
+    }
+
+
+
+    private void PNGload()
+    {
+
+
+
+        string thepath = Path.Combine(Application.persistentDataPath, "images");
+
+        DirectoryInfo d = new DirectoryInfo(thepath);
+
+        FileInfo[] Files = d.GetFiles("*.png");
+
+
+        foreach (FileInfo file in Files)
+        {
+            imagePath = Path.Combine(thepath, file.Name);
+
+            Debug.Log(imagePath);
+            DisplayImageOnAnswer(imagePath);
+
+        }
+
+
+    }
+
+    public void ImageClick()
+    {
+        Debug.Log("Image click");
+
+        Transform temp_transform = loadImagePanel.GetComponent<Transform>();
+        temp_transform.position = new Vector3(2000f, temp_transform.position.y, temp_transform.position.z);
+
+        loadImagePanel.SetActive(false);
+
+        GameData.JQuestion s;
+
+        if (currentButtonName[6] == 'D')
+        {
+            //Jinzhou needs to figure out how to save both Double Jeopardy and Jeopardy
+            s = GameData.GameData.Question[buttonNameImageLoadLine][buttonNameImageLoadRow];
+        }
+        else
+        {
+            s = GameData.GameData.Question[buttonNameImageLoadLine][buttonNameImageLoadRow];
+        }
+
+
+        //creating local datastructure based on what's in memory
+        //s = GameData.GameData.Question[buttonNameImageLoadLine][buttonNameImageLoadRow];
+
+        //changing just one field in our local
+       //s.Clue = imagePath;
+
+        //saving to memory our local
+       // GameData.GameData.Question[buttonNameImageLoadLine][buttonNameImageLoadRow] = s;
+    }
+
+    private Sprite DisplayImageOnAnswer(string path){
+        byte[] fileData;
+        Texture2D tex = null;
+        if (File.Exists(path))
+        {
+            fileData = File.ReadAllBytes(path);
+            tex = new Texture2D(50, 50);
+            tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+
+
+            //return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
+            GameObject newButton = Instantiate(loadImageButton);
+            newButton.GetComponent<Image>().sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
+            newButton.transform.SetParent(loadImageCanvas.transform, false);
+        }
+        else
+        {
+            Debug.Log(path);
+        }
+
+        return null;
+    }
+
+    private bool isImage(string text){
+        return text[0] == '/';
     }
 
 }
