@@ -38,3 +38,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_BACKUP_1041.cs
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_BACKUP_1041.cs.meta
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_BASE_1041.cs
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_BASE_1041.cs.meta
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_LOCAL_1041.cs
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_LOCAL_1041.cs.meta
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_REMOTE_1041.cs
+Jeopardy/Assets/Scripts/Transition/PlayGame/HostGameController_REMOTE_1041.cs.meta
