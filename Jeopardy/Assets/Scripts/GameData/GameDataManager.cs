@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
-//using LitJson;
+using LitJson;
 using UnityEngine;
 
-namespace GameData
-{
     public static class GameDataManager
     {
         private static string mFolderName;
@@ -68,11 +66,13 @@ namespace GameData
                 gamedata.Add(info.Name, info.GetValue(null, null));
             }
             
-            //string values = JsonMapper.ToJson(gamedata);
+            string values = JsonMapper.ToJson(gamedata);
+            Debug.Log(values);
+            
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
-            //Debug.Log(values);
+            
             
             FileStream file = new FileStream(FileName, FileMode.Create);
             //byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
@@ -82,4 +82,3 @@ namespace GameData
             }
         }
     }
-}

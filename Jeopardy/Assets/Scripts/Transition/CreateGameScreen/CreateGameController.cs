@@ -64,12 +64,10 @@ public class CreateGameController : MonoBehaviour
         jeopardyObject.SetActive(false);
         doubleJeopardyObject.SetActive(false);
         finalJeopardyObject.SetActive(false);
-
-
         categoryEditPanel.SetActive(false);
         questionEditPanel.SetActive(false);
 
-
+        GameDataManager.LoadData();
     }
 
     // Update is called once per frame
@@ -97,16 +95,16 @@ public class CreateGameController : MonoBehaviour
 
         string[] redTeam = new string[10];
         string[] blueTeam = new string[10]; ;
-        for (int i = 0; i < 10; i++)
-        {
-            redTeam[i] = GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text;
-            blueTeam[i] = GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text;
-            Debug.Log("redTeam" + i + ": " + redTeam[i]);
-            Debug.Log("blueTeam" + i + ": " + blueTeam[i]);
+//        for (int i = 0; i < 10; i++)
+//        {
+//            redTeam[i] = GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text;
+//            blueTeam[i] = GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text;
+//            Debug.Log("redTeam" + i + ": " + redTeam[i]);
+//            Debug.Log("blueTeam" + i + ": " + blueTeam[i]);
+//
+//        }
 
-        }
-
-        GameData.GameDataManager.SaveData();
+        GameDataManager.SaveData();
     }
 
     private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
@@ -194,12 +192,9 @@ public class CreateGameController : MonoBehaviour
         int n = System.Int32.Parse(index);
 
         Debug.Log(n);
-        string ObjectsText = GameData.GameData.Category[n];
-        if(!(ObjectsText == ""))
-        {
-            txt_Input.text = ObjectsText;
-        }
-
+        string ObjectsText = GameData.Category[n];
+        Debug.Log(ObjectsText);
+        txt_Input.text = ObjectsText;
     }
 
    
@@ -224,12 +219,12 @@ public class CreateGameController : MonoBehaviour
         int row = System.Int32.Parse(rowIndex);
         Debug.Log(row);
 
-        GameData.JQuestion s;
+        JQuestion s;
 
         if (currentButtonName[6] == 'D'){
-           s = GameData.GameData.Question[line][row];//Jinzhou needs to figure out how to save both Double Jeopardy and Jeopardy
+           s = GameData.Question[line][row];
         }else{
-           s = GameData.GameData.Question[line][row];
+           s = GameData.Question[line][row];
         }
           
 
@@ -237,6 +232,7 @@ public class CreateGameController : MonoBehaviour
         {
             question_Input.text = s.Question;
         }
+        
         if (!(s.Answer == ""))
         {
             answer_Input.text = s.Answer;
@@ -290,35 +286,17 @@ public class CreateGameController : MonoBehaviour
             string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
             int row = System.Int32.Parse(rowIndex);
 
-
-            //test code
-
-            //GameData.JQuestion s = GameData.GameData.Question[0][0];
-            //s.Question = questionText;
-            //s.Answer = answerText;
-            //s.Value = 100;
-            //s.Clue = "";
-            //s.isDouble = false;
-
-            //GameData.JQuestion m = GameData.GameData.Question[0][0];
-            //Debug.Log(s.Question);
-            //Debug.Log(m.Question);
-
-
-            GameData.JQuestion s;
+            JQuestion s = GameData.Question[line][row];
             s.Question = questionText;
             s.Answer = answerText;
             s.Value = 100;
             s.Clue = "";
             s.isDouble = isDailyDouble;
-            GameData.GameData.Question[line][row] = s;
 
             questionEditPanel.SetActive(false);
 
         }
     }
-
-    // all methods of categotyEnditPanel
 
     public void ExitCategoryPanelClick()
     {
@@ -350,7 +328,7 @@ public class CreateGameController : MonoBehaviour
             text.text = ObjectsText;
 
             // save data 
-            GameData.GameData.Category[n] = ObjectsText;
+            GameData.Category[n] = ObjectsText;
             txt_Input.text = "";
             categoryEditPanel.SetActive(false);
         }
