@@ -5,42 +5,40 @@ using UnityEngine;
 
     public static class GameDataManager
     {
-        private static string mFolderName;
-        private static string mFileName;
+        private static string SubFolderName = "Save";
+        private static string SaveFileName = "Test.json";
  
-        private static string FileName { get { return Path.Combine(FolderName, mFileName);} }
-        private static string FolderName { get { return Path.Combine(Application.persistentDataPath, mFolderName); } }
+        private static string FileName { get { return Path.Combine(FolderName, SaveFileName);} }
+        private static string FolderName { get { return Path.Combine(Application.persistentDataPath, SubFolderName); } }
 
         public static void InitDemo()
         {
-            GameData.SetSize(5, 5);
-            for (int i = 0; i < 5; i++)
+            GameData.Init(6, 5);
+            for (int i = 0; i < 6; i++)
             {
                 GameData.Category[i] = "Test Category";
                 for (int j = 0; j < 5; j++)
                 {
-                    JQuestion q = new JQuestion();
-                    q.Question = "Test Question";
-                    q.Answer = "Test Answer";
-                    q.Clue = "Test Clue";
-                    q.Value = i * 100 + 100;
-                    q.isDouble = false;
-                    GameData.Question[i][j] = q;
+                    GameData.Question[i][j].Question = "Test Question";
+                    GameData.Question[i][j].Answer = "Test Answer";
+                    GameData.Question[i][j].Clue = "Test Clue";
+                    GameData.Question[i][j].Value = i * 100 + 100;
+                    GameData.Question[i][j].isDouble = false;
+                    
+                    GameData.DoubleQuestion[i][j].Question = "Test Question";
+                    GameData.DoubleQuestion[i][j].Answer = "Test Answer";
+                    GameData.DoubleQuestion[i][j].Clue = "Test Clue";
+                    GameData.DoubleQuestion[i][j].Value = i * 100 + 100;
+                    GameData.DoubleQuestion[i][j].isDouble = false;
                 }
             }
-            
-        }
-        
-        public static void Init(string pFolderName, string pFileName) {
-            mFolderName = pFolderName;
-            mFileName = pFileName;
-            Debug.Log(FileName);
-            Debug.Log(FolderName);
-//            ReadData();
+           
         }
         
         public static void LoadData() {
-            
+            Debug.Log(FileName);
+            Debug.Log(FolderName);
+
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
@@ -48,15 +46,27 @@ using UnityEngine;
             if(File.Exists(FileName)) {
                 FileStream fs = new FileStream(FileName, FileMode.Open);
                 StreamReader sr = new StreamReader(fs);
-                //JGameData data = JsonMapper.ToObject<JGameData>(sr.ReadToEnd());
-                //data.ResumeData();
-                if(fs != null) {
-                    fs.Close();
-                }
-                if(sr != null) {
-                    sr.Close();
-                }
+
+                JsonData data = JsonMapper.ToObject(sr.ReadToEnd());
+                int row = (int) data["Row"];
+                int col = (int) data["Column"];
+                GameData.Init(col, row);
+                
+                GameData.Category = JsonMapper.ToObject<List<string>>(data["Category"].ToJson());
+                GameData.BlueTeam = JsonMapper.ToObject<List<string>>(data["BlueTeam"].ToJson());
+                GameData.RedTeam = JsonMapper.ToObject<List<string>>(data["RedTeam"].ToJson());
+
+                GameData.Question = JsonMapper.ToObject<List<List<JQuestion>>>(data["Question"].ToJson());
+                GameData.DoubleQuestion = JsonMapper.ToObject<List<List<JQuestion>>>(data["DoubleQuestion"].ToJson());
+ 
+                GameData.FinalCategory = data["FinalCategory"].ToString();
+                GameData.FinalQuestion = data["FinalQuestion"].ToString();
+                GameData.FinalAnswer = data["FinalAnswer"].ToString();
+                
+                fs.Close();
+                sr.Close();
             }
+   
         }
         
         public static void SaveData() {
@@ -75,8 +85,8 @@ using UnityEngine;
             
             
             FileStream file = new FileStream(FileName, FileMode.Create);
-            //byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
-            //file.Write(bts,0,bts.Length);
+            byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
+            file.Write(bts,0,bts.Length);
             if(file != null) {
                 file.Close();
             }

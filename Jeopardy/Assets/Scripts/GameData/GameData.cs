@@ -37,7 +37,7 @@ using UnityEngine.Experimental.PlayerLoop;
 
         public void ResumeData()
         {
-            GameData.SetSize(Row, Column);
+            GameData.Init(Row, Column);
             GameData.Question = Question;
             GameData.Category = Category;
         }
@@ -46,7 +46,7 @@ using UnityEngine.Experimental.PlayerLoop;
 
     public static class GameData
     {
-        public static string GameName { get; set; }
+//        public static string GameName { get; set; }
         public static int Row { get; private set; }
         public static int Column { get; private set; }
         public static List<string> Category { get; set; }
@@ -60,12 +60,13 @@ using UnityEngine.Experimental.PlayerLoop;
 
         static GameData()
         {
-            SetSize(6,5);
+            Init(6,5);
         }
        
-        private static void Init()
+        public static void Init(int col, int row)
         {
-            
+            Row = row;
+            Column = col;
             Category = new List<string>();
             Question = new List<List<JQuestion>>();
             DoubleQuestion = new List<List<JQuestion>>();
@@ -105,14 +106,6 @@ using UnityEngine.Experimental.PlayerLoop;
 
             
         }
-        
-        public static void SetSize(int row, int col)
-        {
-            Row = row;
-            Column = col;
-            Init();
-        }
-        
 
     }
     

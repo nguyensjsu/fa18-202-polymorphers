@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class CreateGameController : MonoBehaviour
 {
-
     private GameObject teamsObject;
     private GameObject jeopardyObject;
     private GameObject doubleJeopardyObject;
@@ -33,24 +32,27 @@ public class CreateGameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         teamsObject = GameObject.Find("TeamsPanel");
         jeopardyObject = GameObject.Find("JeopardyPanel");
         doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");
         finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");
-
         categoryEditPanel = GameObject.Find("CategoryEditPanel");
         questionEditPanel = GameObject.Find("QuestionEditPanel");
         loadImagePanel = GameObject.Find("LoadImagePanel");
+        
+        teamsObject.SetActive(true);
+        jeopardyObject.SetActive(false);
+        doubleJeopardyObject.SetActive(false);
+        finalJeopardyObject.SetActive(false);
+        categoryEditPanel.SetActive(false);
+        questionEditPanel.SetActive(false);
 
         Transform temp_transform = jeopardyObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
         temp_transform = finalJeopardyObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
         temp_transform = doubleJeopardyObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
         temp_transform = categoryEditPanel.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
         temp_transform = questionEditPanel.GetComponent<Transform>();
@@ -59,13 +61,6 @@ public class CreateGameController : MonoBehaviour
         GameObject toggleObj = GameObject.Find("DailyDoubleToggle");
         Toggle togle = toggleObj.GetComponent<Toggle>();
         togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
-
-        teamsObject.SetActive(true);
-        jeopardyObject.SetActive(false);
-        doubleJeopardyObject.SetActive(false);
-        finalJeopardyObject.SetActive(false);
-        categoryEditPanel.SetActive(false);
-        questionEditPanel.SetActive(false);
 
         GameDataManager.LoadData();
     }
