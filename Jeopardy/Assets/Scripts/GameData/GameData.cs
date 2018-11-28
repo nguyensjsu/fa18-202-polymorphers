@@ -1,11 +1,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine.Experimental.PlayerLoop;
-
-namespace GameData
-{
-
-    public struct JQuestion
+    public class JQuestion
     {
         public string Question;
         public string Answer;
@@ -20,6 +16,10 @@ namespace GameData
         public int Column { get; set; }
         public List<string> Category { get; set; }
         public List<List<JQuestion>> Question { get; set; }
+        public List<List<JQuestion>> DoubleQuestion { get; set; }
+        public string FinalCategory { get; set; }
+        public string FinalQuestion { get; set; }
+        public string FinalAnswer { get; set; }
         
         public JGameData GetInstance()
         {
@@ -28,7 +28,10 @@ namespace GameData
                 Row = GameData.Row,
                 Column = GameData.Column,
                 Category = GameData.Category,
-                Question = GameData.Question
+                Question = GameData.Question,
+                DoubleQuestion = GameData.DoubleQuestion,
+                FinalCategory = GameData.FinalCategory,
+                FinalAnswer = GameData.FinalAnswer,
             };
         }
 
@@ -43,25 +46,46 @@ namespace GameData
 
     public static class GameData
     {
+        public static string GameName { get; set; }
         public static int Row { get; private set; }
         public static int Column { get; private set; }
         public static List<string> Category { get; set; }
         public static List<List<JQuestion>> Question { get; set; }
+        public static List<List<JQuestion>> DoubleQuestion { get; set; }
+        public static List<string> BlueTeam { get; set; }
+        public static List<string> RedTeam { get; set; }
+        public static string FinalCategory { get; set; }
+        public static string FinalQuestion { get; set; }
+        public static string FinalAnswer { get; set; }
 
         static GameData()
         {
-            SetSize(5,5);
+            SetSize(6,5);
         }
        
         private static void Init()
         {
-            Category.Clear();
+            
+            Category = new List<string>();
+            Question = new List<List<JQuestion>>();
+            DoubleQuestion = new List<List<JQuestion>>();
+            BlueTeam = new List<string>();
+            RedTeam = new List<string>();
+            FinalCategory = "";
+            FinalQuestion = "";
+            FinalAnswer = "";
+            
             for (int i = 0; i < Column; i++)
             {
                 Category.Add("");
             }
             
-            Question.Clear();
+            for (int i = 0; i < 10; i++)
+            {
+                RedTeam.Add("");
+                BlueTeam.Add("");
+            }
+            
             for (int i = 0; i < Column; i++)
             {
                 var qset = new List<JQuestion>();
@@ -71,13 +95,19 @@ namespace GameData
                 }
                 Question.Add(qset);
                 
+                qset = new List<JQuestion>();
+                for (int j = 0; j < Row; j++)
+                {
+                    qset.Add(new JQuestion());
+                }
+                DoubleQuestion.Add(qset);
             }
+
+            
         }
         
         public static void SetSize(int row, int col)
         {
-            Category = new List<string>();
-            Question = new List<List<JQuestion>>();
             Row = row;
             Column = col;
             Init();
@@ -86,5 +116,4 @@ namespace GameData
 
     }
     
-    
-}
+   
