@@ -6,7 +6,7 @@ using System;
 
 public class DailyDoubleAnimation : MonoBehaviour {
 
-    public GameObject myGameObject;
+
     Vector3 rotationEuler;
     RectTransform rectTransform;
 
@@ -15,8 +15,8 @@ public class DailyDoubleAnimation : MonoBehaviour {
 
     void Start()
     {
-        rectTransform = myGameObject.GetComponent<RectTransform>();
-        myGameObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        rectTransform = GetComponent<RectTransform>();
+        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         StartCoroutine(updateOff());
     }
 
@@ -38,11 +38,11 @@ public class DailyDoubleAnimation : MonoBehaviour {
             rotationEuler += Vector3.left * 120 * Time.deltaTime;
             rectTransform.rotation = Quaternion.Euler(rotationEuler);
 
-            if (myGameObject.transform.localScale.x <= 1)
+            if (transform.localScale.x <= 1)
             {
-                myGameObject.transform.localScale = new Vector3(myGameObject.transform.localScale.x + 0.01f,
-                                                                 myGameObject.transform.localScale.y + 0.01f,
-                                                                 myGameObject.transform.localScale.z + 0.01f);//+ transform.localScale.z * scalingFactor * Time.deltaTime*/
+                transform.localScale = new Vector3(transform.localScale.x + 0.01f,
+                                                                 transform.localScale.y + 0.01f,
+                                                                 transform.localScale.z + 0.01f);//+ transform.localScale.z * scalingFactor * Time.deltaTime*/
             }
 
         }

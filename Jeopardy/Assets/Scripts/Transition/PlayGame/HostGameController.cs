@@ -18,7 +18,10 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
     private int redButtonScore;    private int blueButtonScore;    private int currentRedScore;    private int currentBlueScore;
 
     // Use this for initialization
-    void Start()    {        jeopardyObject = GameObject.Find("JeopardyPanel");        doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");        finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");        setScoreOverlay = GameObject.Find("SetScoreOverlay");        selectTeamObject = GameObject.Find("ChooseTeamsOverlay");        audienceObject = GameObject.Find("GameAudienceScreen");        qaGameHostObject = GameObject.Find("QAGameHostScreen");
+    void Start()    {
+
+        //music 
+        FindObjectOfType<AudioManager>().Play("LoadMusic");        jeopardyObject = GameObject.Find("JeopardyPanel");        doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");        finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");        setScoreOverlay = GameObject.Find("SetScoreOverlay");        selectTeamObject = GameObject.Find("ChooseTeamsOverlay");        audienceObject = GameObject.Find("GameAudienceScreen");        qaGameHostObject = GameObject.Find("QAGameHostScreen");
         wagerObject = GameObject.Find("SetWagerOverlay");
         scoreInput = setScoreOverlay.GetComponentInChildren<InputField>();
 
