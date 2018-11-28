@@ -12,6 +12,7 @@ public class dailydouble : MonoBehaviour {
     // Use this for initialization
 
     void Start () {
+        FindObjectOfType<AudioManager>().Play("DailyDouble");
         rectTransform = myGameObject.GetComponent<RectTransform>();
         myGameObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         StartCoroutine(updateOff());

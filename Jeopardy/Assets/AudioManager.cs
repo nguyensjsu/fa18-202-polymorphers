@@ -25,10 +25,19 @@ public class AudioManager : MonoBehaviour {
 
             Debug.LogWarning("Sound: " + name + "not found!");
             return;
-        }else{
-            Debug.Log("enter here");
+        }else {
             s.source.Play();
         }  
         
+    }
+
+    public void Mute(string name){
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if(s == null || !s.source.isPlaying){
+            Debug.LogWarning("Sound: " + name + "not found! or it is muted already");
+        }else{
+            s.source.Stop();
+        }
     }
 }
