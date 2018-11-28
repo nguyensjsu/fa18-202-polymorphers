@@ -81,6 +81,7 @@ public class AudienceController : MonoBehaviour {
     public void dispearButton(string index)
     {
         string str = "AudienceButton" + index;
+        Debug.Log(str);
         GameObject.Find(str).SetActive(false);
     }
 
@@ -109,6 +110,9 @@ public class AudienceController : MonoBehaviour {
             //jeopardyObject.SetActive(false);
             //doubleJeopardyObject.SetActive(false);
             //finalJeopardyObject.SetActive(false);
+
+
+
             qaAudienceObject.SetActive(true);
         }else
         {
@@ -116,15 +120,4 @@ public class AudienceController : MonoBehaviour {
 
         }
     }
-
-    public void changeRedTeamName(string redTeam)
-    {
-        GameObject.Find("Team1Text").GetComponent<Text>().text = redTeam;
-    }
-
-    public void changeBlueTeamName(string blueTeam)
-    {
-        GameObject.Find("Team2Text").GetComponent<Text>().text = blueTeam;
-    }
-
 }
