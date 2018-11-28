@@ -8,6 +8,7 @@ using UnityEngine.Experimental.PlayerLoop;
         public int Value;
         public string Clue;
         public bool isDouble;
+        public string ImgPath;
     }
 
     public class JGameData
