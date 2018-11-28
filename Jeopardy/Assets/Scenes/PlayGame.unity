@@ -11823,7 +11823,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a9872a5f3714b879ad17feb6b66d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: DailyDouble
+    clip: {fileID: 8300000, guid: 043d90cd3b5ac4ef89c221e99e8d3ecb, type: 3}
+    volume: 0.55
+    pitch: 1
+    source: {fileID: 0}
+  - name: LoadMusic
+    clip: {fileID: 8300000, guid: ed355f5b571c343c8b3e7febf79d4d4a, type: 3}
+    volume: 0.559
+    pitch: 1
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
 --- !u!4 &602222894
 Transform:
   m_ObjectHideFlags: 0
