@@ -253,6 +253,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 11.4, y: 40.9, z: -72.226006}
+--- !u!1001 &262791493
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123938240455324, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c33f17224be044cefb40b63545f3b7db, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &364283676
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +380,6 @@ GameObject:
   - component: {fileID: 386992340}
   - component: {fileID: 386992339}
   - component: {fileID: 386992338}
-  - component: {fileID: 386992337}
   m_Layer: 0
   m_Name: Audience Camera
   m_TagString: Untagged
@@ -346,17 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &386992337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 386992336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657f76c24f0b247a4a8c29b5616fbf7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &386992338
 AudioListener:
   m_ObjectHideFlags: 0
@@ -558,7 +588,6 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
-  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Host Camera
   m_TagString: Untagged
@@ -627,17 +656,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &534669906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657f76c24f0b247a4a8c29b5616fbf7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &727828103
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +967,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1024, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1054028134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114393757367328302, guid: c33f17224be044cefb40b63545f3b7db,
+    type: 2}
+  m_PrefabInternal: {fileID: 262791493}
+  m_Script: {fileID: 11500000, guid: 34a3383b168224bc19770540571fbef3, type: 3}
+--- !u!1001 &1122225984
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604109513622392, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 234f21c3399444e3aa3130b9bead0f09, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1194450929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,15 +1522,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1788480473}
-        m_MethodName: CreateEditButtonClick
-        m_Mode: 1
+      - m_Target: {fileID: 1054028134}
+        m_MethodName: FadeOut
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: opengamehost
+          m_StringArgument: CreateEditGame
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1579,7 +1645,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 534669906}
+      - m_Target: {fileID: 0}
         m_MethodName: MoveToScreen
         m_Mode: 5
         m_Arguments:
@@ -1876,15 +1942,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1788480473}
-        m_MethodName: PlayButtonClick
-        m_Mode: 1
+      - m_Target: {fileID: 1054028134}
+        m_MethodName: FadeOut
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: opengamehost
+          m_StringArgument: PlayGame
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
