@@ -114,6 +114,9 @@ public class AudienceController : MonoBehaviour {
         }else if(panel == "Question")
         {
             qaAudienceObject.SetActive(true);
+
+        }else if (panel == "DailyDouble")
+        {
             daily.SetActive(true);
 
             totalTime = 5;

@@ -30,10 +30,6 @@ public class DailyDoubleAnimation : MonoBehaviour {
         StartCoroutine(updateOff());
     }
 
-    private void OnEnable()
-    {
-        
-    }
 
     IEnumerator ExecuteAfterTime(float time)
     {
