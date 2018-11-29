@@ -21,6 +21,11 @@ public class DailyDoubleAnimation : MonoBehaviour {
         StartCoroutine(updateOff());
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
