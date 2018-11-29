@@ -82,7 +82,10 @@ public class AudienceController : MonoBehaviour {
 
     public void SetAudienceTime(string time)
     {
-        GameObject.Find("AudienceClockText").GetComponent<Text>().text = time;
+        if(time != null){
+            //GameObject.Find("AudienceClockText").GetComponent<Text>().text = time;
+        }
+       
     }
 
     public void dispearButton(string index)
