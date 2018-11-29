@@ -11898,15 +11898,15 @@ MonoBehaviour:
     volume: 0.559
     pitch: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Applaud
+    clip: {fileID: 8300000, guid: 73b2837cdc01641089e4f14ff727b5a7, type: 3}
+    volume: 0.532
+    pitch: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Sad
+    clip: {fileID: 8300000, guid: 43c2a67645b904fb6899896bd6cfa7c4, type: 3}
+    volume: 0.496
+    pitch: 1
     source: {fileID: 0}
 --- !u!4 &602222894
 Transform:
