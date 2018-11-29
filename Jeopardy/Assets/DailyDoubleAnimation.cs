@@ -15,6 +15,15 @@ public class DailyDoubleAnimation : MonoBehaviour {
 
     void Start()
     {
+        //FindObjectOfType<AudioManager>().Play("DailyDouble");
+        //rectTransform = GetComponent<RectTransform>();
+        //transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        //StartCoroutine(updateOff());
+    }
+
+    private void OnEnable()
+    {
+        updateOn = true;
         FindObjectOfType<AudioManager>().Play("DailyDouble");
         rectTransform = GetComponent<RectTransform>();
         transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);

@@ -16,7 +16,9 @@ public class AudienceController : MonoBehaviour {
     private GameObject doubleJeopardyObject;
     private GameObject finalJeopardyObject;
 
+    public GameObject daily;
 
+    int totalTime;
 
 
     // Use this for initialization
@@ -40,11 +42,6 @@ public class AudienceController : MonoBehaviour {
 
         temp_transform = qaAudienceObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, 1024, temp_transform.position.z);
-
-        //jeopardyObject.SetActive(true);
-        //doubleJeopardyObject.SetActive(false);
-        //finalJeopardyObject.SetActive(false);
-        //qaAudienceObject.SetActive(false);
 
         jeopardyObject.SetActive(true);
         doubleJeopardyObject.SetActive(false);
@@ -91,7 +88,6 @@ public class AudienceController : MonoBehaviour {
     public void dispearButton(string index)
     {
         string str = "AudienceButton" + index;
-        Debug.Log(str);
         GameObject.Find(str).SetActive(false);
     }
 
@@ -118,10 +114,20 @@ public class AudienceController : MonoBehaviour {
         }else if(panel == "Question")
         {
             qaAudienceObject.SetActive(true);
+            daily.SetActive(true);
+
+            totalTime = 5;
+            StartCoroutine(CountDown());
         }
         else  //ExitQuestion
         {
             qaAudienceObject.SetActive(false);
         }
+    }
+
+    IEnumerator CountDown()
+    {
+        yield return new WaitForSeconds(totalTime);
+        daily.SetActive(false);
     }
 }
