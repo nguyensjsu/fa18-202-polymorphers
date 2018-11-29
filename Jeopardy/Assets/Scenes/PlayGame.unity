@@ -30161,11 +30161,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1214209271}
+      objectReference: {fileID: 2098819662}
     - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitTeamButtonClick
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114580061150347572, guid: 62b36596c115b482dbfea14e5373d95e,
         type: 2}
@@ -34967,7 +34967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1634029010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42623,6 +42623,7 @@ GameObject:
   - component: {fileID: 2098819663}
   - component: {fileID: 2098819665}
   - component: {fileID: 2098819664}
+  - component: {fileID: 2098819666}
   m_Layer: 0
   m_Name: ChooseTeamsOverlay
   m_TagString: Untagged
@@ -42683,6 +42684,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2098819662}
   m_CullTransparentMesh: 0
+--- !u!114 &2098819666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2098819662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e0aa8116a9c45f383720bcc628ab57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113377893
 GameObject:
   m_ObjectHideFlags: 0

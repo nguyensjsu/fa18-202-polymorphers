@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Model;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -68,6 +69,14 @@ public class AudienceController : MonoBehaviour {
         {
             blueText.text = score;
         }
+    }
+
+    public void UpdateAudienceData()
+    {
+        GameObject.Find("Team1Text").GetComponent<Text>().text = AudienceData.GetInstance().GetRedTeamName();
+        GameObject.Find("Team2Text").GetComponent<Text>().text = AudienceData.GetInstance().GetBlueTeamName();
+        redText.text = AudienceData.GetInstance().GetRedScore().ToString();
+        blueText.text = AudienceData.GetInstance().GetBlueScore().ToString();
     }
 
     public void changeRedTeamName(string name)
