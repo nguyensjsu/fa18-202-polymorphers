@@ -1492,11 +1492,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853849327}
+  - component: {fileID: 1853849331}
   - component: {fileID: 1853849330}
   - component: {fileID: 1853849329}
   - component: {fileID: 1853849328}
   - component: {fileID: 1853849332}
-  - component: {fileID: 1853849331}
   m_Layer: 5
   m_Name: CreateEditButton
   m_TagString: Untagged
@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1853849326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b777e1f93f224793959de40ec60a841, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f6025a36c434ff0bb8b47ffff7d1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &1853849332
@@ -1945,9 +1945,9 @@ GameObject:
   - component: {fileID: 1960673543}
   - component: {fileID: 1960673546}
   - component: {fileID: 1960673545}
+  - component: {fileID: 1960673547}
   - component: {fileID: 1960673544}
   - component: {fileID: 1960673548}
-  - component: {fileID: 1960673547}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1960673542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b777e1f93f224793959de40ec60a841, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f6025a36c434ff0bb8b47ffff7d1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &1960673548
