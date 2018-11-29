@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class AudienceController : MonoBehaviour {
     private GameObject finalJeopardyObject;
 
     public GameObject daily;
+    public GameObject displayPanel;
 
     int totalTime;
 
@@ -50,10 +52,15 @@ public class AudienceController : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    //display either question or answer on the student view
+    public void ChangeDisplay()
+    {
+        GameObject obj = EventSystem.current.currentSelectedGameObject;
+        GameObject object1 = obj.transform.GetChild(0).gameObject;
+        Debug.Log(object1.GetComponent<Text>().text);
+
+        displayPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = object1.GetComponent<Text>().text;
+    }
 
     public void setScore(object args)
     {
@@ -82,8 +89,11 @@ public class AudienceController : MonoBehaviour {
 
     public void SetAudienceTime(string time)
     {
-        if(time != null){
-            //GameObject.Find("AudienceClockText").GetComponent<Text>().text = time;
+        if(GameObject.Find("AudienceClockText") != null){
+            GameObject.Find("AudienceClockText").GetComponent<Text>().text = time;
+        }
+        else{
+            Debug.Log("AudienceClockText is null");
         }
        
     }

@@ -2293,7 +2293,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 113219182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1869459806}
+        m_MethodName: ChangeDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &113219182
@@ -11706,7 +11717,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 579505961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1869459806}
+        m_MethodName: ChangeDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &579505961
@@ -14492,7 +14514,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: This design pattern is used to ensure an object is created once.
 --- !u!222 &710703039
@@ -40659,6 +40681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daily: {fileID: 1634029009}
+  displayPanel: {fileID: 714639971}
 --- !u!1 &1878786499
 GameObject:
   m_ObjectHideFlags: 0
