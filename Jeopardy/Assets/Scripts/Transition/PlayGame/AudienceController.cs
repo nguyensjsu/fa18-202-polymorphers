@@ -62,7 +62,7 @@ public class AudienceController : MonoBehaviour {
     {
         object[] objects = (object[])args;
         string score = (string)objects[1];
-        string isRed = (string)objects[0];
+        string isRed = (string)objects[0]; 
         if(isRed == "1")
         {
             redText.text = score;
@@ -71,6 +71,16 @@ public class AudienceController : MonoBehaviour {
         {
             blueText.text = score;
         }
+    }
+
+    public void changeRedTeamName(string name)
+    {
+        GameObject.Find("Team1Text").GetComponent<Text>().text = name;
+    }
+
+    public void changeBlueTeamName(string name)
+    {
+        GameObject.Find("Team2Text").GetComponent<Text>().text = name;
     }
 
     public void SetAudienceTime(string time)
@@ -87,37 +97,31 @@ public class AudienceController : MonoBehaviour {
 
     public void changePanel(string panel)
     {
-        if(panel == "0")
+        if(panel == "Jeoparydy")
         {
             jeopardyObject.SetActive(true);
             doubleJeopardyObject.SetActive(false);
             finalJeopardyObject.SetActive(false);
         }
-        else if(panel == "1")
+        else if(panel == "DoubleJeopardy")
         {
             jeopardyObject.SetActive(false);
             doubleJeopardyObject.SetActive(true);
             finalJeopardyObject.SetActive(false);
         }
-        else if(panel == "2")
+        else if(panel == "FinalJeopardy")
         {
             jeopardyObject.SetActive(false);
             doubleJeopardyObject.SetActive(false);
             finalJeopardyObject.SetActive(true);
 
-        }else if(panel == "3")
+        }else if(panel == "Question")
         {
-            //jeopardyObject.SetActive(false);
-            //doubleJeopardyObject.SetActive(false);
-            //finalJeopardyObject.SetActive(false);
-
-
-
             qaAudienceObject.SetActive(true);
-        }else
+        }
+        else  //ExitQuestion
         {
             qaAudienceObject.SetActive(false);
-
         }
     }
 }
