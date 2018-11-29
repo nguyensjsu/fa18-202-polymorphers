@@ -6,20 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneFade : MonoBehaviour
 {
-    /*public float fadeSpeed;
-    private CanvasGroup canvasGroup;
+    public float fadeSpeed;
+    public Material material;
 
-    // Use this for initialization
-    private void Awake()
+    public void Awake()
     {
-        GameObject.Find("CreateGameCanvas").GetComponent<CanvasGroup>().alpha = 0;
     }
 
-    void Start ()
+    public void OnEnable()
     {
-        canvasGroup = GameObject.Find("CreateGameCanvas").GetComponent<CanvasGroup>();
         FadeIn();
-	}
+    }
 
     public void FadeIn()
     {
@@ -33,31 +30,38 @@ public class SceneFade : MonoBehaviour
 
     IEnumerator IFadeIn()
     {
-        float alpha = 0.0f;
-
-        while(alpha < 1.0f)
-        {
-            alpha += Time.deltaTime * fadeSpeed;
-            canvasGroup.alpha = alpha;
-            yield return null;
-        }
-
-   
-    }
-
-    IEnumerator IFadeOut(string scene)
-    {
         float alpha = 1.0f;
+        Color col = material.color;
 
-        while (alpha > 0.0f)
+        while(alpha > 0.0f)
         {
             alpha -= Time.deltaTime * fadeSpeed;
-            canvasGroup.alpha = alpha;
+            col.a = alpha;
+            material.color = col;
             yield return null;
         }
+        col.a = 0;
+        material.color = col;
+    }
+
+    IEnumerator IFadeOut(string scenename)
+    {
+        float alpha = 0.0f;
+        Color col = material.color;
+
+        while (alpha < 1.0f)
+        {
+            alpha += Time.deltaTime * fadeSpeed;
+            col.a = alpha;
+            material.color = col;
+            yield return null;
+        }
+        col.a = 1;
+        material.color = col;
+
         //scene change
-        SceneManager.LoadScene(scene);
-    }*/
+        SceneManager.LoadScene(scenename);
+    }
     
 
 }
