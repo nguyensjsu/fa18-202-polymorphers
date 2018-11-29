@@ -2786,7 +2786,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Final
 
-    Answer'
+    Question'
 --- !u!222 &137590095
 CanvasRenderer:
   m_ObjectHideFlags: 0
