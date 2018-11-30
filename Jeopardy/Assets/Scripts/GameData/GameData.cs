@@ -29,9 +29,8 @@ public class JCategory
         public static List<List<JQuestion>> DoubleQuestion { get; set; }
         public static List<string> BlueTeam { get; set; }
         public static List<string> RedTeam { get; set; }
-        public static string FinalCategory { get; set; }
-        public static string FinalQuestion { get; set; }
-        public static string FinalAnswer { get; set; }
+        public static JCategory FinalCategory { get; set; }
+        public static JQuestion FinalQuestion { get; set; }
 
         static GameData()
         {
@@ -49,9 +48,8 @@ public class JCategory
             DoubleQuestion = new List<List<JQuestion>>();
             BlueTeam = new List<string>();
             RedTeam = new List<string>();
-            FinalCategory = "";
-            FinalQuestion = "";
-            FinalAnswer = "";
+            FinalCategory = new JCategory();
+            FinalQuestion = new JQuestion();
             
             for (int i = 0; i < Column; i++)
             {

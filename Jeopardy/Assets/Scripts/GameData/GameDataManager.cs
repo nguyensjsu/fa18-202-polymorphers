@@ -34,6 +34,8 @@ using UnityEngine;
                 }
             }
 
+            GameData.FinalCategory.Category = "Final Category";
+
             for (int i = 0; i < 10; i++)
             {
                 GameData.RedTeam[i] = "RedTeam " + i;
@@ -68,9 +70,8 @@ using UnityEngine;
                 GameData.Question = JsonMapper.ToObject<List<List<JQuestion>>>(data["Question"].ToJson());
                 GameData.DoubleQuestion = JsonMapper.ToObject<List<List<JQuestion>>>(data["DoubleQuestion"].ToJson());
  
-                GameData.FinalCategory = data["FinalCategory"].ToString();
-                GameData.FinalQuestion = data["FinalQuestion"].ToString();
-                GameData.FinalAnswer = data["FinalAnswer"].ToString();
+                GameData.FinalCategory = JsonMapper.ToObject<JCategory>(data["FinalCategory"].ToJson());
+                GameData.FinalQuestion = JsonMapper.ToObject<JQuestion>(data["FinalQuestion"].ToJson());
                 
                 fs.Close();
                 sr.Close();
@@ -91,7 +92,8 @@ using UnityEngine;
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
-            
+
+            SaveFileName = GameData.GameName;
             FileStream file = new FileStream(FileName, FileMode.Create);
             byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
             file.Write(bts,0,bts.Length);

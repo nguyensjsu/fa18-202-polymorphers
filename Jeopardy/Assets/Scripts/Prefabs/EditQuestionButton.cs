@@ -27,5 +27,4 @@ public class EditQuestionButton : MonoBehaviour
         controller.CallbackMethod = ManualUpdate;
         controller.QuestionButtonClick();
     }
-
 }
