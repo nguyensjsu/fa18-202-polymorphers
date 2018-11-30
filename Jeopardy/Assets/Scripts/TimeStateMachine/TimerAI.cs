@@ -34,14 +34,14 @@ public class TimerAI : MonoBehaviour
     public void PauseButtonClick()
     {
         IsPlaying = false;
-        aibuzzin.disableBuzzes();
+        //aibuzzin.disableBuzzes();
     }
 
     public void StartButtonClick()
     {
         IsPlaying = true;
         AudienceObject.SendMessage("changePanel", "Question"); //audience screen show quesiton
-        aibuzzin.enableBuzzes();
+        //aibuzzin.enableBuzzes();
 
     }
 

@@ -22,7 +22,7 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
 
         audienceObject.SendMessage("changePanel", "Question"); //audience screen show quesiton
 
-        aibuzzin.disableBuzzes();
+        //aibuzzin.disableBuzzes();
 
         // audience button disppears
 

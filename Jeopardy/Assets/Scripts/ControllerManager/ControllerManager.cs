@@ -28,33 +28,33 @@ public class ControllerManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetJoystickNames().Length == 0)
-    //    {
-    //        redImage.color = Color.red;
-    //        blueImage.color = Color.red;
+    void Update()
+    {
+        if (Input.GetJoystickNames().Length == 0)
+        {
+            redImage.color = Color.red;
+            blueImage.color = Color.red;
 
-    //    }
-    //    else if (Input.GetJoystickNames().Length == 1)
-    //    {
-    //        redImage.color = Color.green;
-    //        blueImage.color = Color.red;
-    //    }
-    //    else
-    //    {
-    //        redImage.color = Color.green;
-    //        blueImage.color = Color.green;
-    //    }
+        }
+        else if (Input.GetJoystickNames().Length == 1)
+        {
+            redImage.color = Color.green;
+            blueImage.color = Color.red;
+        }
+        else
+        {
+            redImage.color = Color.green;
+            blueImage.color = Color.green;
+        }
 
-    //    if (Input.GetButton("redBuzz"))
-    //    {
-    //        redImage.color = Color.blue;
-    //    }
+        if (Input.GetButton("redBuzz"))
+        {
+            redImage.color = Color.blue;
+        }
 
-    //    if (Input.GetButton("blueBuzz"))
-    //    {
-    //        blueImage.color = Color.blue;
-    //    }
-    //}
+        if (Input.GetButton("blueBuzz"))
+        {
+            blueImage.color = Color.blue;
+        }
+    }
 }

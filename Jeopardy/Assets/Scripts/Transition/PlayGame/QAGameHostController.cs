@@ -77,7 +77,7 @@ public class QAGameHostController : MonoBehaviour {
         gameObject.SetActive(false);
         audienceObject.SendMessage("changePanel", "ExitQuestion");
         timerAI.ResetButtonClick();
-        aIBuzzIn.disableBuzzes();
+        //aIBuzzIn.disableBuzzes();
 
     }
 
