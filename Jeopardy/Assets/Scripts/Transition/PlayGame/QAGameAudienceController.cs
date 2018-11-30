@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class QAGameAudienceController : MonoBehaviour {
 
+    public AIBuzzIn aibuzzin;
     bool isFirstShowScreen = true;
     private string question;
     private string answer;
@@ -24,6 +25,8 @@ public class QAGameAudienceController : MonoBehaviour {
     void OnEnable()
     {
         //GameObject.Find("AnswerPanel").GetComponentInChildren<Text>().text = "123456";
+        //aibuzzin.clearBuzzes();
+        //Debug.Log("QAScreen Enabled");
 
         if (isFirstShowScreen)
         {

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TimerAI : MonoBehaviour
 {
+    public AIBuzzIn aibuzzin;
     public int TotalTime { get; set; } //Countdown
     public GameObject AudienceObject { get; private set; }
     public bool IsPlaying { get; set; }
@@ -17,10 +18,11 @@ public class TimerAI : MonoBehaviour
 
 
     // Use this for initialization
-    void Start () {
-        IsPlaying = false;
+    void Start()
+    {
         AudienceObject = GameObject.Find("GameAudienceScreen");
         clockText = GameObject.Find("ClockText").GetComponent<Text>();
+        IsPlaying = false;
         TotalTime = 60;
     }
 
@@ -32,15 +34,22 @@ public class TimerAI : MonoBehaviour
     public void PauseButtonClick()
     {
         IsPlaying = false;
+        aibuzzin.disableBuzzes();
     }
 
     public void StartButtonClick()
     {
         IsPlaying = true;
+        AudienceObject.SendMessage("changePanel", "Question"); //audience screen show quesiton
+        aibuzzin.enableBuzzes();
+
     }
+
+
 
     public void ResetButtonClick()
     {
+        IsPlaying = false;
         TotalTime = 60;
         UpdateClockText();
     }

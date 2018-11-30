@@ -7804,6 +7804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0199e67c2453f43f588bd928b13bd69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerAI: {fileID: 528858634}
+  aIBuzzIn: {fileID: 0}
 --- !u!1 &216512383
 GameObject:
   m_ObjectHideFlags: 0
@@ -8250,10 +8252,8 @@ GameObject:
   m_Component:
   - component: {fileID: 232852124}
   - component: {fileID: 232852127}
-  - component: {fileID: 232852129}
   - component: {fileID: 232852126}
   - component: {fileID: 232852125}
-  - component: {fileID: 232852128}
   m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
@@ -8342,35 +8342,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232852123}
   m_CullTransparentMesh: 0
---- !u!95 &232852128
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 232852123}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f8227fe20fcc4f61b2a7c01a0bc37a9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &232852129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 232852123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc58a9146f774554be30af43b6f4e90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &235139968
 GameObject:
   m_ObjectHideFlags: 0
@@ -16461,6 +16432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7190b6100a73441b692912cb06fdc33d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aibuzzin: {fileID: 580105760}
   startButton: {fileID: 373056897}
   pauseButton: {fileID: 1869177851}
   resetButton: {fileID: 1855869288}
@@ -18690,6 +18662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 580105759}
+  - component: {fileID: 580105760}
   - component: {fileID: 580105758}
   m_Layer: 0
   m_Name: ControllerManager
@@ -18698,19 +18671,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &580105758
-MonoBehaviour:
+--- !u!95 &580105758
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 580105757}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e20f4452a02cb4d518b04394dffcdd43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RedTeamControllerIndicator: {fileID: 624658964}
-  BlueTeamControllerIndicator: {fileID: 2006696828}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f8227fe20fcc4f61b2a7c01a0bc37a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &580105759
 Transform:
   m_ObjectHideFlags: 0
@@ -18724,6 +18702,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &580105760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 580105757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc58a9146f774554be30af43b6f4e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qaghc: {fileID: 214185986}
+  redBuzzedIn: 0
+  blueBuzzedIn: 0
+  redDisable: 0
+  blueDisable: 0
+  RedTeamControllerIndicator: {fileID: 624658964}
+  BlueTeamControllerIndicator: {fileID: 2006696828}
+  RedPanel: {fileID: 1539023098}
+  BluePanel: {fileID: 1739982281}
 --- !u!1 &585149902
 GameObject:
   m_ObjectHideFlags: 0
@@ -24102,6 +24100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a45226635b28480db8e246c7f5a7fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aibuzzin: {fileID: 580105760}
 --- !u!1 &727828103
 GameObject:
   m_ObjectHideFlags: 0
@@ -40158,6 +40157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513ebfa231e41431eac67ff8aedac6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aibuzzin: {fileID: 580105760}
   jeopardyButton: {fileID: 1940387381}
   doubleJeopardyButton: {fileID: 1990588601}
   finalJeopardyButton: {fileID: 354977716}
