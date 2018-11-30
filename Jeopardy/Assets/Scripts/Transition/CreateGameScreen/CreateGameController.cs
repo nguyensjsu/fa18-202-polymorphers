@@ -1,332 +1,121 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class CreateGameController : MonoBehaviour
 {
-    private GameObject teamsObject;
-    private GameObject jeopardyObject;
-    private GameObject doubleJeopardyObject;
-    private GameObject finalJeopardyObject;
+    private CreateGamePanelSwitch panelSwitch;
+    private InputField categoryInput;
+    private InputField questionInput;
+    private InputField answerInput;
+    private Toggle doubleToggle;
 
-    private GameObject categoryEditPanel;
-    private GameObject questionEditPanel;
-    private GameObject loadImagePanel;
+    public JQuestion CurrentEditingQuestion { get; set; }
+    public JCategory CurrentEditingCategory { get; set; }
 
-    private bool isDailyDouble = true;
+    public delegate void Callback();
+    public Callback CallbackMethod;
 
-    private string currentCategoryName;
-    private string currentButtonName;
-
-    public Button teamsButton;
-    public Button jeopardyButton;
-    public Button doubleJeopardyButton;
-    public Button finalJeopardyButton;
-
-    private string tempCategoryString;
-
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-        teamsObject = GameObject.Find("TeamsPanel");
-        jeopardyObject = GameObject.Find("JeopardyPanel");
-        doubleJeopardyObject = GameObject.Find("DoubleJeopardyPanel");
-        finalJeopardyObject = GameObject.Find("FinalJeopardyPanel");
-        categoryEditPanel = GameObject.Find("CategoryEditPanel");
-        questionEditPanel = GameObject.Find("QuestionEditPanel");
-        loadImagePanel = GameObject.Find("LoadImagePanel");
-        
-        teamsObject.SetActive(true);
-        jeopardyObject.SetActive(false);
-        doubleJeopardyObject.SetActive(false);
-        finalJeopardyObject.SetActive(false);
-        categoryEditPanel.SetActive(false);
-        questionEditPanel.SetActive(false);
-
-        Transform temp_transform = jeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-        temp_transform = finalJeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-        temp_transform = doubleJeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-        temp_transform = categoryEditPanel.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-        temp_transform = questionEditPanel.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
-        GameObject toggleObj = GameObject.Find("DailyDoubleToggle");
-        Toggle togle = toggleObj.GetComponent<Toggle>();
-        togle.onValueChanged.AddListener((bool value) => OnToggleClick(togle, value));
-
-        GameDataManager.LoadData();
+        categoryInput = GameObject.Find("CategoryInputField").GetComponent<InputField>();
+        questionInput = GameObject.Find("QuestionInputField").GetComponent<InputField>();
+        answerInput   = GameObject.Find("AnswerInputField").GetComponent<InputField>();
+        doubleToggle  = GameObject.Find("DailyDoubleToggle").GetComponent<Toggle>();
+        panelSwitch = gameObject.GetComponent<CreateGamePanelSwitch>();
+        LoadData();
     }
 
-    // Update is called once per frame
-    void Update()
+    void LoadData()
     {
+        GameDataManager.InitDemo();  
+        GameDataManager.LoadData();
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text = GameData.RedTeam[i];
+            GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text = GameData.BlueTeam[i];
+        }
 
+        GameObject.Find("GameNameInputField").GetComponent<InputField>().text = GameData.GameName;
     }
 
     public void ExitCreateGameButtonClick()
     {
-        /*
-         * (David)
-         * Prompt Save Game
-         */
-
         SceneManager.LoadScene("MainMenu");
     }
 
     public void SaveGameButtonClick()
     {
-        //get game name
-        string gameName = GameObject.Find("NameOfGameField").GetComponent<InputField>().text;
-
-        Debug.Log(gameName);
-
-        string[] redTeam = new string[10];
-        string[] blueTeam = new string[10]; ;
-//        for (int i = 0; i < 10; i++)
-//        {
-//            redTeam[i] = GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text;
-//            blueTeam[i] = GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text;
-//            Debug.Log("redTeam" + i + ": " + redTeam[i]);
-//            Debug.Log("blueTeam" + i + ": " + blueTeam[i]);
-//
-//        }
+        for (int i = 0; i < 10; i++)
+        {
+            GameData.RedTeam[i] = GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text;
+            GameData.BlueTeam[i] = GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text;
+        }
+        GameData.GameName = GameObject.Find("GameNameInputField").GetComponent<InputField>().text ;
 
         GameDataManager.SaveData();
     }
 
-    private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
-    {
-        ColorBlock cb = button.GetComponentInChildren<Button>().colors;
-        cb.normalColor = cb.highlightedColor = buttonColor;
-        button.GetComponentInChildren<Button>().colors = cb;
-        button.GetComponentInChildren<Text>().color = textColor;
-    }
-
-    public void TeamsButtonClick()
-    {
-        ChangeButtonColorAndText(teamsButton, Color.black, Color.white);
-        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
-        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
-        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
-
-        teamsObject.SetActive(true);
-        jeopardyObject.SetActive(false);
-        doubleJeopardyObject.SetActive(false);
-        finalJeopardyObject.SetActive(false);
-    }
-
-    public void JeopardyButtonClick()
-    {
-        ChangeButtonColorAndText(teamsButton, Color.white, Color.black);
-        ChangeButtonColorAndText(jeopardyButton, Color.black, Color.white);
-        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
-        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
-
-        teamsObject.SetActive(false);
-        jeopardyObject.SetActive(true);
-        doubleJeopardyObject.SetActive(false);
-        finalJeopardyObject.SetActive(false);
-    }
-
-    public void DoubleJeopardyClick()
-    {
-        ChangeButtonColorAndText(teamsButton, Color.white, Color.black);
-        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
-        ChangeButtonColorAndText(doubleJeopardyButton, Color.black, Color.white);
-        ChangeButtonColorAndText(finalJeopardyButton, Color.white, Color.black);
-
-        teamsObject.SetActive(false);
-        jeopardyObject.SetActive(false);
-        doubleJeopardyObject.SetActive(true);
-        finalJeopardyObject.SetActive(false);
-    }
-
-    public void FinalJeopardyClick()
-    {
-        ChangeButtonColorAndText(teamsButton, Color.white, Color.black);
-        ChangeButtonColorAndText(jeopardyButton, Color.white, Color.black);
-        ChangeButtonColorAndText(doubleJeopardyButton, Color.white, Color.black);
-        ChangeButtonColorAndText(finalJeopardyButton, Color.black, Color.white);
-
-        teamsObject.SetActive(false);
-        jeopardyObject.SetActive(false);
-        doubleJeopardyObject.SetActive(false);
-        finalJeopardyObject.SetActive(true);
-
-        Transform temp_transform = finalJeopardyObject.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
-    }
-
     public void CategoryButtonClick()
-    {
-        currentCategoryName = EventSystem.current.currentSelectedGameObject.name;
-
-
-        Transform temp_transform = categoryEditPanel.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
-        categoryEditPanel.SetActive(true);
-
-        //read category imformation
-        InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
-
-        Text text = GameObject.Find(currentCategoryName).GetComponentInChildren<Text>();
-        tempCategoryString = text.text;
-        Debug.Log(tempCategoryString);
-
-        string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
-        int n = System.Int32.Parse(index);
-
-        Debug.Log(n);
-        string ObjectsText = GameData.Category[n];
-        Debug.Log(ObjectsText);
-        txt_Input.text = ObjectsText;
+    {        
+        if (CurrentEditingCategory.Category != "")
+        {
+            categoryInput.text = CurrentEditingCategory.Category;
+        }
+        panelSwitch.OpenEditCategoryPanel();
     }
 
    
     public void QuestionButtonClick()
     {
-        currentButtonName = EventSystem.current.currentSelectedGameObject.name;
-
-
-        Transform temp_transform = questionEditPanel.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
-        questionEditPanel.SetActive(true);
-
-        InputField question_Input = GameObject.FindGameObjectWithTag("Question").GetComponent<InputField>();
-        InputField answer_Input = GameObject.FindGameObjectWithTag("Answer").GetComponent<InputField>();
-
-        string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
-        int line = System.Int32.Parse(lineIndex);
-        Debug.Log(line);
-
-        string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
-        int row = System.Int32.Parse(rowIndex);
-        Debug.Log(row);
-
-        JQuestion s;
-
-        if (currentButtonName[6] == 'D'){
-           s = GameData.Question[line][row];
-        }else{
-           s = GameData.Question[line][row];
-        }
-          
-
-        if (!(s.Question == ""))
+        if (CurrentEditingQuestion.Question != "")
         {
-            question_Input.text = s.Question;
+            questionInput.text = CurrentEditingQuestion.Question;
         }
         
-        if (!(s.Answer == ""))
+        if (CurrentEditingQuestion.Answer != "")
         {
-            answer_Input.text = s.Answer;
+            answerInput.text = CurrentEditingQuestion.Answer;
         }
-
-
-
-
-    }
-
-    public void LoadImageButtonClick()
-    {
-        Transform temp_transform = loadImagePanel.GetComponent<Transform>();
-        temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
-
-        loadImagePanel.SetActive(true);
-
-
-
-    }
-
-    // all methods of questionEditPanel
-    public void ExitQuestionPanelClick()
-    {
-        questionEditPanel.SetActive(false);
-
-    }
-
-    public void OnToggleClick(Toggle toggle, bool value)
-    {
-        isDailyDouble = value;
+        
+        doubleToggle.isOn = CurrentEditingQuestion.isDouble;
+        panelSwitch.OpenEditQuestionPanel();
+        
     }
 
     public void SaveQuestionButtonClick()
     {
-        InputField question_Input = GameObject.FindGameObjectWithTag("Question").GetComponent<InputField>();
-        InputField answer_Input = GameObject.FindGameObjectWithTag("Answer").GetComponent<InputField>();
-        string questionText = question_Input.text;
-        string answerText = answer_Input.text;
+        string questionText = questionInput.text;
+        string answerText = answerInput.text;
 
-        if (questionText == "" && answerText == "")
+        if (questionText != "" && answerText != "")
         {
-            Debug.Log("Please input text");
+            CurrentEditingQuestion.Question = questionText;
+            CurrentEditingQuestion.Answer = answerText;
+            CurrentEditingQuestion.Clue = "";
+            CurrentEditingQuestion.isDouble = doubleToggle.isOn;
+            CallbackMethod();
         }
-        else
-        {
-
-            string lineIndex = currentButtonName.Substring((currentButtonName.Length) - 2, 1);
-            int line = System.Int32.Parse(lineIndex);
-
-            string rowIndex = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
-            int row = System.Int32.Parse(rowIndex);
-
-            JQuestion s = GameData.Question[line][row];
-            s.Question = questionText;
-            s.Answer = answerText;
-            s.Value = 100;
-            s.Clue = "";
-            s.isDouble = isDailyDouble;
-
-            questionEditPanel.SetActive(false);
-
-        }
-    }
-
-    public void ExitCategoryPanelClick()
-    {
-        categoryEditPanel.SetActive(false);
-
-        string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
-        int n = System.Int32.Parse(index);
-
-        Text text = GameObject.Find(currentCategoryName).GetComponentInChildren<Text>();
-        text.text = tempCategoryString;
-
-
+        panelSwitch.CloseEditQuestionPanel();
     }
 
     public void SaveCategoryButtonClick()
     {
-        InputField txt_Input = GameObject.Find("InputField").GetComponent<InputField>();
-        string ObjectsText = txt_Input.text;
-        if(ObjectsText == "")
+       
+        string categoryText = categoryInput.text;
+        if(categoryText != "")
         {
-            Debug.Log("Please input text");
+            Debug.Log("success");
+            CurrentEditingCategory.Category = categoryInput.text;
+            CallbackMethod();
         }
-        else
-        {
-            string index = currentCategoryName.Substring((currentCategoryName.Length) - 1, 1);
-            int n = System.Int32.Parse(index);
-
-            Text text = GameObject.Find(currentCategoryName).GetComponentInChildren<Text>();
-            text.text = ObjectsText;
-
-            // save data 
-            GameData.Category[n] = ObjectsText;
-            txt_Input.text = "";
-            categoryEditPanel.SetActive(false);
-        }
+        panelSwitch.CloseEditCategoryPanel();
     }
 
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Question
   - Answer
+  - Category
   layers:
   - Default
   - TransparentFX

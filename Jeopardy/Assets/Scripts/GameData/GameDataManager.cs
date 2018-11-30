@@ -16,23 +16,31 @@ using UnityEngine;
             GameData.Init(6, 5);
             for (int i = 0; i < 6; i++)
             {
-                GameData.Category[i] = "Test Category";
+                GameData.Category[i].Category = "Test Category S" + i;
+                GameData.DoubleCategory[i].Category = "Test Category D" + i;
                 for (int j = 0; j < 5; j++)
                 {
-                    GameData.Question[i][j].Question = "Test Question";
+                    GameData.Question[i][j].Question = "Test Question " + i + "-" +  j;
                     GameData.Question[i][j].Answer = "Test Answer";
                     GameData.Question[i][j].Clue = "Test Clue";
                     GameData.Question[i][j].Value = i * 100 + 100;
                     GameData.Question[i][j].isDouble = false;
                     
-                    GameData.DoubleQuestion[i][j].Question = "Test Question";
+                    GameData.DoubleQuestion[i][j].Question = "Test Question D" + i + "-" +  j;
                     GameData.DoubleQuestion[i][j].Answer = "Test Answer";
                     GameData.DoubleQuestion[i][j].Clue = "Test Clue";
-                    GameData.DoubleQuestion[i][j].Value = i * 100 + 100;
+                    GameData.DoubleQuestion[i][j].Value = (i * 100 + 100)*2;
                     GameData.DoubleQuestion[i][j].isDouble = false;
                 }
             }
-           
+
+            for (int i = 0; i < 10; i++)
+            {
+                GameData.RedTeam[i] = "RedTeam " + i;
+                GameData.BlueTeam[i] = "BlueTeam " + i;
+            }
+
+            GameData.GameName = "TestGame";
         }
         
         public static void LoadData() {
@@ -52,10 +60,11 @@ using UnityEngine;
                 int col = (int) data["Column"];
                 GameData.Init(col, row);
                 
-                GameData.Category = JsonMapper.ToObject<List<string>>(data["Category"].ToJson());
                 GameData.BlueTeam = JsonMapper.ToObject<List<string>>(data["BlueTeam"].ToJson());
                 GameData.RedTeam = JsonMapper.ToObject<List<string>>(data["RedTeam"].ToJson());
 
+                GameData.Category = JsonMapper.ToObject<List<JCategory>>(data["Category"].ToJson());
+                GameData.DoubleCategory = JsonMapper.ToObject<List<JCategory>>(data["DoubleCategory"].ToJson());
                 GameData.Question = JsonMapper.ToObject<List<List<JQuestion>>>(data["Question"].ToJson());
                 GameData.DoubleQuestion = JsonMapper.ToObject<List<List<JQuestion>>>(data["DoubleQuestion"].ToJson());
  
@@ -82,7 +91,6 @@ using UnityEngine;
             if(!Directory.Exists(FolderName)) {
                 Directory.CreateDirectory(FolderName);
             }
-            
             
             FileStream file = new FileStream(FileName, FileMode.Create);
             byte[] bts = System.Text.Encoding.UTF8.GetBytes(values);
