@@ -51,6 +51,28 @@ public class QAGameHostController : MonoBehaviour {
         GameObject.Find("BlueSubtractButton").GetComponentInChildren<Text>().text = "-" + currentAddBlueScore.ToString();
         GameObject.Find("RedText").GetComponentInChildren<Text>().text = audienceData.GetRedTeamName();
         GameObject.Find("BlueText").GetComponentInChildren<Text>().text = audienceData.GetBlueTeamName();
+
+        string question, answer;
+        int line = audienceData.GetQuestionLine();
+        int row = audienceData.GetQuestionRow();
+        if(audienceData.GetQuestionType() == 0)
+        {
+            question = GameData.Question[line][row].Question;
+            answer = GameData.Question[line][row].Answer;
+        }
+        else if(audienceData.GetQuestionType() == 1)
+        {
+            question = GameData.DoubleQuestion[line][row].Question;
+            answer = GameData.DoubleQuestion[line][row].Answer;
+        }
+        else
+        {
+            question = GameData.FinalQuestion.Question;
+            answer = GameData.FinalQuestion.Answer;
+        }
+
+        GameObject.Find("QuestionButton").GetComponentInChildren<Text>().text = question;
+        GameObject.Find("AnswerButton").GetComponentInChildren<Text>().text = answer;
     }
 
     public void ExitQAHostButtonClick()

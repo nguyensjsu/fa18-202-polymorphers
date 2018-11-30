@@ -1,23 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Model
 {
     public class AudienceData
     {
 
         private static AudienceData uniqueInstance;
-        //private string redTeamName;
-        //private string blueTeamName;
+
         private int redScore;
         private int blueScore;
 
         private int redIndex;
         private int blueIndex;
-        private string[] redTeams;
-        private string[] blueTeams;
-
+        private List<string> redTeams;
+        private List<string> blueTeams;
 
         private int addRedScore;
         private int addBlueScore;
+
+        private int questionType; //0 jeo //1 double //3 final 
+        private int questionLine;
+        private int questionRow;
 
 
         private AudienceData()
@@ -34,11 +38,12 @@ namespace Model
             return uniqueInstance;
         }
 
-        public void SetTeamInformation(string[] redTeam, string[] blueTeam)
+        public void SetTeamInformation(List<string> redTeams, List<string> blueTeams)
         {
-            this.redTeams = redTeam;
-            this.blueTeams = blueTeam;
+            this.redTeams = redTeams;
+            this.blueTeams = blueTeams;
         }
+
 
         public void SetTeamsIndex(int redIndex, int blueIndex)
         {
@@ -62,6 +67,14 @@ namespace Model
             this.blueScore = score;
         }
 
+        public void SetQuestion(int type, int line, int row)
+        {
+            this.questionType = type;
+            this.questionLine = line;
+            this.questionRow = row;
+        }
+
+
         public string GetRedTeamName()
         {
             return redTeams[redIndex];
@@ -82,12 +95,12 @@ namespace Model
             return blueScore;
         }
 
-        public string[] GetRedTeams()
+        public List<string> GetRedTeams()
         {
             return redTeams;
         }
 
-        public string[] GetBlueTeams()
+        public List<string> GetBlueTeams()
         {
             return blueTeams;
         }
@@ -120,6 +133,21 @@ namespace Model
         public int GetAddBlueScore()
         {
             return addBlueScore;
+        }
+
+        public int GetQuestionType()
+        {
+            return questionType;
+        }
+
+        public int GetQuestionLine()
+        {
+            return questionLine;
+        }
+
+        public int GetQuestionRow()
+        {
+            return questionRow;
         }
     }
 }
