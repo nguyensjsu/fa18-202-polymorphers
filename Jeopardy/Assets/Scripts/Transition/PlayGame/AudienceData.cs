@@ -16,6 +16,10 @@ namespace Model
         private string[] blueTeams;
 
 
+        private int addRedScore;
+        private int addBlueScore;
+
+
         private AudienceData()
         {
 
@@ -46,6 +50,16 @@ namespace Model
         {
             this.redScore = redScore;
             this.blueScore = blueScore;
+        }
+
+        public void SetRedTeamScore(int score)
+        {
+            this.redScore = score;
+        }
+
+        public void SetBlueTeamScore(int score)
+        {
+            this.blueScore = score;
         }
 
         public string GetRedTeamName()
@@ -86,6 +100,26 @@ namespace Model
         public int GetCurrentBlueIndex()
         {
             return blueIndex;
+        }
+
+        public void SetAddRedScore(int score)
+        {
+            this.addRedScore = score;
+        }
+
+        public void SetAddBlueScore(int score)
+        {
+            this.addBlueScore = score;
+        }
+
+        public int GetAddRedScore()
+        {
+            return addRedScore;
+        }
+
+        public int GetAddBlueScore()
+        {
+            return addBlueScore;
         }
     }
 }

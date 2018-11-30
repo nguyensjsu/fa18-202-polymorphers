@@ -16,12 +16,12 @@ public class ChooseTeamController : MonoBehaviour {
 
     private string currentButtonName;
 
-    private GameObject selectTeamObject;
     private GameObject gameHostObject;
+
+    bool isFirstShowScreen = true;
 
     // Use this for initialization
     void Start () {
-        selectTeamObject = GameObject.Find("ChooseTeamsOverlay");
         gameHostObject = GameObject.Find("GameHostScreen");
     }
 
@@ -32,6 +32,11 @@ public class ChooseTeamController : MonoBehaviour {
 
     void OnEnable()
     {
+        if(isFirstShowScreen)
+        {
+            isFirstShowScreen = false;
+            return;
+        }
         if (redTeams == null || blueTeams == null)
         {
             redTeams = AudienceData.GetInstance().GetRedTeams();
@@ -84,13 +89,13 @@ public class ChooseTeamController : MonoBehaviour {
     {
         AudienceData.GetInstance().SetTeamsIndex(temporaryRedIndex, temporaryBlueIndex);
         gameHostObject.SendMessage("UpdateTeamName");
-        selectTeamObject.SetActive(false);
+        gameObject.SetActive(false);
 
     }
 
     public void ExitTeamButtonClick()
     {
-        selectTeamObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void SelectOneRedTeamButtonClick()

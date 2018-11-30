@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Question
   - Answer
-  - scoretext
+  - Category
   layers:
   - Default
   - TransparentFX
