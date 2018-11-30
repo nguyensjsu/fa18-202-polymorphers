@@ -29,9 +29,9 @@ Acceptance criteria:
 ###### 4.	As a student, I want to be able to set my own wager for a daily double so that I can get more points. – Jinzhou Tao
 
 Acceptance criteria:
-•	All the wager should reflect on score when the professor clicks the add or subtract points buttons.
-•	Wager is triggered before display the Jeopardy answer to students.
-•	The student screen should display after the wager set-up window is closed. 
+-	All the wager should reflect on score when the professor clicks the add or subtract points buttons.
+-	Wager is triggered before display the Jeopardy answer to students.
+-	The student screen should display after the wager set-up window is closed. 
 
 
 ###### 5.	As a professor, I can create and save games, so that I can have multiple jeopardy games for my different classes. -Team
