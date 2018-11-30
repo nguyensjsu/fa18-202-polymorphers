@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CreateGamePanelSwitch : MonoBehaviour
 {
-    
     private string[] panelList =
     {
         "Teams", "Jeopardy", "DoubleJeopardy", "FinalJeopardy" 
@@ -34,7 +33,6 @@ public class CreateGamePanelSwitch : MonoBehaviour
         {
             GameObject panel = GameObject.Find(panelName+"Panel");
             panels.Add(panelName, panel);
-            Debug.Log(panel);
             
             Button button = GameObject.Find(panelName+"Button").GetComponent<Button>();
             panelButton.Add(panelName,button);
@@ -47,8 +45,7 @@ public class CreateGamePanelSwitch : MonoBehaviour
         {
             GameObject panel = GameObject.Find(panelName);
             gamePanels.Add(panelName, panel);
-            panel.transform.position = new Vector3(0, 0, 0);
-//            panel.SetActive(false);
+            panel.transform.position = new Vector3(0, -1000, 0);
         }
     }
 
@@ -94,21 +91,21 @@ public class CreateGamePanelSwitch : MonoBehaviour
 
     public void OpenEditQuestionPanel()
     {
-        gamePanels["QuestionEditPanel"].SetActive(true);
+        gamePanels["QuestionEditPanel"].transform.position = new Vector3(0,0,0);
     }
     
     public void OpenEditCategoryPanel()
     {
-        gamePanels["CategoryEditPanel"].SetActive(true);
+        gamePanels["CategoryEditPanel"].transform.position = new Vector3(0,0,0);
     }
     
     public void CloseEditQuestionPanel()
     {
-        gamePanels["QuestionEditPanel"].SetActive(false);
+        gamePanels["QuestionEditPanel"].transform.position = new Vector3(0,-1000,0);
     }
     
     public void CloseEditCategoryPanel()
     {
-        gamePanels["CategoryEditPanel"].SetActive(false);
+        gamePanels["CategoryEditPanel"].transform.position = new Vector3(0,-1000,0);
     }
 }
