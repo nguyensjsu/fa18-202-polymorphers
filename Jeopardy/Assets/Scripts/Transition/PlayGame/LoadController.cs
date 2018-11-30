@@ -74,7 +74,7 @@ public class LoadController : MonoBehaviour {
         GameDataManager.InitDemo();
         AudienceData.GetInstance().SetTeamInformation(GameData.RedTeam, GameData.BlueTeam);
         AudienceData.GetInstance().SetTeamsIndex(0, 0);
-        AudienceData.GetInstance().SetTeamsScore(10000, 10000);
+        AudienceData.GetInstance().SetTeamsScore(5000, 5000);
 
         gameObject.SetActive(false);
         allGamesPanel.SetActive(true);
@@ -83,6 +83,7 @@ public class LoadController : MonoBehaviour {
 
     public void GameButtonClick()
     {
+        
         GameObject clickButton = EventSystem.current.currentSelectedGameObject;
 
         string indexString = clickButton.name.Substring((clickButton.name.Length) - 1, 1);

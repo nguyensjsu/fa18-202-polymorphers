@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class QAGameHostController : MonoBehaviour {
 
+    public string lastPointsButtonClicked { get; set; }
+    public TimerAI timerAI;
+    public AIBuzzIn aIBuzzIn;
+
     private GameObject gameHostObject;
     private GameObject audienceObject;
     private GameObject wagerObject;
@@ -72,10 +76,15 @@ public class QAGameHostController : MonoBehaviour {
     {
         gameObject.SetActive(false);
         audienceObject.SendMessage("changePanel", "ExitQuestion");
+        timerAI.ResetButtonClick();
+        aIBuzzIn.disableBuzzes();
+
     }
 
     public void RedAddScoreButtonClick()
     {
+        lastPointsButtonClicked = "redAdd";
+
         //music
         FindObjectOfType<AudioManager>().Play("Applaud");
 
@@ -88,6 +97,8 @@ public class QAGameHostController : MonoBehaviour {
 
     public void RedSubtractButtonClick()
     {
+        lastPointsButtonClicked = "redSubtract";
+
         //music
         FindObjectOfType<AudioManager>().Play("Sad");
 
@@ -102,6 +113,8 @@ public class QAGameHostController : MonoBehaviour {
 
     public void BlueAddScoreButtonClick()
     {
+        lastPointsButtonClicked = "blueAdd";
+
         //music
         FindObjectOfType<AudioManager>().Play("Applaud");
 
@@ -115,7 +128,11 @@ public class QAGameHostController : MonoBehaviour {
     }
 
     public void BlueSubtractButtonClick()
+
     {
+
+        lastPointsButtonClicked = "blueSubtract";
+
         //music
         FindObjectOfType<AudioManager>().Play("Sad");
 
