@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class QAGameAudienceController : MonoBehaviour {
 
-    bool isFirstShowScreen = true;
     private string question;
     private string answer;
 
@@ -23,13 +22,6 @@ public class QAGameAudienceController : MonoBehaviour {
 
     void OnEnable()
     {
-        //GameObject.Find("AnswerPanel").GetComponentInChildren<Text>().text = "123456";
-
-        if (isFirstShowScreen)
-        {
-            isFirstShowScreen = false;
-            return;
-        }
 
         AudienceData audienceData = AudienceData.GetInstance();
         int line = audienceData.GetQuestionLine();

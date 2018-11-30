@@ -17,12 +17,10 @@ public class ChooseTeamController : MonoBehaviour {
     private string currentButtonName;
 
     private GameObject gameHostObject;
-
-    bool isFirstShowScreen = true;
-
+    
     // Use this for initialization
     void Start () {
-        gameHostObject = GameObject.Find("GameHostScreen");
+        gameHostObject = GameObject.Find("HostPlayGamePanel");
     }
 
     // Update is called once per frame
@@ -32,11 +30,6 @@ public class ChooseTeamController : MonoBehaviour {
 
     void OnEnable()
     {
-        if(isFirstShowScreen)
-        {
-            isFirstShowScreen = false;
-            return;
-        }
         if (redTeams == null || blueTeams == null)
         {
             redTeams = AudienceData.GetInstance().GetRedTeams();

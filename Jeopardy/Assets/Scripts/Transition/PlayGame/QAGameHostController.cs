@@ -16,13 +16,11 @@ public class QAGameHostController : MonoBehaviour {
     private int currentAddBlueScore;
 
     bool isRed;
-
-    bool isFirstShowScreen = true;
-
+    
 
     // Use this for initialization
     void Start () {
-        gameHostObject = GameObject.Find("GameHostScreen");
+        gameHostObject = GameObject.Find("HostPlayGamePanel");
         audienceObject = GameObject.Find("GameAudienceScreen");
         wagerObject = GameObject.Find("SetWagerOverlay");
         qaGameAudienceObject = GameObject.Find("QAGameAudienceScreen");
@@ -35,11 +33,6 @@ public class QAGameHostController : MonoBehaviour {
 
     private void OnEnable()
     {
-        if (isFirstShowScreen)
-        {
-            isFirstShowScreen = false;
-            return;
-        }
 
         AudienceData audienceData = AudienceData.GetInstance();
         currentAddRedScore = audienceData.GetAddRedScore();
