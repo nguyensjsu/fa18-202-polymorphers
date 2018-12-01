@@ -66,3 +66,5 @@
 - No so far
 #### Time Spend
 8hrs
+#### Communication
+ At the meeting, we reported each person’s work tasks and next week’s arrangements, and raised the difficulties encountered.
