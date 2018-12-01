@@ -45,6 +45,17 @@
 ## Fei Wang
 
 #### Last Week Finished 
+- #61 Read category data to show(1)
+- #63 handle toggle click event(1)
+- #64 handle to control both host screen and audience screen(1)
+- #65 fix bug that DoubleJeopardyButton could not respond click(1)
+- #66 set team score(3)
+- #67 change field font size(0.5)
+- #68 send message from one object to another(0.5)
+- show question information in two screen(5)
 #### Next Week Planned
+- finish all function and fix bugs
 #### Problem
+- No so far
 #### Time Spend
+13 hrs
