@@ -31,14 +31,18 @@ We've developed a jeopardy game desktop application using C# and unity. The basi
 ## Individual Contributions
 
 ### Jinzhou Tao
-
 * GameData: Data structure design and its access api
 * GameDataManager: Save/Load gamedata from file and resume it into GameData object
 * CreateGame Scene: Create the control panel with code and 
 * **Design Pattern**: Memento (for save/load game)
 
 #### David Montes
-
+* Demo: Wireless Controllers
+* UI: Screen, Overlays, and UI elements
+* Documentation: UI Wireframes
+* Demo: Dual screen
+* Gamecontrollers: Buzzin logic
+* Animation: Fade in and fade out transition between screens.
 
 #### Siyi Cai
 * Animation: Create Daily Double Animation
