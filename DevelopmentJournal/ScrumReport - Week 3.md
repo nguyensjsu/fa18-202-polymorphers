@@ -30,10 +30,17 @@
 
 ## Siyi Cai
 
-#### Last Week Finished 
+#### Last Week Finished
+- #44  add music effect to team getting positive points(0.5)
+- #45  add music effect to team getting negative points(0.5)
+- create a Audio Controller to controll all the music(1)
+- Implement loading images to CreateGame Scene(2)
 #### Next Week Planned
+- Implement the logic of Timer
+- Implement the logic of Buzzing System
 #### Problem
 #### Time Spend
+4 hrs
 
 ## Fei Wang
 
