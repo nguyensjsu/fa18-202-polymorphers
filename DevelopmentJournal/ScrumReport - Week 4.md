@@ -20,18 +20,15 @@
 ## David Montes
 
 #### Last Week Finished 
-
+- Animate Buttons when hovering (1)
+- Load Image panel implementation (3)
+- Tabs UI (1)
+- Load Image Panel UI (1)
 
 #### Next Week Planned
-
-
-
 #### Problem
-
-- 
-
 #### Time Spend
-
+6 hrs
 
 ## Siyi Cai
 
