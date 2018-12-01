@@ -81,3 +81,8 @@
 
 - Learning unity: 10 hrs
 
+#### Communication
+ Through communication, we developed development plans and tasks for everyone.
+
+
+
