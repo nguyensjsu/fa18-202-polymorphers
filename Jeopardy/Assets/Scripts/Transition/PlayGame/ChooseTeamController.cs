@@ -9,8 +9,8 @@ public class ChooseTeamController : MonoBehaviour {
 
     private int temporaryRedIndex;
     private int temporaryBlueIndex;
-    private string[] redTeams;
-    private string[] blueTeams;
+    private List<string> redTeams;
+    private List<string> blueTeams;
     private int currentRedIndex;
     private int currentBlueIndex;
 
@@ -46,7 +46,7 @@ public class ChooseTeamController : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < redTeams.Length; i++)
+        for (int i = 0; i < redTeams.Count; i++)
         {
             string buttonName = "RedTeamButton" + i.ToString();
             GameObject button = GameObject.Find(buttonName);
@@ -64,7 +64,7 @@ public class ChooseTeamController : MonoBehaviour {
 
         temporaryRedIndex = currentRedIndex;
 
-        for (int i = 0; i < blueTeams.Length; i++)
+        for (int i = 0; i < blueTeams.Count; i++)
         {
             string buttonName = "BlueTeamButton" + i.ToString();
             GameObject button = GameObject.Find(buttonName);
@@ -104,7 +104,7 @@ public class ChooseTeamController : MonoBehaviour {
         string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
         temporaryRedIndex = System.Int32.Parse(indexString);
 
-        for (int i = 0; i < redTeams.Length; i++)
+        for (int i = 0; i < redTeams.Count; i++)
         {
             if (i == temporaryRedIndex)
             {
@@ -127,7 +127,7 @@ public class ChooseTeamController : MonoBehaviour {
         string indexString = currentButtonName.Substring((currentButtonName.Length) - 1, 1);
         temporaryBlueIndex = System.Int32.Parse(indexString);
 
-        for (int i = 0; i < blueTeams.Length; i++)
+        for (int i = 0; i < blueTeams.Count; i++)
         {
             if (i == temporaryBlueIndex)
             {
