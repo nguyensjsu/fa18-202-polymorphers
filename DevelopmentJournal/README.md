@@ -52,7 +52,7 @@ We've developed a jeopardy game desktop application using C# and unity. The basi
 * Buzzing System: Realize the control of Buzz-in logics
 * **Design Pattern**: State Design Pattern (for timer in the QA Panel)
 
-
-
-
 #### Fei Wang
+* CreateGame:  Implement the funtion to create games, storage team and question
+* PlayGame:    Implement the funtion to play game, control two screens to display game information
+* **Design Pattern**: Observer Design Pattern (Used to modify information to notify two screens)
