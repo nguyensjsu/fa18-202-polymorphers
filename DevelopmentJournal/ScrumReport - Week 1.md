@@ -59,7 +59,7 @@
 
 #### Time Spend
 
-- Developing CUBETHON: 6 hrs
+- Developing CUBETHON: 10 hrs
 
 ## Fei Wang
 
