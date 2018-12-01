@@ -41,6 +41,14 @@ We've developed a jeopardy game desktop application using C# and unity. The basi
 
 
 #### Siyi Cai
+* Animation: Create Daily Double Animation
+* Music Control: Control Music for the game
+* Image Loading: Realize image loading from local disk to the CreateGame Scene and PlayGame Scene
+* Timer Control: Realize timer controll logic in the QA Question Panel
+* Buzzing System: Realize the control of Buzz-in logics
+* **Design Pattern**: State Machine (for timer in the QA Panel)
+
+
 
 
 #### Fei Wang
