@@ -52,3 +52,5 @@ no so far
 no so far
 #### Time Spend
 17 hrs
+#### Communication
+Develop together every day, communicate more and improve functions
