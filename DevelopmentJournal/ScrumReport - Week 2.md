@@ -43,13 +43,22 @@
 ## Siyi Cai
 
 #### Last Week Finished 
+- #37 Animation - Add Daily Double transition(5)
+- #38 SFX - theme music playing when game starts(0.5) 
+- #39 SFX - 30 second music to play during Final Jeopardy(0.5) 
 #### Next Week Planned
+- #45 Animation - team getting negative points 
+- #44 Animation - Team getting positive points. 
 #### Problem
 #### Time Spend
+6hrs
 
 ## Fei Wang
 
 #### Last Week Finished 
+
 #### Next Week Planned
+
 #### Problem
 #### Time Spend
+
