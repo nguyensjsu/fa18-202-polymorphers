@@ -3,9 +3,21 @@
 ## Jinzhou Tao
 
 #### Last Week Finished 
+
+- EditGame Scene: Wiring Gamedata Object in  (4)
+- EditGame Scene: Create Button Jumping Script (6)
+
 #### Next Week Planned
+
+- Save / Load Game function
+
 #### Problem
+
+- No so far
+
 #### Time Spend
+
+- 10 hrs
 
 ## David Montes
 

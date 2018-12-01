@@ -6,11 +6,19 @@
 
 - #40 Create Button from script (12)
 - #40-1 Wire Gamedata Object into each button (4)
-- Documentation for GameData system
+- Documentation for GameData system (Not Implemented)
 
 #### Next Week Planned
+
+- Wiring Gamedata Object into Edit Screen
+
 #### Problem
+
+- No so far
+
 #### Time Spend
+
+- 16 hrs
 
 ## David Montes
 
