@@ -7804,7 +7804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0199e67c2453f43f588bd928b13bd69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerAI: {fileID: 0}
+  timerAI: {fileID: 528858634}
   aIBuzzIn: {fileID: 0}
 --- !u!1 &216512383
 GameObject:
@@ -8373,15 +8373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc58a9146f774554be30af43b6f4e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qaghc: {fileID: 0}
-  redBuzzedIn: 0
-  blueBuzzedIn: 0
-  redDisable: 0
-  blueDisable: 0
-  RedTeamControllerIndicator: {fileID: 0}
-  BlueTeamControllerIndicator: {fileID: 0}
-  RedPanel: {fileID: 0}
-  BluePanel: {fileID: 0}
 --- !u!1 &235139968
 GameObject:
   m_ObjectHideFlags: 0
@@ -16286,9 +16277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aibuzzin: {fileID: 0}
-  startButton: {fileID: 0}
-  pauseButton: {fileID: 0}
-  resetButton: {fileID: 0}
+  startButton: {fileID: 373056897}
+  pauseButton: {fileID: 1869177851}
+  resetButton: {fileID: 1855869288}
 --- !u!95 &528858635
 Animator:
   serializedVersion: 3
@@ -18539,10 +18530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20f4452a02cb4d518b04394dffcdd43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RedTeamControllerIndicator: {fileID: 0}
-  BlueTeamControllerIndicator: {fileID: 0}
-  RedPanel: {fileID: 0}
-  BluePanel: {fileID: 0}
+  RedTeamControllerIndicator: {fileID: 624658964}
+  BlueTeamControllerIndicator: {fileID: 2006696828}
+  RedPanel: {fileID: 1539023098}
+  BluePanel: {fileID: 1739982281}
 --- !u!4 &580105759
 Transform:
   m_ObjectHideFlags: 0
@@ -66893,9 +66884,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aibuzzin: {fileID: 0}
-  jeopardyButton: {fileID: 0}
-  doubleJeopardyButton: {fileID: 0}
-  finalJeopardyButton: {fileID: 0}
+  jeopardyButton: {fileID: 1940387381}
+  doubleJeopardyButton: {fileID: 1990588601}
+  finalJeopardyButton: {fileID: 354977716}
 --- !u!114 &2132987068
 MonoBehaviour:
   m_ObjectHideFlags: 0
