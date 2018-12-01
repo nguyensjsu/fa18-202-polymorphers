@@ -59,3 +59,5 @@
 - No so far
 #### Time Spend
 13 hrs
+#### Communication
+Report on each person's work tasks and promote the progress of the project。
