@@ -48,15 +48,16 @@
 ## Fei Wang
 
 #### Last Week Finished 
-- #87
-
-
+- #86 Implementing Countdown Function(1)
+- #87 Modify score funtion(1)
+- #94 add and subtract score(1)
+- #95 modify score from wager(2)
+- #96 two wager control each score(1)
+- #97 set team select recycle(1)
+- fix bugs(10)
 #### Next Week Planned
-
-
+no so far
 #### Problem
-
-
-
+no so far
 #### Time Spend
-
+17 hrs
