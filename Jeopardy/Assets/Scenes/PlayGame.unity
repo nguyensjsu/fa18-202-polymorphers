@@ -3531,6 +3531,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2002654925}
     m_Modifications:
+    - target: {fileID: 114350077474812166, guid: 3f73f63a203c34faba4b475e834bba70,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224714086715222140, guid: 3f73f63a203c34faba4b475e834bba70,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3624,6 +3629,31 @@ Prefab:
     - target: {fileID: 1948821910768718, guid: 3f73f63a203c34faba4b475e834bba70, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114350077474812166, guid: 3f73f63a203c34faba4b475e834bba70,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114350077474812166, guid: 3f73f63a203c34faba4b475e834bba70,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114350077474812166, guid: 3f73f63a203c34faba4b475e834bba70,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1531747910}
+    - target: {fileID: 114350077474812166, guid: 3f73f63a203c34faba4b475e834bba70,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114350077474812166, guid: 3f73f63a203c34faba4b475e834bba70,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f73f63a203c34faba4b475e834bba70, type: 2}
@@ -7909,7 +7939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerAI: {fileID: 528858634}
-  aIBuzzIn: {fileID: 0}
+  aIBuzzIn: {fileID: 580105760}
 --- !u!1 &216512383
 GameObject:
   m_ObjectHideFlags: 0

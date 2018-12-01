@@ -31,7 +31,14 @@ using UnityEngine;
                     GameData.DoubleQuestion[i][j].Clue = "Test Clue";
                     GameData.DoubleQuestion[i][j].Value = (i * 100 + 100)*2;
                     GameData.DoubleQuestion[i][j].isDouble = false;
-                }
+
+                    if(i == 0 && j == 0)
+                    {
+                       GameData.Question[i][j].isDouble = true;
+                       GameData.DoubleQuestion[i][j].isDouble = true;
+
+                    }
+                 }
             }
 
             GameData.FinalCategory.Category = "Final Category";
