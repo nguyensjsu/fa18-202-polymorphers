@@ -1,8 +1,7 @@
-# Project Report - Polymorphers
+# Project Report - CMPE202 18Fall
 
-### Course Info
-* CMPE202 - 18Fall
-* Instructor : Paul Nguyen
+## Project - Jeopardy Game
+
 ### Team Name
 * Polymorphers
 
@@ -13,7 +12,7 @@
 * [Siyi Cai](https://github.com/CSIYI)
 * [Fei Wang](https://github.com/feiwang6079)
 
-## Project - Jeopardy Game
+### Project Detail
 
 We've developed a jeopardy game desktop application using C# and unity. The basic game play, load/save game, edit game, sound effect functions are implemented.
 
@@ -23,7 +22,11 @@ We've developed a jeopardy game desktop application using C# and unity. The basi
 
 ### Project Dashboard
 
+![](https://github.com/nguyensjsu/fa18-202-polymorphers/blob/master/DevelopmentJournal/ProjectBoard%2011:30:18.png)
+
 ### Code Contribution
+
+![](https://github.com/nguyensjsu/fa18-202-polymorphers/blob/master/DevelopmentJournal/CodeContribution%2011:30:18.png)
 
 ## Individual Contributions
 
