@@ -4,18 +4,12 @@
 
 #### Last Week Finished 
 
-
-#### Next Week Planned
-
-
+- Save / Load Game function
+- Bugfix on CreateGame scene
+- Wire GameData with play game scene
 
 #### Problem
-
-
-
 #### Time Spend
-
-
 
 ## David Montes
 
