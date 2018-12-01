@@ -56,9 +56,13 @@
 ## Fei Wang
 
 #### Last Week Finished 
-
+- #57 Create Game page respond mouse click(1)
+- #58 Show edit category and question page(1)
+- #59 Save category and question information(5)
+- #60 Get text from input input field(1)
 #### Next Week Planned
-
+- develop play game function
 #### Problem
+- No so far
 #### Time Spend
-
+8hrs
