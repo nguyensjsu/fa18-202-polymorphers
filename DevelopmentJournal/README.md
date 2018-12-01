@@ -20,6 +20,8 @@ We've developed a jeopardy game desktop application using C# and unity. The basi
 
 ### Burndown Map
 
+![](https://github.com/nguyensjsu/fa18-202-polymorphers/blob/master/DevelopmentJournal/BurndownMap%2011:30:18.png)
+
 ### Project Dashboard
 
 ![](https://github.com/nguyensjsu/fa18-202-polymorphers/blob/master/DevelopmentJournal/ProjectBoard%2011:30:18.png)
