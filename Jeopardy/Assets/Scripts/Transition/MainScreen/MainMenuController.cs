@@ -5,17 +5,12 @@ using UnityEngine.SceneManagement;
 
 
 
-public class MainMenuController : MonoBehaviour {
+public class MainMenuController : MonoBehaviour
+{
+    public void ExitButtonClick(){
+        Application.Quit();
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void PlayButtonClick(){
 
