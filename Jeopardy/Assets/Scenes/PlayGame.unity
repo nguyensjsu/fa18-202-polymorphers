@@ -19263,67 +19263,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 599433485}
   m_CullTransparentMesh: 0
---- !u!1 &602222892
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 602222894}
-  - component: {fileID: 602222893}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &602222893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 602222892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a9872a5f3714b879ad17feb6b66d65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: DailyDouble
-    clip: {fileID: 8300000, guid: 043d90cd3b5ac4ef89c221e99e8d3ecb, type: 3}
-    volume: 0.55
-    pitch: 1
-    source: {fileID: 0}
-  - name: LoadMusic
-    clip: {fileID: 8300000, guid: 365074c271ee9421fa97d3064676c5d0, type: 3}
-    volume: 0.559
-    pitch: 1
-    source: {fileID: 0}
-  - name: Applaud
-    clip: {fileID: 8300000, guid: 73b2837cdc01641089e4f14ff727b5a7, type: 3}
-    volume: 0.532
-    pitch: 1
-    source: {fileID: 0}
-  - name: Sad
-    clip: {fileID: 8300000, guid: 43c2a67645b904fb6899896bd6cfa7c4, type: 3}
-    volume: 0.496
-    pitch: 1
-    source: {fileID: 0}
---- !u!4 &602222894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 602222892}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604336956
 GameObject:
   m_ObjectHideFlags: 0
@@ -22533,6 +22472,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 688649206}
   m_CullTransparentMesh: 0
+--- !u!1001 &703813675
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422864770132020, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4923e3aa1567b43139c5b5ba30742375, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &706741300
 GameObject:
   m_ObjectHideFlags: 0

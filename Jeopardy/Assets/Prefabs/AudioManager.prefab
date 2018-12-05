@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1518805541391296}
+  m_IsPrefabAsset: 1
+--- !u!1 &1518805541391296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4422864770132020}
+  - component: {fileID: 114539002776008148}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4422864770132020
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518805541391296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114539002776008148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518805541391296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a9872a5f3714b879ad17feb6b66d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: DailyDouble
+    clip: {fileID: 8300000, guid: 043d90cd3b5ac4ef89c221e99e8d3ecb, type: 3}
+    volume: 0.55
+    pitch: 1
+    source: {fileID: 0}
+  - name: LoadMusic
+    clip: {fileID: 8300000, guid: 365074c271ee9421fa97d3064676c5d0, type: 3}
+    volume: 0.559
+    pitch: 1
+    source: {fileID: 0}
+  - name: Applaud
+    clip: {fileID: 8300000, guid: 73b2837cdc01641089e4f14ff727b5a7, type: 3}
+    volume: 0.532
+    pitch: 1
+    source: {fileID: 0}
+  - name: Sad
+    clip: {fileID: 8300000, guid: 43c2a67645b904fb6899896bd6cfa7c4, type: 3}
+    volume: 0.496
+    pitch: 1
+    source: {fileID: 0}

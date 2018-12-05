@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("LoadMusic");
+    }
+
     public void ExitButtonClick(){
         Application.Quit();
     }
