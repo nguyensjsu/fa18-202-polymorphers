@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4395835, g: 0.47991794, b: 0.5247336, a: 1}
+  m_IndirectSpecularColor: {r: 0.4395832, g: 0.47991788, b: 0.52473384, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3699,7 +3699,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 0.39215684, b: 0.9835175, a: 0}
+  m_BackGroundColor: {r: 0.39215684, g: 0.6403618, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -6721,11 +6721,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 915396843}
   m_CullTransparentMesh: 0
---- !u!224 &916070050 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224508959980625968, guid: 6a1c587aff72a42fa884abc81a708e39,
-    type: 2}
-  m_PrefabInternal: {fileID: 1334460340}
 --- !u!1 &918896158
 GameObject:
   m_ObjectHideFlags: 0
@@ -7602,7 +7597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146578449}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitCategoryPanelClick
         m_Mode: 1
         m_Arguments:
@@ -8714,7 +8709,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146578449}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadImageButtonClick
         m_Mode: 1
         m_Arguments:
@@ -10112,7 +10107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 136, y: 747}
+  m_AnchoredPosition: {x: 136, y: 747.4}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1404056523
@@ -10728,7 +10723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 28, y: 753}
+  m_AnchoredPosition: {x: 28, y: 747.4}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1548060022
