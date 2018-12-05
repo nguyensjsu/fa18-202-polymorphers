@@ -11,9 +11,6 @@ public class ControllerManager : MonoBehaviour
     private Image redImage;
     private Image blueImage;
 
-    public GameObject RedPanel;
-    public GameObject BluePanel;
-
     private Image redPanelImage;
     private Image bluePanelImage;
 
@@ -23,8 +20,6 @@ public class ControllerManager : MonoBehaviour
         redImage = RedTeamControllerIndicator.GetComponent<Image>();
         blueImage = BlueTeamControllerIndicator.GetComponent<Image>();
 
-        redPanelImage = RedPanel.GetComponent<Image>();
-        bluePanelImage = BluePanel.GetComponent<Image>();
     }
 
     // Update is called once per frame

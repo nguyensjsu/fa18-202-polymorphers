@@ -13,11 +13,8 @@ public class AIBuzzIn : MonoBehaviour
     public bool redDisable ;
     public bool blueDisable ;
 
-    public GameObject RedTeamControllerIndicator;
-    public GameObject BlueTeamControllerIndicator;
-
-    private Image redImage;
-    private Image blueImage;
+    //private Image redImage;
+    //private Image blueImage;
 
     public GameObject RedPanel;
     public GameObject BluePanel;
@@ -32,23 +29,10 @@ public class AIBuzzIn : MonoBehaviour
     {
         IsReady = false;
 
-        redImage = RedTeamControllerIndicator.GetComponent<Image>();
-        blueImage = BlueTeamControllerIndicator.GetComponent<Image>();
-
         redPanelImage = RedPanel.GetComponent<Image>();
         bluePanelImage = BluePanel.GetComponent<Image>();
     }
 
-    // EnabledRedController()
-
-    // EnableBlueController()
-
-    // DisableRedController()
-
-    // DisableBlueController()
-
-    // bool blueEnabled
-    // bool redEnabled
 
     /*
      * Called when professor clicks on $100 button
@@ -130,27 +114,9 @@ public class AIBuzzIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetJoystickNames().Length == 0)
-        {
-            redImage.color = Color.red;
-            blueImage.color = Color.red;
-
-        }
-        else if (Input.GetJoystickNames().Length == 1)
-        {
-            redImage.color = Color.green;
-            blueImage.color = Color.red;
-        }
-        else
-        {
-            redImage.color = Color.green;
-            blueImage.color = Color.green;
-        }
-
         if (Input.GetButton("redBuzz") && !redDisable)
         {
-            redImage.color = Color.red;
+            //redImage.color = Color.red;
 
             if (blueBuzzedIn)
                 redBuzzedIn = false;
@@ -167,7 +133,7 @@ public class AIBuzzIn : MonoBehaviour
 
         if (Input.GetButton("blueBuzz") && !blueDisable)
         {
-            blueImage.color = Color.blue;
+            //blueImage.color = Color.blue;
             if (redBuzzedIn) blueBuzzedIn = false;
             else blueBuzzedIn = true;
 
