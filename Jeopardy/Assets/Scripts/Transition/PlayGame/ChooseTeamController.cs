@@ -77,7 +77,7 @@ public class ChooseTeamController : MonoBehaviour {
             {
                 changeTeamButtonColor(button, Color.white, Color.black);
             }
-            button.GetComponentInChildren<Text>().text = redTeams[i];
+            button.GetComponentInChildren<Text>().text = blueTeams[i];
         }
 
         temporaryBlueIndex = currentBlueIndex;
