@@ -5,7 +5,10 @@ using Model;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ChooseTeamController : MonoBehaviour {
+public class ChooseTeamController : MonoBehaviour, ISubject
+{
+
+    private List<IObserver> observers = new List<IObserver>();
 
     private int temporaryRedIndex;
     private int temporaryBlueIndex;
@@ -44,7 +47,11 @@ public class ChooseTeamController : MonoBehaviour {
             currentRedIndex = AudienceData.GetInstance().GetCurrentRedIndex();
             currentBlueIndex = AudienceData.GetInstance().GetCurrentBlueIndex();
         }
-
+        else
+        {
+            currentRedIndex = AudienceData.GetInstance().GetCurrentRedIndex();
+            currentBlueIndex = AudienceData.GetInstance().GetCurrentBlueIndex();
+        }
 
         for (int i = 0; i < redTeams.Count; i++)
         {
@@ -88,7 +95,8 @@ public class ChooseTeamController : MonoBehaviour {
     public void saveTeamButtonClick()
     {
         AudienceData.GetInstance().SetTeamsIndex(temporaryRedIndex, temporaryBlueIndex);
-        gameHostObject.SendMessage("UpdateTeamName");
+        //gameHostObject.SendMessage("UpdateTeamName");
+        NotifyObserver();
         gameObject.SetActive(false);
 
     }
@@ -149,5 +157,19 @@ public class ChooseTeamController : MonoBehaviour {
         cb.normalColor = cb.highlightedColor = buttonColor;
         button.GetComponentInChildren<Button>().colors = cb;
         button.GetComponentInChildren<Text>().color = textColor;
+    }
+
+    public void Attach(IObserver observer)
+    {
+        observers.Add(observer);
+    }
+
+    public void NotifyObserver()
+    {
+        foreach(var obj in observers)
+        {
+            //obj.SendMessage("UpdateTeamInformation");
+            obj.UpdateTeamInformation();
+        }
     }
 }

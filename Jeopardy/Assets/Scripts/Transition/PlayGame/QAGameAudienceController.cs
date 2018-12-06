@@ -4,7 +4,8 @@ using Model;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QAGameAudienceController : MonoBehaviour {
+public class QAGameAudienceController : MonoBehaviour
+{
 
     public AIBuzzIn aibuzzin;
     bool isFirstShowScreen = true;
@@ -70,6 +71,5 @@ public class QAGameAudienceController : MonoBehaviour {
 
         }
     }
-
 
 }
