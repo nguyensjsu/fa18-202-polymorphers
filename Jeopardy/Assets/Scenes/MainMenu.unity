@@ -521,7 +521,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 386992336}
   m_LocalRotation: {x: -0, y: -0, z: -0.00000001117587, w: 1}
-  m_LocalPosition: {x: 0, y: 1024, z: -0}
+  m_LocalPosition: {x: 0, y: 2048, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1832211685}
@@ -556,7 +556,7 @@ Transform:
   m_Children:
   - {fileID: 1194450930}
   m_Father: {fileID: 1577737922}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &479271601
 MonoBehaviour:
@@ -728,6 +728,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &591508369
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1577737922}
+    m_Modifications:
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 340
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 42.612488
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 42.612488
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 42.612488
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958106564498302, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+      propertyPath: m_Name
+      value: JeopardyLogo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e6c12ac7368e7439fb9bdea0face3d82, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &591508370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4874890054781870, guid: e6c12ac7368e7439fb9bdea0face3d82,
+    type: 2}
+  m_PrefabInternal: {fileID: 591508369}
 --- !u!1 &727828103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1380,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1024, z: 660}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 591508370}
   - {fileID: 479271600}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1541,7 +1605,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-    m_HighlightedColor: {r: 0.7783019, g: 0.7930431, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1693,7 +1757,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-    m_HighlightedColor: {r: 0.7783019, g: 0.7930431, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1992,7 +2056,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-    m_HighlightedColor: {r: 0.7783019, g: 0.7930431, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1

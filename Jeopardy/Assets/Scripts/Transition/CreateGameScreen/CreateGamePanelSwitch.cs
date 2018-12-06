@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CreateGamePanelSwitch : MonoBehaviour
@@ -12,7 +13,7 @@ public class CreateGamePanelSwitch : MonoBehaviour
 
     private string[] gamePanelList =
     {
-        "CategoryEditPanel", "QuestionEditPanel"
+        "CategoryEdit", "QuestionEdit", "NewGameOrLoadGame", "LoadGame"
     };
     
     private Dictionary<string, GameObject> panels;
@@ -40,13 +41,20 @@ public class CreateGamePanelSwitch : MonoBehaviour
             panel.SetActive(false);
         }
         panels["Teams"].SetActive(true);
-       
         foreach (var panelName in gamePanelList)
         {
-            GameObject panel = GameObject.Find(panelName);
+            GameObject panel = GameObject.Find(panelName+"Panel");
             gamePanels.Add(panelName, panel);
             panel.transform.position = new Vector3(0, -1000, 0);
         }
+        OpenPanel("NewGameOrLoadGame");
+        
+        SceneManager.sceneUnloaded += (scene) =>
+        {
+            Debug.Log(scene.name);
+            if (scene.name == "CreateEditGame")
+                OpenPanel("NewGameOrLoadGame");
+        };
     }
 
     private void ChangeButtonColorAndText(Button button, Color buttonColor, Color textColor)
@@ -89,23 +97,13 @@ public class CreateGamePanelSwitch : MonoBehaviour
         SetActive("FinalJeopardy");
     }
 
-    public void OpenEditQuestionPanel()
+    public void OpenPanel(string name)
     {
-        gamePanels["QuestionEditPanel"].transform.position = new Vector3(0,0,0);
+        gamePanels[name].transform.position = new Vector3(0,0,0);
     }
     
-    public void OpenEditCategoryPanel()
+    public void ClosePanel(string name)
     {
-        gamePanels["CategoryEditPanel"].transform.position = new Vector3(0,0,0);
-    }
-    
-    public void CloseEditQuestionPanel()
-    {
-        gamePanels["QuestionEditPanel"].transform.position = new Vector3(0,-1000,0);
-    }
-    
-    public void CloseEditCategoryPanel()
-    {
-        gamePanels["CategoryEditPanel"].transform.position = new Vector3(0,-1000,0);
+        gamePanels[name].transform.position = new Vector3(0,-1000,0);
     }
 }
