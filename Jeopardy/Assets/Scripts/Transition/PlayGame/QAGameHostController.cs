@@ -75,8 +75,8 @@ public class QAGameHostController : MonoBehaviour {
             answer = GameData.FinalQuestion.Answer;
         }
 
-        GameObject.Find("QuestionButton").GetComponentInChildren<Text>().text = question;
-        GameObject.Find("AnswerButton").GetComponentInChildren<Text>().text = answer;
+        GameObject.Find("QuestionButton").GetComponentInChildren<Text>().text = answer; 
+        GameObject.Find("AnswerButton").GetComponentInChildren<Text>().text = question;
     }
 
     public void ExitQAHostButtonClick()
@@ -205,11 +205,11 @@ public class QAGameHostController : MonoBehaviour {
         GameObject obj = EventSystem.current.currentSelectedGameObject;
         if(obj.name == "AnswerButton")
         {
-            isAnswer = true;
+            isAnswer = false;
         }
         else
         {
-            isAnswer = false;
+            isAnswer = true;
         }
         //    GameObject object1 = obj.transform.GetChild(0).gameObject;
         //    Debug.Log(object1.GetComponent<Text>().text);

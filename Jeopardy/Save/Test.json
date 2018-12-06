@@ -1,0 +1,480 @@
+{
+ "GameName": "TestGame",
+ "Row": 6,
+ "Column": 6,
+ "Category": [{
+  "Category": "Design Pattern"
+ }, {
+  "Category": "Scrum"
+ }, {
+  "Category": "Kanban"
+ }, {
+  "Category": "Design Pattern"
+ }, {
+  "Category": "UML"
+ }, {
+  "Category": "Design Pattern"
+ }],
+ "Question": [
+  [{
+   "Question": "A way of passing a request between a chain of objects",
+   "Answer": "Chain of responsibility",
+   "Value": 100,
+   "Clue": "Test Clue",
+   "isDouble": true,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 0-1",
+   "Answer": "Test Answer",
+   "Value": 100,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 0-2",
+   "Answer": "Test Answer",
+   "Value": 100,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 0-3",
+   "Answer": "Test Answer",
+   "Value": 100,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 0-4",
+   "Answer": "Test Answer",
+   "Value": 100,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Encapsulate a command request as an object",
+   "Answer": "Command",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 1-1",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 1-2",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 1-3",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 1-4",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Sequentially access the elements of a collection",
+   "Answer": "Iterator",
+   "Value": 300,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 2-1",
+   "Answer": "Test Answer",
+   "Value": 300,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 2-2",
+   "Answer": "Test Answer",
+   "Value": 300,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 2-3",
+   "Answer": "Test Answer",
+   "Value": 300,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 2-4",
+   "Answer": "Test Answer",
+   "Value": 300,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Defines simplified communication between classes,
+   "Answer": "Mediator",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 3-1",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 3-2",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 3-3",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 3-4",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "A way of notifying change to a number of classes",
+   "Answer": "Observer",
+   "Value": 500,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 4-1",
+   "Answer": "Test Answer",
+   "Value": 500,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 4-2",
+   "Answer": "Test Answer",
+   "Value": 500,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 4-3",
+   "Answer": "Test Answer",
+   "Value": 500,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 4-4",
+   "Answer": "Test Answer",
+   "Value": 500,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Alter an object's behavior when its state changes",
+   "Answer": "State",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 5-1",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 5-2",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 5-3",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question 5-4",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }]
+ ],
+ "DoubleCategory": [{
+  "Category": "Design Pattern"
+ }, {
+  "Category": "Scrum"
+ }, {
+  "Category": "Kanban"
+ }, {
+  "Category": "Design Pattern"
+ }, {
+  "Category": "UML"
+ }, {
+  "Category": "Design Pattern"
+ }],
+ "DoubleQuestion": [
+  [{
+   "Question": "Match interfaces of different classes",
+   "Answer": "Adaptor",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": true,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D0-1",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D0-2",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D0-3",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D0-4",
+   "Answer": "Test Answer",
+   "Value": 200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Test Question D1-0",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D1-1",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D1-2",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D1-3",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D1-4",
+   "Answer": "Test Answer",
+   "Value": 400,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "A tree structure of simple and composite objects",
+   "Answer": "Composite",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D2-1",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D2-2",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D2-3",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D2-4",
+   "Answer": "Test Answer",
+   "Value": 600,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Add responsibilities to objects dynamically",
+   "Answer": "Decorator",
+   "Value": 800,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D3-1",
+   "Answer": "Test Answer",
+   "Value": 800,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D3-2",
+   "Answer": "Test Answer",
+   "Value": 800,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D3-3",
+   "Answer": "Test Answer",
+   "Value": 800,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D3-4",
+   "Answer": "Test Answer",
+   "Value": 800,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "An object representing another object",
+   "Answer": "Proxy",
+   "Value": 1000,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D4-1",
+   "Answer": "Test Answer",
+   "Value": 1000,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D4-2",
+   "Answer": "Test Answer",
+   "Value": 1000,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D4-3",
+   "Answer": "Test Answer",
+   "Value": 1000,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D4-4",
+   "Answer": "Test Answer",
+   "Value": 1000,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }],
+  [{
+   "Question": "Encapsulates an algorithm inside a class",
+   "Answer": "Strategy",
+   "Value": 1200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D5-1",
+   "Answer": "Test Answer",
+   "Value": 1200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D5-2",
+   "Answer": "Test Answer",
+   "Value": 1200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D5-3",
+   "Answer": "Test Answer",
+   "Value": 1200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }, {
+   "Question": "Test Question D5-4",
+   "Answer": "Test Answer",
+   "Value": 1200,
+   "Clue": "Test Clue",
+   "isDouble": false,
+   "ImgPath": null
+  }]
+ ],
+ "BlueTeam": ["sixsix", "blitz", "zenith", "nintendo", "stratus", "cloudflare", "Phoenix", "Ninja", "Old Drivers", "Nimbus"],
+ "RedTeam": ["Techninjas", "Starburst", "Spartans", "Sharkhead", "Avengers", "Space", "genesys", "Mavericks", "Bit Flip", "Code Warriors"],
+ "FinalCategory": {
+  "Category": "Design Pattern"
+ },
+ "FinalQuestion": {
+  "Question": null,
+  "Answer": null,
+  "Value": 0,
+  "Clue": null,
+  "isDouble": false,
+  "ImgPath": null
+ }
+}
