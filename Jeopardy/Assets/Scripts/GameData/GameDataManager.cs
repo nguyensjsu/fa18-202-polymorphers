@@ -36,7 +36,6 @@ using UnityEngine;
                     {
                        GameData.Question[i][j].isDouble = true;
                        GameData.DoubleQuestion[i][j].isDouble = true;
-
                     }
                  }
             }
@@ -50,6 +49,11 @@ using UnityEngine;
             }
 
             GameData.GameName = "TestGame";
+        }
+
+        public static void Init()
+        {
+            GameData.Init(6,5);
         }
         
         public static void LoadData() {

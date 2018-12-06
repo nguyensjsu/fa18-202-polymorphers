@@ -62,20 +62,25 @@ public class JCategory
                 RedTeam.Add("");
                 BlueTeam.Add("");
             }
-            
+
             for (int i = 0; i < Column; i++)
             {
                 var qset = new List<JQuestion>();
                 for (int j = 0; j < Row; j++)
                 {
-                    qset.Add(new JQuestion());
+                    var question = new JQuestion();
+                    question.Value = i * 100 + 100;
+                    qset.Add(question);
+                   
                 }
                 Question.Add(qset);
                 
                 qset = new List<JQuestion>();
                 for (int j = 0; j < Row; j++)
                 {
-                    qset.Add(new JQuestion());
+                    var question = new JQuestion();
+                    question.Value = (i * 100 + 100)*2;
+                    qset.Add(question);
                 }
                 DoubleQuestion.Add(qset);
             }
