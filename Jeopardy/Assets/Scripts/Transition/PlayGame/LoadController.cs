@@ -15,7 +15,8 @@ public class LoadController : MonoBehaviour
     private int buttonCount;
     private int currentGame = 0;
     private GameObject[] allButtons;
-    private string currentButtonName;
+
+    private List<string> gameNames;
 
     void Start()
     {
@@ -23,7 +24,8 @@ public class LoadController : MonoBehaviour
         Transform temp_transform = gameObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
-        buttonCount = 3;
+        gameNames = GameDataTest.DemoName();
+        buttonCount = gameNames.Count;
         allButtons = new GameObject[buttonCount];
 
         loadGamesPanel = GameObject.Find("LoadGamesPanel");
@@ -31,7 +33,7 @@ public class LoadController : MonoBehaviour
         for (int i = 0; i < buttonCount; i++)
         {
             GameObject newButton = Instantiate(buttonObject);
-            newButton.GetComponentInChildren<Text>().text = @"PlayGame0";
+            newButton.GetComponentInChildren<Text>().text = gameNames[i];
             newButton.transform.SetParent(loadGamesPanel.transform, false);
 
             if (i != 0)
@@ -41,7 +43,6 @@ public class LoadController : MonoBehaviour
                                 tempObjetct.transform.position.x, tempObjetct.transform.position.y - 150, tempObjetct.transform.position.z);
             }
 
-            newButton.GetComponentInChildren<Text>().text = @"PlayGame" + i.ToString();
             newButton.name = "button" + i.ToString();
             newButton.SetActive(true);
             allButtons[i] = newButton;
@@ -69,6 +70,12 @@ public class LoadController : MonoBehaviour
         //handle data
 
         //get current Index
+
+        GameDataTest.TestInitDemo(gameNames[currentGame]);
+        GameObject hostGame = GameObject.Find("GameHostScreen");
+        GameObject audience = GameObject.Find("GameAudienceScreen");
+        hostGame.SendMessage("ReloadData");
+        audience.SendMessage("ReloadData");
 
         gameObject.SetActive(false);
     }
