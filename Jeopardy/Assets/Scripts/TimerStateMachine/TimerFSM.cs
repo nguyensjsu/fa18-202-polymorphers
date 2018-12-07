@@ -24,6 +24,7 @@ public class TimerFSM : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        TotalTime = 60;
         timerPlayState = new TimerPlayState(this);
         timerPauseState = new TimerPauseState(this);
         setState(timerPauseState);
