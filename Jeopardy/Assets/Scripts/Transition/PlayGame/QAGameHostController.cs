@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class QAGameHostController : MonoBehaviour {
 
     public string lastPointsButtonClicked { get; set; }
-    public TimerAI timerAI;
+    public TimerFSM timerFSM;
     public AIBuzzIn aIBuzzIn;
 
     private GameObject gameHostObject;
@@ -45,6 +45,8 @@ public class QAGameHostController : MonoBehaviour {
             return;
         }
 
+        //Debug.Log("reset timer");
+        //timerFSM.TotalTime = 60;
         AudienceData audienceData = AudienceData.GetInstance();
         currentAddRedScore = audienceData.GetAddRedScore();
         currentAddBlueScore = audienceData.GetAddBlueScore();
@@ -83,7 +85,8 @@ public class QAGameHostController : MonoBehaviour {
     {
         gameObject.SetActive(false);
         audienceObject.SendMessage("changePanel", "ExitQuestion");
-        timerAI.ResetButtonClick();
+        timerFSM.ResetButtonClick();
+
         aIBuzzIn.disableBuzzes();
 
     }
