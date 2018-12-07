@@ -6,9 +6,9 @@ using UnityEngine;
     public static class GameDataManager
     {
         private static string SubFolderName = "Save";
-        private static string SaveFileName = "Test.json";
+        private static string SaveFileName = "Test";
  
-        private static string FileName { get { return Path.Combine(FolderName, SaveFileName);} }
+        private static string FileName { get { return Path.Combine(FolderName, SaveFileName)+".json";} }
         private static string FolderName { get { return Path.Combine(Application.persistentDataPath, SubFolderName); } }
 
         public static void InitDemo()
@@ -57,7 +57,6 @@ using UnityEngine;
         }
         
         public static void LoadData() {
-            Debug.Log(FileName);
             Debug.Log(FolderName);
 
             if(!Directory.Exists(FolderName)) {
@@ -72,6 +71,8 @@ using UnityEngine;
                 int row = (int) data["Row"];
                 int col = (int) data["Column"];
                 GameData.Init(col, row);
+
+                GameData.GameName = SaveFileName;
                 
                 GameData.BlueTeam = JsonMapper.ToObject<List<string>>(data["BlueTeam"].ToJson());
                 GameData.RedTeam = JsonMapper.ToObject<List<string>>(data["RedTeam"].ToJson());
