@@ -55,18 +55,22 @@ using UnityEngine;
         {
             GameData.Init(6,5);
         }
-        
-        public static void LoadData() {
-            Debug.Log(FolderName);
 
-            if(!Directory.Exists(FolderName)) {
+        public static FileInfo[] LoadFiles() {
+            if (Directory.Exists(FolderName))
                 Directory.CreateDirectory(FolderName);
-            }
-            
-            if(File.Exists(FileName)) {
-                FileStream fs = new FileStream(FileName, FileMode.Open);
-                StreamReader sr = new StreamReader(fs);
+            DirectoryInfo di = new DirectoryInfo(FolderName);
+            return  di.GetFiles();
+        }
 
+        public static void LoadData() {
+            FileInfo file = new FileInfo(FileName);
+            LoadData(file);
+        }
+        
+        public static void LoadData(FileInfo file) {
+            if (file!=null) {  
+                StreamReader sr = new StreamReader(file.Open(FileMode.Open));
                 JsonData data = JsonMapper.ToObject(sr.ReadToEnd());
                 int row = (int) data["Row"];
                 int col = (int) data["Column"];
@@ -84,11 +88,8 @@ using UnityEngine;
  
                 GameData.FinalCategory = JsonMapper.ToObject<JCategory>(data["FinalCategory"].ToJson());
                 GameData.FinalQuestion = JsonMapper.ToObject<JQuestion>(data["FinalQuestion"].ToJson());
-                
-                fs.Close();
                 sr.Close();
             }
-   
         }
         
         public static void SaveData() {

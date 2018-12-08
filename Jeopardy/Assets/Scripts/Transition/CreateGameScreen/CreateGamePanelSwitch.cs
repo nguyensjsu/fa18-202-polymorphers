@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,11 +20,8 @@ public class CreateGamePanelSwitch : MonoBehaviour
     private Dictionary<string, GameObject> panels;
     private Dictionary<string, Button> panelButton;
     private Dictionary<string, GameObject> gamePanels;
-    
-    public Button teamsButton;
-    public Button jeopardyButton;
-    public Button doubleJeopardyButton;
-    public Button finalJeopardyButton;
+
+    public GameObject GameButtonPrefab;
 
     void Start()
     {
@@ -48,6 +46,18 @@ public class CreateGamePanelSwitch : MonoBehaviour
             panel.transform.position = new Vector3(0, -1000, 0);
         }
         OpenPanel("NewGameOrLoadGame");
+
+
+        GameObject savedGamePanel = GameObject.Find("SavedGamesPanel");
+        Debug.Log(savedGamePanel.name);
+        FileInfo[] files = GameDataManager.LoadFiles();
+        foreach (var file in files) {
+            var gameButton = Instantiate(GameButtonPrefab);
+            var buttonObj = gameButton.GetComponent<LoadGameButton>();
+            buttonObj.file = file;
+            gameButton.GetComponent<Button>().onClick.AddListener(() => ClosePanel("LoadGame"));
+            gameButton.transform.SetParent(savedGamePanel.transform);
+        }
         
         SceneManager.sceneUnloaded += (scene) =>
         {
