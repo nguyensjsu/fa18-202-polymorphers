@@ -527,7 +527,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+ using System.IO;
+ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
@@ -643,9 +644,9 @@ public class CreateGameController : MonoBehaviour
         LoadData();
     }
 
-    public void LoadGame()
+    public void LoadGame(FileInfo file)
     {
-        GameDataManager.LoadData();
+        GameDataManager.LoadData(file);
         LoadData();
     }
     
@@ -655,6 +656,7 @@ public class CreateGameController : MonoBehaviour
         {
             GameObject.Find("RedTeamInputField" + i).GetComponent<InputField>().text = GameData.RedTeam[i];
             GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text = GameData.BlueTeam[i];
+            Debug.Log(GameData.RedTeam[i]);
         }
         gameNameInput.GetComponent<InputField>().text = GameData.GameName;
     }
