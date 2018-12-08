@@ -47,7 +47,6 @@ public class CreateGamePanelSwitch : MonoBehaviour
         }
         OpenPanel("NewGameOrLoadGame");
 
-
         GameObject savedGamePanel = GameObject.Find("SavedGamesPanel");
         Debug.Log(savedGamePanel.name);
         FileInfo[] files = GameDataManager.LoadFiles();

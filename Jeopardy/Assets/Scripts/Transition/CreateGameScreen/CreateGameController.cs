@@ -524,7 +524,7 @@
 //}
 //=======
 
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
  using System.IO;
@@ -575,8 +575,8 @@ public class CreateGameController : MonoBehaviour
             GameData.BlueTeam[i] = GameObject.Find("BlueTeamInputField" + i).GetComponent<InputField>().text;
         }
         GameData.GameName = gameNameInput.GetComponent<InputField>().text ;
-
         GameDataManager.SaveData();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void CategoryButtonClick()
