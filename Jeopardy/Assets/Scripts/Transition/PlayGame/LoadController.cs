@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Model;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,7 +17,9 @@ public class LoadController : MonoBehaviour
     private int currentGame = 0;
     private GameObject[] allButtons;
 
-    private List<string> gameNames;
+    //private List<string> gameNames;
+
+    FileInfo[] allFiles; 
 
     void Start()
     {
@@ -24,16 +27,21 @@ public class LoadController : MonoBehaviour
         Transform temp_transform = gameObject.GetComponent<Transform>();
         temp_transform.position = new Vector3(0f, temp_transform.position.y, temp_transform.position.z);
 
-        gameNames = GameDataTest.DemoName();
-        buttonCount = gameNames.Count;
+
+        allFiles = GameDataManager.LoadFiles();
+
+        //gameNames = GameDataTest.DemoName();
+
+        buttonCount = allFiles.Length;
         allButtons = new GameObject[buttonCount];
 
         loadGamesPanel = GameObject.Find("LoadGamesPanel");
 
         for (int i = 0; i < buttonCount; i++)
         {
+            FileInfo file = allFiles[i];
             GameObject newButton = Instantiate(buttonObject);
-            newButton.GetComponentInChildren<Text>().text = gameNames[i];
+            newButton.GetComponentInChildren<Text>().text = file.Name;
             newButton.transform.SetParent(loadGamesPanel.transform, false);
 
             if (i != 0)
@@ -71,7 +79,7 @@ public class LoadController : MonoBehaviour
 
         //get current Index
 
-        GameDataTest.TestInitDemo(gameNames[currentGame]);
+        GameDataManager.LoadData(allFiles[currentGame]);
         GameObject hostGame = GameObject.Find("GameHostScreen");
         GameObject audience = GameObject.Find("GameAudienceScreen");
         hostGame.SendMessage("ReloadData");

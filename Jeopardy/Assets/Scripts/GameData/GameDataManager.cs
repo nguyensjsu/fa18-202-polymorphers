@@ -60,7 +60,7 @@ using UnityEngine;
             if (Directory.Exists(FolderName))
                 Directory.CreateDirectory(FolderName);
             DirectoryInfo di = new DirectoryInfo(FolderName);
-            return  di.GetFiles();
+            return  di.GetFiles("*.json");
         }
 
         public static void LoadData() {
