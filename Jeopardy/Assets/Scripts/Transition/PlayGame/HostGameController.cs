@@ -27,16 +27,16 @@ using System.Collections;using System.Collections.Generic;using UnityEngine;
                 audienceObject.SendMessage("changePanel", "DailyDouble");                clickDdailyDouble = 1;                return;
             }            else if(clickDdailyDouble == 1 && isDaily)            {
                 clickDdailyDouble = 2;                GameData.DoubleQuestion[line][row].isDouble = false;
-                addButtonScore = 2 * (baseScore * (line + 1));            }            else            {
-                addButtonScore = baseScore * (line + 1);            }        }        else if(currentButtonName[6] == 'F')        {            baseScore = 5000;            index = "";            questionType = 2;            addButtonScore = baseScore;
+                addButtonScore = 2 * (baseScore * (row + 1));            }            else            {
+                addButtonScore = baseScore * (row + 1);            }        }        else if(currentButtonName[6] == 'F')        {            baseScore = 5000;            index = "";            questionType = 2;            addButtonScore = baseScore;
         }        else        {            baseScore = 100;            index = currentButtonName.Substring(currentButtonName.Length - 2, 2);            questionType = 0;
             isDaily = GameData.Question[line][row].isDouble;            if (clickJDailyDouble == 0 && isDaily)            {                audienceObject.SendMessage("changePanel", "DailyDouble");                clickJDailyDouble = 1;
                 return;            }            else if (clickJDailyDouble == 1 && isDaily)            {                clickJDailyDouble = 2;
                 GameData.Question[line][row].isDouble = false;
 
-                addButtonScore = 2 * (baseScore * (line + 1));
+                addButtonScore = 2 * (baseScore * (row + 1));
             }else            {
-                addButtonScore = baseScore * (line + 1);            }
+                addButtonScore = baseScore * (row + 1);            }
         }
         AudienceData.GetInstance().SetQuestion(questionType, line, row);        AudienceData.GetInstance().SetAddRedScore(addButtonScore);
         AudienceData.GetInstance().SetAddBlueScore(addButtonScore);        qaGameHostObject.SetActive(true);        //audienceObject.SendMessage("changePanel", "Question"); //audience screen show quesiton
